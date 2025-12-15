@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Review: Chinese Simplified Translations</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 40px; }
+        h3 { color: #666; }
+        .instructions {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .document-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .text-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .text-box.professional { border-left: 4px solid #28a745; }
+        .text-box.llm { border-left: 4px solid #007bff; }
+        .text-box.original { border-left: 4px solid #6c757d; }
+        .text-box.backtrans { border-left: 4px solid #ffc107; }
+        .label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        .metrics-badge {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+        .model-section {
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .model-section:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <h1>Human Review: Chinese Simplified Translations</h1>
+
+    <div class="instructions">
+        <h3>Review Instructions</h3>
+        <p><strong>For each document section below:</strong></p>
+        <ol>
+            <li><strong>Compare translations:</strong> Read the Professional Translation (left) and LLM Translation (right) side by side.</li>
+            <li><strong>Check for:</strong> Accuracy, fluency, medical terminology, cultural appropriateness</li>
+            <li><strong>Review back-translation:</strong> Compare Original English to Back-Translation to assess meaning preservation</li>
+            <li><strong>Note any issues:</strong> Missing information, mistranslations, awkward phrasing, errors</li>
+        </ol>
+        <p>These documents were selected because they showed the <strong>highest variance</strong> in scores across different AI models.</p>
+    </div>
+
+    <div class="document-section">
+        <h2>Document: Immunize   Hepatitis B</h2>
+        <p>
+            <span class="metrics-badge">Mean COMET: 0.834</span>
+            <span class="metrics-badge">Variance: 0.0002</span>
+        </p>
+
+        <h3>Original English Text</h3>
+        <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What You Need to Know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause mild
+Infants should get their first dose of hepatitis B
+illness lasting a few weeks, or it can lead to a serious,
+vaccine at birth and will usually complete the series
+lifelong illness.
+at 6–18 months of age. The birth dose of hepatitis B
+ Acute hepatitis B is a short-term illness that can
+vaccine is an important part of preventing long-
+lead to fever, fatigue, loss of appetite, nausea,
+term illness in infants and the spread of hepatitis B
+vomiting, jaundice (yellow skin or eyes, dark urine,
+in the United States.
+clay-colored bowel movements), and pain in the
+muscles, joints, and stomach. Anyone 59 years of age or younger who has not yet
+ Chronic hepatitis B is a long-term illness that gotten the vaccine should be vaccinated.
+occurs when the hepatitis B virus remains in a
+Hepatitis B vaccination is recommended for adults
+person’s body. Most people who go on to develop
+60 years or older at increased risk of exposure to
+chronic hepatitis B do not have symptoms, but it
+hepatitis B who were not vaccinated previously.
+is still very serious and can lead to liver damage
+Adults 60 years or older who are not at increased
+(cirrhosis), liver cancer, and death. Chronically
+risk and were not vaccinated in the past may also be
+infected people can spread hepatitis B virus
+vaccinated.
+to others, even if they do not feel or look sick
+themselves. Hepatitis B vaccine may be given as a stand-alone
+vaccine, or as part of a combination vaccine (a type
+Hepatitis B is spread when blood, semen, or other
+...</div>
+
+        <div class="model-section">
+            <h3>GPT-5.1</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 15.0</span>
+                <span class="metrics-badge">COMET: 0.824</span>
+                <span class="metrics-badge">BERTScore: 0.794</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">This translation is out of date. Use it along with the current VIS in English. Visit www.immunize.org/vis for details.
+● Simplified Chinese
+疫苗信息声明
+Simplified Chinese and other
+languages. www.immunize.org/vis
+乙型肝炎疫苗：
+许多疫苗信息声明均提供简体中文和
+须知事宜 其他语言 ww的w版.im本m。u nize.org/vis
+请参阅
+1. 2.
+为何接种疫苗？ 乙型肝炎疫苗
+2 3 4
+乙型肝炎疫苗可以预防乙型肝炎。乙型肝炎是一 乙型肝炎疫苗通常接种 、或 剂。
+种肝病，可能导致持续数周的轻微疾病，也可能导
+婴儿应在出生时接种第一剂乙型肝炎疫苗，然后
+致严重的终身疾病。 6 18
+ 通常在 – 个月时继续完成一系列接种。在美
+急性乙型肝炎是一种短期疾病，可能导致发烧、
+国，出生时接种乙型肝炎疫苗是预防婴儿患上长
+疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发
+期疾病及阻止乙型肝炎传播的重要一环。
+黄、尿色深暗、排出陶土色大便）以及肌肉痛、关
+59
+节痛和胃痛。 任何岁数在 岁或以下且未接种过疫苗者都应
+
+慢性乙型肝炎是乙型肝炎病毒留在人体内时发 该接种疫苗。
+60
+生的长期疾病。发展为慢性乙型肝炎的大多数患
+建议先前未接种过乙肝疫苗的 岁或以上，且
+者都没有症状，但它仍然非常严重，并可能导致
+有较高风险接触乙型肝炎的成年人接种乙肝疫
+60
+肝损伤（肝硬化）、肝癌和死亡。慢性感染者可将
+苗。 岁或以上且过去未接种过疫苗但风险未加
+乙型肝炎病毒传染给他人，即使他们自己没有感
+大的成年人，也不妨接种疫苗。
+到不适或看起来没有生病也有传染性。
+乙型肝炎疫苗可作为单独疫苗进行接种，也可以
+当感染乙型肝炎病毒的血液、精液或其他体液进
+作为联合疫苗（一种将多种疫苗结合到一针中的
+入未感染的人体内，就会造成乙型肝炎传播。人们
+疫苗）的一部分进行接种。
+可能通过以下途径感染：
+
+出生（如果怀孕者患有乙型肝炎，其怀着的宝宝 乙型肝炎疫苗可以和其他疫苗一起接种。
+有可能被感染）
+ 3.
+与感染者共用物品，如剃须刀或牙刷
+ 请咨询您的医务人员
+接触到感染者的血液或裸露的溃疡
+
+与受感染的伴侣发生性行为 如果接种疫苗者有以下情况，请告诉您的疫苗接
+
+共用针头、注射器或其他毒品注射器具 种服务提供者：
+ 
+由于针刺或其他锋利器具而接触血液 在上次接种乙型肝炎疫苗后出现了过敏反应，或
+有任何重度、危及生命的过敏反应
+大多数接种乙型肝炎疫苗的人可终生免疫。
+在某些情况下，您的医务人员可能会决定将乙型
+肝炎疫苗推迟至下次就诊时再接种。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+6.
+先前未接种过疫苗的孕妇或正在哺乳者应接种疫 国家疫苗伤害赔偿计划
+苗。怀孕或母乳喂养并不足以构成不接种乙型肝
+National Vaccine Injury Compensation Program
+炎疫苗的理由。
+VICP
+(国家疫苗伤害赔偿计划， ）是一项联邦计划，
+患有诸如感冒等轻微疾病者可以接种疫苗。但对
+旨在对可能因接种某些疫苗而受伤者提供赔偿。
+于患有中度或重度疾病的人，则应等到康复后再
+关于声...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息说明书  
+乙型肝炎疫苗：  
+您可以在 www.immunize.org/vis 查看更多疫苗信息说明书。  
+许多疫苗信息说明书有西班牙语和其他语言版本。  
+Hojas de información sobre vacunas están disponibles en español y en muchos otros idiomas. Visite www.immunize.org/vis  
+
+您需要了解的内容  
+
+1. 为什么要接种疫苗？  
+乙型肝炎疫苗可以预防乙型肝炎。  
+
+乙型肝炎是一种肝脏疾病，可以引起持续几周的轻度疾病，也可以发展为严重的、终身的疾病。  
+
+ 急性乙型肝炎是一种短期疾病，可导致发热、疲劳、食欲减退、恶心、呕吐、黄疸（皮肤或眼睛发黄、小便颜色变深、大便呈陶土色）、以及肌肉、关节和腹部疼痛。  
+
+ 慢性乙型肝炎是一种长期疾病，当乙型肝炎病毒持续存在于人体内时就会发生。大多数发展为慢性乙型肝炎的人没有症状，但这种疾病仍然非常严重，可导致肝损伤（肝硬化）、肝癌和死亡。慢性乙型肝炎感染者即使自己没有任何不适或外观正常，也可以将乙型肝炎病毒传播给他人。  
+
+当被乙型肝炎病毒感染的血液、精液或其他体液进入未感染者体内时，就会传播乙型肝炎。人们可能通过以下方式感染：  
+
+ 分娩（如果孕妇患有乙型肝炎，她的婴儿可能会被感染）  
+ 与感染者共用剃须刀或牙刷等物品  
+ 接触感染者的血液或开放性伤口  
+ 与感染者发生性行为  
+ 共用针头、注射器或其他注射毒品用具  
+ 被针刺伤或其他锐器接触血液  
+
+大多数接种了乙型肝炎疫苗的人终身免疫。  
+
+未曾接种过疫苗的孕妇或哺乳期妇女应接种乙型肝炎疫苗。妊娠或哺乳不是避免接种乙型肝炎疫苗的理由。  
+
+有轻微疾病（如感冒）的人可以接种疫苗。中度或重度患病的人通常应等病情好转后再接种乙型肝炎疫苗。  
+
+您的医疗保健提供者可以向您提供更多信息。  
+
+2. 乙型肝炎疫苗  
+
+乙型肝炎疫苗通常分 2、3 或 4 针接种。  
+
+婴儿应在出生时接种第一剂乙型肝炎疫苗，通常在 6–18 个月内完成全程接种。出生时接种乙型肝炎疫苗是预防婴儿长期患病和减少乙型肝炎在美国传播的重要措施。  
+
+任何 59 岁及以下、尚未接种过乙型肝炎疫苗的人都应接种。  
+
+建议 60 岁及以上、乙型肝炎暴露风险增加且此前未接种过疫苗的成年人接种乙型肝炎疫苗。  
+
+60 岁及以上、乙型肝炎暴露风险不增加且过去未接种过疫苗的成年人也可以选择接种。  
+
+乙型肝炎疫苗可以单独接种，也可以作为联合疫苗的一部分接种（联合疫苗是将多种疫苗合在一针中接种的一种疫苗）。  
+
+乙型肝炎疫苗可以与其他疫苗同时接种。  
+
+3. 与您的医疗保健提供者沟通  
+
+如果接种疫苗的人：  
+
+ 以前接种乙型肝炎疫苗后发生过过敏反应，或有任何严重、危及生命的过敏反应  
+
+请告知您的接种服务提供者。  
+
+在某些情况下，您的医疗保健提供者可能会决定将乙型肝炎疫苗接种推迟到以后就诊时进行。  
+
+4. 疫苗反应的风险  
+
+ 接种部位酸痛、发热、头痛和疲劳（感觉很累）可能在接种乙型肝炎疫苗后出现。  
+
+有时人们在接受医疗操作（包括接种疫苗）后会晕厥。如果您感到头晕、视力改变或耳鸣，请告诉您的接种服务提供者。  
+
+与任何药物一样，疫苗也有极小的可能性会引起严重的过敏反应、其他严重伤害或死亡。  
+
+5. 如果出现严重问题怎么办？  
+
+严重的过敏反应可能会在接种者离开诊所后发生。如果您发现严...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What You Need to Know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause mild
+Infants should get their first dose of hepatitis B
+illness lasting a few weeks, or it can lead to a serious,
+vaccine at birth and will usually complete the series
+lifelong illness.
+at 6–18 months of age. The birth dose of hepatitis B
+ Acute hepatitis B is a short-term illness that can
+vaccine is an important part of preventing long-
+lead to fever, fatigue, loss of appetite, nausea,
+term illness in infants and the spread of hepatitis B
+vomiting, jaundice (yellow skin or eyes, dark urine,
+in the United States.
+clay-colored bowel movements), and pain in the
+muscles, joints, and stomach. Anyone 59 years of age or younger who has not yet
+ Chronic hepatitis B is a long-term illness that gotten the vaccine should be vaccinated.
+occurs when the hepatitis B virus remains in a
+Hepatitis B vaccination is recommended for adults
+person’s body. Most people who go on to develop
+60 years or older at increased risk of exposure to
+chronic hepatitis B do not have symptoms, but it
+hepatitis B who were no...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement  
+Hepatitis B Vaccine:  
+You can view more Vaccine Information Statements at www.immunize.org/vis.  
+Many Vaccine Information Statements are available in Spanish and other languages.  
+Hojas de información sobre vacunas están disponibles en español y en muchos otros idiomas. Visite www.immunize.org/vis  
+
+What you need to know  
+
+1. Why get vaccinated?  
+Hepatitis B vaccine can prevent hepatitis B.  
+
+Hepatitis B is a liver disease that can cause a mild illness lasting a few weeks, or can develop into a serious, lifelong illness.  
+
+ Acute hepatitis B is a short-term illness that can cause fever, fatigue, loss of appetite, nausea, vomiting, jaundice (yellowing of the skin or eyes, dark urine, clay-colored stools), and muscle, joint, and abdominal pain.  
+
+ Chronic hepatitis B is a long-term illness that occurs when the hepatitis B virus remains in the body. Most people who develop chronic hepatitis B have no symptoms, but the disease is still very serious and can lead to liver damage (cirrhosis), liver cancer, and death. People with chronic hepatitis B infection can spread the hepatitis B virus to others even if they have no discomfort themselves or appear normal.  
+
+Hepatitis B is spread when blood, semen, or other body fluids from a person infected with the hepatitis B virus enter the body of someone who is not infected. People can become infected in the following ways:  
+
+ Birth (if a pregnant woman has hepatitis B, her baby can become infe...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Claude Opus 4.5</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 13.4</span>
+                <span class="metrics-badge">COMET: 0.855</span>
+                <span class="metrics-badge">BERTScore: 0.849</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">This translation is out of date. Use it along with the current VIS in English. Visit www.immunize.org/vis for details.
+● Simplified Chinese
+疫苗信息声明
+Simplified Chinese and other
+languages. www.immunize.org/vis
+乙型肝炎疫苗：
+许多疫苗信息声明均提供简体中文和
+须知事宜 其他语言 ww的w版.im本m。u nize.org/vis
+请参阅
+1. 2.
+为何接种疫苗？ 乙型肝炎疫苗
+2 3 4
+乙型肝炎疫苗可以预防乙型肝炎。乙型肝炎是一 乙型肝炎疫苗通常接种 、或 剂。
+种肝病，可能导致持续数周的轻微疾病，也可能导
+婴儿应在出生时接种第一剂乙型肝炎疫苗，然后
+致严重的终身疾病。 6 18
+ 通常在 – 个月时继续完成一系列接种。在美
+急性乙型肝炎是一种短期疾病，可能导致发烧、
+国，出生时接种乙型肝炎疫苗是预防婴儿患上长
+疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发
+期疾病及阻止乙型肝炎传播的重要一环。
+黄、尿色深暗、排出陶土色大便）以及肌肉痛、关
+59
+节痛和胃痛。 任何岁数在 岁或以下且未接种过疫苗者都应
+
+慢性乙型肝炎是乙型肝炎病毒留在人体内时发 该接种疫苗。
+60
+生的长期疾病。发展为慢性乙型肝炎的大多数患
+建议先前未接种过乙肝疫苗的 岁或以上，且
+者都没有症状，但它仍然非常严重，并可能导致
+有较高风险接触乙型肝炎的成年人接种乙肝疫
+60
+肝损伤（肝硬化）、肝癌和死亡。慢性感染者可将
+苗。 岁或以上且过去未接种过疫苗但风险未加
+乙型肝炎病毒传染给他人，即使他们自己没有感
+大的成年人，也不妨接种疫苗。
+到不适或看起来没有生病也有传染性。
+乙型肝炎疫苗可作为单独疫苗进行接种，也可以
+当感染乙型肝炎病毒的血液、精液或其他体液进
+作为联合疫苗（一种将多种疫苗结合到一针中的
+入未感染的人体内，就会造成乙型肝炎传播。人们
+疫苗）的一部分进行接种。
+可能通过以下途径感染：
+
+出生（如果怀孕者患有乙型肝炎，其怀着的宝宝 乙型肝炎疫苗可以和其他疫苗一起接种。
+有可能被感染）
+ 3.
+与感染者共用物品，如剃须刀或牙刷
+ 请咨询您的医务人员
+接触到感染者的血液或裸露的溃疡
+
+与受感染的伴侣发生性行为 如果接种疫苗者有以下情况，请告诉您的疫苗接
+
+共用针头、注射器或其他毒品注射器具 种服务提供者：
+ 
+由于针刺或其他锋利器具而接触血液 在上次接种乙型肝炎疫苗后出现了过敏反应，或
+有任何重度、危及生命的过敏反应
+大多数接种乙型肝炎疫苗的人可终生免疫。
+在某些情况下，您的医务人员可能会决定将乙型
+肝炎疫苗推迟至下次就诊时再接种。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+6.
+先前未接种过疫苗的孕妇或正在哺乳者应接种疫 国家疫苗伤害赔偿计划
+苗。怀孕或母乳喂养并不足以构成不接种乙型肝
+National Vaccine Injury Compensation Program
+炎疫苗的理由。
+VICP
+(国家疫苗伤害赔偿计划， ）是一项联邦计划，
+患有诸如感冒等轻微疾病者可以接种疫苗。但对
+旨在对可能因接种某些疫苗而受伤者提供赔偿。
+于患有中度或重度疾病的人，则应等到康复后再
+关于声...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息说明书
+许多疫苗信息说明书有
+乙型肝炎疫苗：西班牙语和其他语言版本。
+请访问 www.immunize.org/vis
+Hojas de información sobre vacunas están
+您需要了解的信息
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. 为什么要接种疫苗？ 2. 乙型肝炎疫苗
+乙型肝炎疫苗可以预防乙型肝炎。 乙型肝炎疫苗通常分2、3或4针接种。
+乙型肝炎是一种肝脏疾病，可能引起持续数周的
+婴儿应在出生时接种第一剂乙型肝炎疫苗，通常
+轻微疾病，也可能导致严重的终身疾病。
+在6-18月龄时完成整个接种程序。出生时接种
+ 急性乙型肝炎是一种短期疾病，可能导致发热、
+乙型肝炎疫苗是预防婴儿长期患病和防止乙型肝炎
+疲劳、食欲减退、恶心、呕吐、黄疸（皮肤或
+在美国传播的重要措施。
+眼睛发黄、尿色深、大便呈陶土色）以及肌肉、
+关节和腹部疼痛。 任何59岁及以下尚未接种疫苗的人都应接种疫苗。
+ 慢性乙型肝炎是一种长期疾病，当乙型肝炎
+建议60岁及以上、感染乙型肝炎风险较高且之前
+病毒留在人体内时就会发生。大多数发展为
+未接种疫苗的成年人接种乙型肝炎疫苗。
+慢性乙型肝炎的人没有症状，但它仍然非常
+60岁及以上、感染风险不高且之前未接种疫苗的
+严重，可能导致肝脏损害（肝硬化）、肝癌
+成年人也可以接种疫苗。
+和死亡。慢性感染者即使自己感觉或看起来
+没有生病，也可以将乙型肝炎病毒传播给他人。 乙型肝炎疫苗可以作为单独疫苗接种，也可以
+作为联合疫苗（一种将多种疫苗合并为一针的
+乙型肝炎通过感染乙型肝炎病毒的血液、精液或
+疫苗类型）的一部分接种。
+其他体液进入未感染者体内而传播。人们可能
+通过以下途径被感染： 乙型肝炎疫苗可以与其他疫苗同时接种。
+ 出生时（如果孕妇患有乙型肝炎，她的婴儿
+可能被感染） 3. 与您的医疗保健提供者沟通
+ 与感染者共用剃须刀或牙刷等物品
+ 接触感染者的血液或开放性伤口 请告知您的疫苗接种提供者，如果接种疫苗的人：
+ 与感染者发生性行为  在之前接种乙型肝炎疫苗后出现过敏反应，或
+ 共用针头、注射器或其他注射毒品设备 有任何严重的、危及生命的过敏症
+ 因针刺伤或其他锐器接触血液
+在某些情况下，您的医疗保健提供者可能决定将
+大多数接种乙型肝炎疫苗的人可获得终身免疫。 乙型肝炎疫苗接种推迟到下次就诊时进行。
+
+之前未接种疫苗的孕妇或哺乳期妇女应接种疫苗。 6. 国家疫苗伤害赔偿计划
+怀孕或哺乳不是避免接种乙型肝炎疫苗的理由。
+国家疫苗伤害赔偿计划（VICP）是一项联邦计划，
+患有轻微疾病（如感冒）的人可以接种疫苗。中度
+旨在赔偿可能因某些疫苗而受伤的人。关于疫苗
+或重度患病的人通常应等到康复后再接种乙型
+接种导致的伤害或死亡索赔有提交时限，最短
+肝炎疫苗。
+可能只有两年。请访问VICP网站
+www.hrsa.gov/vaccinecompensation 或拨打
+您的医疗保健提供者可以为您提供更多信息。
+1-800-338-2382了解该计划和提交索赔的相关信息。
+
+4. 疫苗反应的风险 7. 如何了解更多信息？
+ 接种乙型肝炎疫苗后可能出现注射部位疼痛、  咨询您的医疗保健提供者。
+发热、头痛和疲劳（感觉疲倦）。  致电您当地或州的卫生部门。
+ 访问美国食品药品监督管理局（FDA）网站，
+人们有时会在医疗程序（包括接种疫苗）后晕倒。
+查看疫苗包装说明书和其他信息：www.fda.gov/
+如果您感到...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What You Need to Know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause mild
+Infants should get their first dose of hepatitis B
+illness lasting a few weeks, or it can lead to a serious,
+vaccine at birth and will usually complete the series
+lifelong illness.
+at 6–18 months of age. The birth dose of hepatitis B
+ Acute hepatitis B is a short-term illness that can
+vaccine is an important part of preventing long-
+lead to fever, fatigue, loss of appetite, nausea,
+term illness in infants and the spread of hepatitis B
+vomiting, jaundice (yellow skin or eyes, dark urine,
+in the United States.
+clay-colored bowel movements), and pain in the
+muscles, joints, and stomach. Anyone 59 years of age or younger who has not yet
+ Chronic hepatitis B is a long-term illness that gotten the vaccine should be vaccinated.
+occurs when the hepatitis B virus remains in a
+Hepatitis B vaccination is recommended for adults
+person’s body. Most people who go on to develop
+60 years or older at increased risk of exposure to
+chronic hepatitis B do not have symptoms, but it
+hepatitis B who were no...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement
+Many Vaccine Information Statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What you need to know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause
+Infants should get the first dose of hepatitis B vaccine at birth and usually
+mild illness lasting a few weeks, or it can lead to a serious, lifelong illness.
+complete the series at 6-18 months of age. A dose of hepatitis B vaccine given at birth is an important step in preventing long-term illness in infants and stopping the spread of hepatitis B in the United States.
+ Acute hepatitis B is a short-term illness that can lead to fever,
+fatigue, loss of appetite, nausea, vomiting, jaundice (yellow skin or
+eyes, dark urine, clay-colored bowel movements), and muscle,
+joint, and abdominal pain. Anyone 59 years of age or younger who has not been vaccinated should get vaccinated.
+ Chronic hepatitis B is a long-term illness that
+Adults 60 years or older with risk factors for hepatitis B infection who have not previously been vaccinated are recommended to receive hepatitis B vaccine.
+happens when the hepatitis B virus remains in a person's body. Most people who develop
+chronic hepatitis B don't have ...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Gemini 3 Pro</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 14.9</span>
+                <span class="metrics-badge">COMET: 0.829</span>
+                <span class="metrics-badge">BERTScore: 0.786</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">This translation is out of date. Use it along with the current VIS in English. Visit www.immunize.org/vis for details.
+● Simplified Chinese
+疫苗信息声明
+Simplified Chinese and other
+languages. www.immunize.org/vis
+乙型肝炎疫苗：
+许多疫苗信息声明均提供简体中文和
+须知事宜 其他语言 ww的w版.im本m。u nize.org/vis
+请参阅
+1. 2.
+为何接种疫苗？ 乙型肝炎疫苗
+2 3 4
+乙型肝炎疫苗可以预防乙型肝炎。乙型肝炎是一 乙型肝炎疫苗通常接种 、或 剂。
+种肝病，可能导致持续数周的轻微疾病，也可能导
+婴儿应在出生时接种第一剂乙型肝炎疫苗，然后
+致严重的终身疾病。 6 18
+ 通常在 – 个月时继续完成一系列接种。在美
+急性乙型肝炎是一种短期疾病，可能导致发烧、
+国，出生时接种乙型肝炎疫苗是预防婴儿患上长
+疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发
+期疾病及阻止乙型肝炎传播的重要一环。
+黄、尿色深暗、排出陶土色大便）以及肌肉痛、关
+59
+节痛和胃痛。 任何岁数在 岁或以下且未接种过疫苗者都应
+
+慢性乙型肝炎是乙型肝炎病毒留在人体内时发 该接种疫苗。
+60
+生的长期疾病。发展为慢性乙型肝炎的大多数患
+建议先前未接种过乙肝疫苗的 岁或以上，且
+者都没有症状，但它仍然非常严重，并可能导致
+有较高风险接触乙型肝炎的成年人接种乙肝疫
+60
+肝损伤（肝硬化）、肝癌和死亡。慢性感染者可将
+苗。 岁或以上且过去未接种过疫苗但风险未加
+乙型肝炎病毒传染给他人，即使他们自己没有感
+大的成年人，也不妨接种疫苗。
+到不适或看起来没有生病也有传染性。
+乙型肝炎疫苗可作为单独疫苗进行接种，也可以
+当感染乙型肝炎病毒的血液、精液或其他体液进
+作为联合疫苗（一种将多种疫苗结合到一针中的
+入未感染的人体内，就会造成乙型肝炎传播。人们
+疫苗）的一部分进行接种。
+可能通过以下途径感染：
+
+出生（如果怀孕者患有乙型肝炎，其怀着的宝宝 乙型肝炎疫苗可以和其他疫苗一起接种。
+有可能被感染）
+ 3.
+与感染者共用物品，如剃须刀或牙刷
+ 请咨询您的医务人员
+接触到感染者的血液或裸露的溃疡
+
+与受感染的伴侣发生性行为 如果接种疫苗者有以下情况，请告诉您的疫苗接
+
+共用针头、注射器或其他毒品注射器具 种服务提供者：
+ 
+由于针刺或其他锋利器具而接触血液 在上次接种乙型肝炎疫苗后出现了过敏反应，或
+有任何重度、危及生命的过敏反应
+大多数接种乙型肝炎疫苗的人可终生免疫。
+在某些情况下，您的医务人员可能会决定将乙型
+肝炎疫苗推迟至下次就诊时再接种。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+6.
+先前未接种过疫苗的孕妇或正在哺乳者应接种疫 国家疫苗伤害赔偿计划
+苗。怀孕或母乳喂养并不足以构成不接种乙型肝
+National Vaccine Injury Compensation Program
+炎疫苗的理由。
+VICP
+(国家疫苗伤害赔偿计划， ）是一项联邦计划，
+患有诸如感冒等轻微疾病者可以接种疫苗。但对
+旨在对可能因接种某些疫苗而受伤者提供赔偿。
+于患有中度或重度疾病的人，则应等到康复后再
+关于声...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息声明
+许多疫苗信息声明提供
+乙型肝炎疫苗：西班牙语和其他语言版本。
+请访问 www.immunize.org/vis
+须知事项
+
+1. 为什么要接种疫苗？
+乙型肝炎疫苗可以预防乙型肝炎。
+乙型肝炎是一种肝脏疾病，可能引起持续数周的轻微疾病，也可能导致严重的终身疾病。
+‚ 急性乙型肝炎是一种短期疾病，可能导致发烧、疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发黄、尿液呈深色、大便呈灰白色），以及肌肉、关节和胃部疼痛。
+‚ 慢性乙型肝炎是一种长期疾病，发生在乙型肝炎病毒存留在人体内时。大多数发展为慢性乙型肝炎的人没有症状，但这仍然非常严重，并可能导致肝损伤（肝硬化）、肝癌和死亡。慢性感染者即使自己感觉不到生病或看起来没有生病，也可以将乙型肝炎病毒传播给他人。
+
+当感染了乙型肝炎病毒的血液、精液或其他体液进入未感染者体内时，乙型肝炎就会传播。人们可以通过以下途径感染：
+‚ 分娩（如果孕妇患有乙型肝炎，她的婴儿可能会被感染）
+‚ 与感染者共用剃须刀或牙刷等物品
+‚ 接触感染者的血液或开放性伤口
+‚ 与感染后的伴侣发生性行为
+‚ 共用针头、注射器或其他药物注射设备
+‚ 接触针刺或其他锋利器械上的血液
+
+大多数接种乙型肝炎疫苗的人可获得终身免疫。
+
+2. 乙型肝炎疫苗
+乙型肝炎疫苗通常接种 2、3 或 4 针。
+婴儿应在出生时接种第一剂乙型肝炎疫苗，通常在 6-18 个月大时完成系列接种。乙型肝炎疫苗的出生剂量是预防婴儿长期疾病和乙型肝炎在美国传播的重要部分。
+
+任何 59 岁或以下尚未接种疫苗的人都应接种疫苗。
+建议 60 岁或以上、有较高乙型肝炎接触风险且以前未接种过疫苗的成年人接种乙型肝炎疫苗。
+60 岁或以上、没有较高风险且过去未接种过疫苗的成年人也可以接种疫苗。
+
+乙型肝炎疫苗可以作为单独的疫苗接种，也可以作为联合疫苗（一种将多种疫苗结合在一针中的疫苗）的一部分接种。
+
+乙型肝炎疫苗可以与其他疫苗同时接种。
+
+3. 与您的医疗服务提供者交谈
+如果接种疫苗的人有以下情况，请告知您的疫苗接种提供者：
+‚ 在接种上一剂乙型肝炎疫苗后出现过敏反应，或有任何严重、危及生命的过敏症
+
+在某些情况下，您的医疗服务提供者可能会决定将乙型肝炎疫苗接种推迟到以后的就诊时间。
+
+以前未接种过疫苗的孕妇或哺乳期妇女应接种疫苗。怀孕或哺乳不是避免接种乙型肝炎疫苗的理由。
+
+患有轻微疾病（如感冒）的人可以接种疫苗。患有中度或重度疾病的人通常应等到康复后再接种乙型肝炎疫苗。
+
+您的医疗服务提供者可以为您提供更多信息。
+
+4. 疫苗反应的风险
+‚ 接种乙型肝炎疫苗后，可能会出现注射部位酸痛、发烧、头痛和疲劳（感觉累）。
+
+人们有时会在医疗程序（包括疫苗接种）后晕厥。如果您感到头晕、视力发生变化或耳鸣，请告诉您的提供者。
+
+与任何药物一样，疫苗引起严重过敏反应、其他严重伤害或死亡的可能性极小。
+
+5. 如果出现严重问题怎么办？
+过敏反应可能会在接种疫苗的人离开诊所后发生。如果您看到严重过敏反应的迹象（荨麻疹、面部和喉咙肿胀、呼吸困难、心跳过快、头晕或虚弱），请拨打 9-1-1 并将该人送往最近的医院。
+
+对于其他令您担心的迹象，请致电您的医疗服务提供者。
+
+不良反应应报告给疫苗不良事件报告系统 (VAERS)。您的医疗服务提供者通常会提交此报告，或者您可以自己提交。请访问 VAERS 网站 www.vaers.hhs.gov 或致电 1-800-822-7967。VAERS 仅用于报告反应，VAERS 工作人员不提供医疗建议。
+
+6. 国家疫苗伤害赔偿计划
+国家疫苗伤害赔偿...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What You Need to Know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause mild
+Infants should get their first dose of hepatitis B
+illness lasting a few weeks, or it can lead to a serious,
+vaccine at birth and will usually complete the series
+lifelong illness.
+at 6–18 months of age. The birth dose of hepatitis B
+ Acute hepatitis B is a short-term illness that can
+vaccine is an important part of preventing long-
+lead to fever, fatigue, loss of appetite, nausea,
+term illness in infants and the spread of hepatitis B
+vomiting, jaundice (yellow skin or eyes, dark urine,
+in the United States.
+clay-colored bowel movements), and pain in the
+muscles, joints, and stomach. Anyone 59 years of age or younger who has not yet
+ Chronic hepatitis B is a long-term illness that gotten the vaccine should be vaccinated.
+occurs when the hepatitis B virus remains in a
+Hepatitis B vaccination is recommended for adults
+person’s body. Most people who go on to develop
+60 years or older at increased risk of exposure to
+chronic hepatitis B do not have symptoms, but it
+hepatitis B who were no...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement
+Many Vaccine Information Statements are available
+Hepatitis B Vaccine: Spanish and other language versions.
+Please visit www.immunize.org/vis
+What you need to know
+
+1. Why get vaccinated?
+Hepatitis B vaccine can prevent hepatitis B.
+Hepatitis B is a liver disease that may cause mild illness lasting a few weeks, or it may lead to serious lifelong illness.
+‚ Acute hepatitis B is a short-term illness that may lead to fever, fatigue, loss of appetite, nausea, vomiting, jaundice (yellowing of skin or eyes, dark urine, clay-colored bowel movements), and muscle, joint, and stomach pain.
+‚ Chronic hepatitis B is a long-term illness that occurs when the hepatitis B virus remains in the human body. Most people who develop chronic hepatitis B do not have symptoms, but this is still very serious and may lead to liver damage (cirrhosis), liver cancer, and death. Chronically infected persons can spread the hepatitis B virus to others even if they do not feel sick or look sick themselves.
+
+Hepatitis B spreads when blood, semen, or other body fluids infected with the hepatitis B virus enter the body of an uninfected person. People can become infected through the following ways:
+‚ Childbirth (if a pregnant woman has hepatitis B, her baby may be infected)
+‚ Sharing items such as razors or toothbrushes with an infected person
+‚ Contact with the blood or open sores of an infected person
+‚ Having sex with an infected partner
+‚ Sharing needles, syringes, or other drug...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Kimi K2</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 8.3</span>
+                <span class="metrics-badge">COMET: 0.828</span>
+                <span class="metrics-badge">BERTScore: 0.788</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">This translation is out of date. Use it along with the current VIS in English. Visit www.immunize.org/vis for details.
+● Simplified Chinese
+疫苗信息声明
+Simplified Chinese and other
+languages. www.immunize.org/vis
+乙型肝炎疫苗：
+许多疫苗信息声明均提供简体中文和
+须知事宜 其他语言 ww的w版.im本m。u nize.org/vis
+请参阅
+1. 2.
+为何接种疫苗？ 乙型肝炎疫苗
+2 3 4
+乙型肝炎疫苗可以预防乙型肝炎。乙型肝炎是一 乙型肝炎疫苗通常接种 、或 剂。
+种肝病，可能导致持续数周的轻微疾病，也可能导
+婴儿应在出生时接种第一剂乙型肝炎疫苗，然后
+致严重的终身疾病。 6 18
+ 通常在 – 个月时继续完成一系列接种。在美
+急性乙型肝炎是一种短期疾病，可能导致发烧、
+国，出生时接种乙型肝炎疫苗是预防婴儿患上长
+疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发
+期疾病及阻止乙型肝炎传播的重要一环。
+黄、尿色深暗、排出陶土色大便）以及肌肉痛、关
+59
+节痛和胃痛。 任何岁数在 岁或以下且未接种过疫苗者都应
+
+慢性乙型肝炎是乙型肝炎病毒留在人体内时发 该接种疫苗。
+60
+生的长期疾病。发展为慢性乙型肝炎的大多数患
+建议先前未接种过乙肝疫苗的 岁或以上，且
+者都没有症状，但它仍然非常严重，并可能导致
+有较高风险接触乙型肝炎的成年人接种乙肝疫
+60
+肝损伤（肝硬化）、肝癌和死亡。慢性感染者可将
+苗。 岁或以上且过去未接种过疫苗但风险未加
+乙型肝炎病毒传染给他人，即使他们自己没有感
+大的成年人，也不妨接种疫苗。
+到不适或看起来没有生病也有传染性。
+乙型肝炎疫苗可作为单独疫苗进行接种，也可以
+当感染乙型肝炎病毒的血液、精液或其他体液进
+作为联合疫苗（一种将多种疫苗结合到一针中的
+入未感染的人体内，就会造成乙型肝炎传播。人们
+疫苗）的一部分进行接种。
+可能通过以下途径感染：
+
+出生（如果怀孕者患有乙型肝炎，其怀着的宝宝 乙型肝炎疫苗可以和其他疫苗一起接种。
+有可能被感染）
+ 3.
+与感染者共用物品，如剃须刀或牙刷
+ 请咨询您的医务人员
+接触到感染者的血液或裸露的溃疡
+
+与受感染的伴侣发生性行为 如果接种疫苗者有以下情况，请告诉您的疫苗接
+
+共用针头、注射器或其他毒品注射器具 种服务提供者：
+ 
+由于针刺或其他锋利器具而接触血液 在上次接种乙型肝炎疫苗后出现了过敏反应，或
+有任何重度、危及生命的过敏反应
+大多数接种乙型肝炎疫苗的人可终生免疫。
+在某些情况下，您的医务人员可能会决定将乙型
+肝炎疫苗推迟至下次就诊时再接种。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+6.
+先前未接种过疫苗的孕妇或正在哺乳者应接种疫 国家疫苗伤害赔偿计划
+苗。怀孕或母乳喂养并不足以构成不接种乙型肝
+National Vaccine Injury Compensation Program
+炎疫苗的理由。
+VICP
+(国家疫苗伤害赔偿计划， ）是一项联邦计划，
+患有诸如感冒等轻微疾病者可以接种疫苗。但对
+旨在对可能因接种某些疫苗而受伤者提供赔偿。
+于患有中度或重度疾病的人，则应等到康复后再
+关于声...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息声明
+
+许多疫苗信息声明
+乙型肝炎疫苗：提供西班牙语及其他语言版本。
+您需要了解的信息 请访问 www.immunize.org/vis
+疫苗信息声明提供西班牙语
+及其他多种语言版本。
+请访问 www.immimze.org/vis
+
+1. 为什么要接种疫苗？
+乙型肝炎疫苗可预防乙型肝炎。乙型肝炎是一种肝脏疾病，可引起持续数周的轻微疾病，或导致严重的终身疾病。
+• 急性乙型肝炎是一种短期疾病，可导致发热、疲劳、食欲不振、恶心、呕吐、黄疸（皮肤或眼睛发黄、尿液深、大便呈粘土色）以及肌肉、关节和胃部疼痛。
+• 慢性乙型肝炎是一种长期疾病，发生在乙型肝炎病毒留在人体内时。大多数发展为慢性乙型肝炎的人没有症状，但它仍然非常严重，可导致肝损伤（肝硬化）、肝癌和死亡。慢性感染者即使自己感觉或看起来没有生病，也能将乙型肝炎病毒传播给他人。
+
+乙型肝炎通过血液、精液或其他感染乙型肝炎病毒的体液进入未感染者体内而传播。人们可能通过以下途径感染：
+• 分娩（如果孕妇患有乙型肝炎，她的婴儿可能被感染）
+• 与感染者共用剃须刀或牙刷等物品
+• 接触感染者的血液或开放性溃疡
+• 与感染者发生性行为
+• 共用针头、注射器或其他药物注射设备
+• 接触针刺伤或其他锐器中的血液
+
+接种乙型肝炎疫苗的大多数人可获得终身免疫。
+
+2. 乙型肝炎疫苗
+乙型肝炎疫苗通常接种2、3或4剂。
+婴儿应在出生时接种第一剂乙型肝炎疫苗，并通常在6至18月龄完成全程接种。乙型肝炎疫苗的出生剂量是预防婴儿长期疾病和乙型肝炎在美国传播的重要组成部分。
+
+任何59岁及以下尚未接种疫苗的人都应接种疫苗。
+
+建议60岁及以上有乙型肝炎暴露风险增加且既往未接种过疫苗的成人接种乙型肝炎疫苗。60岁及以上无风险增加且过去未接种过疫苗的成人也可接种。
+
+乙型肝炎疫苗可作为单独疫苗接种，或作为联合疫苗的一部分（一种将多种疫苗合并在一次注射中的疫苗类型）。
+
+乙型肝炎疫苗可与其他疫苗同时接种。
+
+3. 与您的医疗保健提供者沟通
+请告诉疫苗接种提供者接种者是否有以下情况：
+• 在接种前一剂乙型肝炎疫苗后出现过过敏反应，或有任何严重的、危及生命的过敏史
+
+在某些情况下，您的医疗保健提供者可能会决定推迟乙型肝炎疫苗接种至下次就诊。
+
+既往未接种过疫苗的怀孕或哺乳期妇女应接种疫苗。怀孕或哺乳不是避免乙型肝炎疫苗接种的理由。
+
+患有轻微疾病（如感冒）的人可以接种疫苗。患有中度或重度疾病的人通常应等到康复后再接种乙型肝炎疫苗。
+
+您的医疗保健提供者可以为您提供更多信息。
+
+4. 疫苗反应的风险
+接种乙型肝炎疫苗后可能出现注射部位疼痛、发热、头痛和疲劳（感觉疲倦）。
+
+人们在医疗操作后有时会晕倒，包括接种疫苗。如果您感到头晕或出现视力变化或耳鸣，请告诉您的提供者。
+
+与任何药物一样，疫苗导致严重过敏反应、其他严重伤害或死亡的可能性极小。
+
+5. 如果出现严重问题怎么办？
+接种疫苗的人离开诊所后可能会发生过敏反应。如果您看到严重过敏反应的体征（荨麻疹、面部和喉咙肿胀、呼吸困难、心跳加快、头晕或虚弱），请拨打9-1-1并将患者送往最近的医院。
+
+对于其他令您担忧的体征，请致电您的医疗保健提供者。
+
+不良反应应报告给疫苗不良事件报告系统（VAERS）。您的医疗保健提供者通常会提交此报告，或者您也可以自行提交。请访问VAERS网站www.vaers.hhs.gov或致电1-800-822-7967。VAERS仅用于报告反应，VAERS工作人员不提供医疗建议。
+
+6. 国家疫苗伤害赔偿计划
+国家疫苗伤害赔偿计划（VICP）是一项联邦计划...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Hepatitis B Vaccine: available in Spanish and other languages.
+See www.immunize.org/vis
+Hojas de información sobre vacunas están
+What You Need to Know
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Hepatitis B vaccine
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B vaccine is usually given as 2, 3, or 4 shots.
+Hepatitis B is a liver disease that can cause mild
+Infants should get their first dose of hepatitis B
+illness lasting a few weeks, or it can lead to a serious,
+vaccine at birth and will usually complete the series
+lifelong illness.
+at 6–18 months of age. The birth dose of hepatitis B
+ Acute hepatitis B is a short-term illness that can
+vaccine is an important part of preventing long-
+lead to fever, fatigue, loss of appetite, nausea,
+term illness in infants and the spread of hepatitis B
+vomiting, jaundice (yellow skin or eyes, dark urine,
+in the United States.
+clay-colored bowel movements), and pain in the
+muscles, joints, and stomach. Anyone 59 years of age or younger who has not yet
+ Chronic hepatitis B is a long-term illness that gotten the vaccine should be vaccinated.
+occurs when the hepatitis B virus remains in a
+Hepatitis B vaccination is recommended for adults
+person’s body. Most people who go on to develop
+60 years or older at increased risk of exposure to
+chronic hepatitis B do not have symptoms, but it
+hepatitis B who were no...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement
+
+Many Vaccine Information Statements
+Hepatitis B Vaccine: Provides Spanish and other language versions.
+Information you need to know Please visit www.immunize.org/vis
+Vaccine Information Statement provides Spanish
+and many other language versions.
+Please visit www.immimze.org/vis
+
+1. Why get vaccinated?
+Hepatitis B vaccine can prevent hepatitis B. Hepatitis B is a liver disease that can cause a mild illness lasting several weeks, or lead to serious lifelong illness.
+• Acute hepatitis B is a short-term disease that can cause fever, fatigue, loss of appetite, nausea, vomiting, jaundice (yellowing of skin or eyes, dark urine, clay-colored stools), and muscle, joint, and stomach pain.
+• Chronic hepatitis B is a long-term disease that occurs when hepatitis B virus remains in the body. Most people who develop chronic hepatitis B have no symptoms, but it is still very serious and can cause liver damage (cirrhosis), liver cancer, and death. Chronically infected people can transmit hepatitis B virus to others even if they themselves feel or appear not sick.
+
+Hepatitis B is transmitted through blood, semen, or other body fluids infected with hepatitis B virus entering an uninfected person's body. People may be infected through the following routes:
+• Childbirth (if a pregnant woman has hepatitis B, her infant may be infected)
+• Sharing items like razors or toothbrushes with an infected person
+• Contact with an infected person's blood or open sores
+• Having...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="document-section">
+        <h2>Document: Immunize   Zoster Recombinant</h2>
+        <p>
+            <span class="metrics-badge">Mean COMET: 0.864</span>
+            <span class="metrics-badge">Variance: 0.0005</span>
+        </p>
+
+        <h3>Original English Text</h3>
+        <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Recombinant Zoster (Shingles)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Hojas de información sobre vacunas están
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant zoster (shingles) vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles,
+recombinant shingles vaccine also protects against PHN
+Shingles (also called herpes zoster, or just zoster)
+and other complications.
+is a painful skin rash, usually with blisters. In addition
+to the rash, shingles can cause fever, headache, Recombinant shingles vaccine is recommended for:
+chills, or upset stomach. Rarely, shingles can lead to  Adults 50 years and older
+complications such as pneumonia, hearing problems,  Adults 19 years and older who have a weakened
+blindness, brain inflammation (encephalitis), or death. immune system because of disease or treatments
+Shingles vaccine is given as a two-dose series. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people who have or will have
+a weakened immune system can get the second dose
+1 to 2 months after the first dose. Ask your health care
+provider for guidance.
+People who have had shingles in the past and people
+who have received varicella (chickenpox) vaccine are
+recommended to get recombinant shingles vaccine.
+The vaccine is also recommended for people who have
+already gotten another type of shingles vaccine, the live
+shingles vaccine. There is no live virus in recombinant
+The risk of shingles increases with age. The most
+shingles vaccine.
+common complication of shingles is long-term nerve
+pain called postherpetic neuralgia (PHN). PHN occurs Shingles vaccine may be given at the same time as
+in the areas where the shingles rash was and can last for...</div>
+
+        <div class="model-section">
+            <h3>GPT-5.1</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 9.5</span>
+                <span class="metrics-badge">COMET: 0.835</span>
+                <span class="metrics-badge">BERTScore: 0.718</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">Simplified Chinese
+疫苗信息声明
+Many vaccine information statements are
+Recombinant
+available in Simplified Chinese and other
+languages. See www.immunize.org/vis
+重组带状疱疹疫苗（
+Zoster Vaccine, RZV
+许多疫苗信息声明均提供 简体中文和
+）：须知事宜
+其ww他w语.im言mu的ni版ze.本org。/请vis参阅
+1. 2.
+为何接种疫苗？ 重组带状疱疹疫苗
+重组带状疱疹疫苗可以预防带状疱疹。 重组带状疱疹疫苗对带状疱疹有很强的保护作用。
+herpes zoster zoster 通过预防带状疱疹，重组带状疱疹疫苗还可以预防
+带状疱疹（也称为 或仅 ）是一种 PHN
+与其他并发症。
+引起疼痛的皮疹，通常伴有水疱。除了皮疹以外，带
+状疱疹可以引起发烧、头痛、发冷或胃部不适。在罕 建议以下群体接受重组带状疱疹疫苗接种：
+� 50
+见情况下，带状疱疹可导致并发症（例如：肺炎、听力 所有 岁及以上的成年人
+�
+问题、失明、脑部炎症[脑炎]），或死亡。 因为疾病或治疗而免疫系统弱化的成人（已年满
+19
+岁）
+带状疱疹疫苗以两剂的形式提供。对大多数人而言，
+2 6
+第二剂应在第一剂后 至 个月给予接种。某些免
+疫系统已弱化或将弱化的人可以在接受第一剂后的
+1 2
+至 个月接受第二剂。请向您的医疗保健提供者寻
+求指导。
+建议过去曾患过带状疱疹的人和接种过水痘（水痘）
+疫苗的人接受重组带状疱疹疫苗接种。还建议将该
+疫苗用于已接种过其他类型疱疹疫苗，即活性带状
+疱疹疫苗的人。重组带状疱疹疫苗中不含活病毒。
+带状疱疹疫苗可以和其他疫苗同时接种。
+带状疱疹的风险随年龄增长而增加。带状疱疹
+最常见的并发症是称为带状疱疹后遗神经痛
+postherpetic neuralgia, PHN
+（ ）的长期神经疼痛。
+PHN
+发生在带状疱疹所在部位，并可在该皮疹消退
+PHN
+后持续数月或数年。 引起的疼痛可以很严重，并
+且使人身体衰弱。
+PHN
+的风险随年龄增长而增加。与年轻人相比，患有
+PHN
+带状疱疹的老年人更容易患上 ，并且持续时间
+更长，而疼痛也更严重。
+免疫系统较弱的人有更高风险会患上带状疱疹及此
+病引起的并发症。
+带状疱疹是由水痘-带状疱疹病毒所致，同样的病毒
+也会导致水痘。您出了水痘后，病毒会留在您身体
+里，并可能在以后生活中导致带状疱疹。带状疱疹不
+会人传人，但导致带状疱疹的病毒可能会在从未患
+过水痘或从未接种过水痘疫苗的人身上传播并引起
+水痘。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+3. 5.
+请咨询您的医疗保健提供者 如果出现严重问题怎么办？
+如果接受疫苗接种的人有以下情况，请告知您的疫 过敏反应可能会在接受疫苗接种的人离开诊所后发
+苗接种服务提供者： 生。如果您看到严重过敏反应的体征（荨麻疹、面部
+�
+在先前接受过前一剂重组带状疱疹疫苗后出现过 和喉咙肿胀、呼吸困难、心跳加快、头晕或无力），请
+9 1 1
+敏反应，或出现任何严重、危及性命的过敏 致电 - - ，并把人送到最近的医院。
+�
+目前正在出现带状疱疹发作
+�
+如出现其他让您担心的体征，请致电您的医疗保健
+正在怀孕
+提供者。
+在某些情况下，您的医疗保健提供者可...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息说明书  
+许多疫苗信息说明书有西班牙语和其他语言版本。  
+带状疱疹（Recombinant Zoster，Shingles）  
+请参见 www.immunize.org/vis  
+疫苗：你需要了解的内容  
+Hojas de información sobre vacunas están  
+disponibles en español y en muchos otros  
+idiomas. Visite www.immunize.org/vis  
+
+1. 为什么要接种疫苗？  
+
+重组带状疱疹疫苗（recombinant zoster（shingles）vaccine）可以预防带状疱疹。  
+
+带状疱疹（也称为 herpes zoster，或简称 zoster）是一种疼痛的皮疹，通常伴有水疱。除了皮疹外，带状疱疹还可引起发热、头痛、发冷或胃部不适。少数情况下，带状疱疹可导致肺炎、听力问题、失明、脑炎（encephalitis，脑部炎症）甚至死亡等并发症。  
+
+带状疱疹最常见的并发症是长期神经疼痛，称为带状疱疹后神经痛（postherpetic neuralgia，PHN）。PHN 发生在曾经出现带状疱疹皮疹的部位，即使皮疹消失后，疼痛仍可持续数月甚至数年。PHN 引起的疼痛可能非常严重并影响日常生活。  
+
+PHN 的风险会随着年龄增长而增加。年长的带状疱疹患者比年轻患者更容易出现 PHN，且疼痛时间更长、程度更重。  
+
+免疫系统较弱的人也更容易患带状疱疹及出现该疾病的并发症。  
+
+带状疱疹是由水痘-带状疱疹病毒（varicella-zoster virus）引起的，这与引起水痘（chickenpox）的病毒是同一种病毒。得过水痘后，病毒会一直潜伏在体内，日后可能引起带状疱疹。带状疱疹本身不能在人与人之间直接传播，但引起带状疱疹的病毒可以传播给从未得过水痘或从未接种过水痘疫苗（chickenpox vaccine）的人，并在他们身上引起水痘。  
+
+美国卫生与公众服务部  
+疾病控制和预防中心（Centers for Disease Control and Prevention）  
+
+2. 重组带状疱疹疫苗  
+
+重组带状疱疹疫苗（recombinant shingles vaccine）可对带状疱疹提供强有力的保护。通过预防带状疱疹，重组带状疱疹疫苗还能预防 PHN 和其他并发症。  
+
+建议接种重组带状疱疹疫苗的人群包括：  
+ 50 岁及以上的成年人  
+ 19 岁及以上、因疾病或治疗导致免疫系统减弱的成年人  
+
+带状疱疹疫苗以两剂系列的方式接种。对大多数人来说，第二剂应在第一剂后 2 至 6 个月接种。部分已经或将要出现免疫系统减弱的人，可以在第一剂后 1 至 2 个月接种第二剂。请向您的医疗保健提供者咨询具体建议。  
+
+曾经得过带状疱疹的人以及接种过水痘（varicella，chickenpox）疫苗的人，均建议接种重组带状疱疹疫苗。  
+
+已经接种过另一种带状疱疹疫苗（减毒活带状疱疹疫苗，live shingles vaccine）的人，也建议接种这种重组带状疱疹疫苗。重组带状疱疹疫苗中不含活病毒。  
+
+带状疱疹疫苗可以与其他疫苗同时接种。  
+
+3. 与您的医疗保健提供者沟通  
+
+如果接种疫苗的人有以下情况，请告知为您接种疫苗的医务人员：  
+ 以前接种重组带状疱疹疫苗后发生过过敏反应，或有任何严重、危及生命的过敏史  
+ 目前正处于带状疱疹发作期  
+ 正在怀孕  
+
+在某些情况下，...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Recombinant Zoster (Shingles)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Hojas de información sobre vacunas están
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant zoster (shingles) vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles,
+recombinant shingles vaccine also protects against PHN
+Shingles (also called herpes zoster, or just zoster)
+and other complications.
+is a painful skin rash, usually with blisters. In addition
+to the rash, shingles can cause fever, headache, Recombinant shingles vaccine is recommended for:
+chills, or upset stomach. Rarely, shingles can lead to  Adults 50 years and older
+complications such as pneumonia, hearing problems,  Adults 19 years and older who have a weakened
+blindness, brain inflammation (encephalitis), or death. immune system because of disease or treatments
+Shingles vaccine is given as a two-dose series. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people who have or will have
+a weakened immune system can get the second dose
+1 to 2 months after the first dose. Ask your health care
+provider for guidance.
+People who have had shingles in the past and people
+who have received varicella (chickenpox) vaccin...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement  
+Many Vaccine Information Statements are available in Spanish and other languages.  
+Recombinant Zoster (Shingles)  
+See www.immunize.org/vis  
+Vaccine: What You Need to Know  
+Hojas de información sobre vacunas están  
+disponibles en español y en muchos otros  
+idiomas. Visite www.immunize.org/vis  
+
+1. Why get vaccinated?  
+
+Recombinant zoster (shingles) vaccine can prevent shingles.  
+
+Shingles (also called herpes zoster, or simply zoster) is a painful rash, usually with blisters. In addition to the rash, shingles can cause fever, headache, chills, or stomach upset. In a small number of cases, shingles can lead to complications such as pneumonia, hearing problems, blindness, encephalitis (inflammation of the brain), or even death.  
+
+The most common complication of shingles is long-term nerve pain, called postherpetic neuralgia (PHN). PHN occurs in the area where the shingles rash appeared, and the pain can continue for months or even years after the rash has disappeared. The pain caused by PHN can be very severe and affect daily life.  
+
+The risk of PHN increases with age. Older people with shingles are more likely than younger patients to develop PHN, and the pain lasts longer and is more severe.  
+
+People with weaker immune systems are also more likely to get shingles and to develop complications of this disease.  
+
+Shingles is caused by the varicella-zoster virus, which is the same virus that causes chickenpox. After having had chickenpox...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Claude Opus 4.5</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 8.1</span>
+                <span class="metrics-badge">COMET: 0.884</span>
+                <span class="metrics-badge">BERTScore: 0.797</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">Simplified Chinese
+疫苗信息声明
+Many vaccine information statements are
+Recombinant
+available in Simplified Chinese and other
+languages. See www.immunize.org/vis
+重组带状疱疹疫苗（
+Zoster Vaccine, RZV
+许多疫苗信息声明均提供 简体中文和
+）：须知事宜
+其ww他w语.im言mu的ni版ze.本org。/请vis参阅
+1. 2.
+为何接种疫苗？ 重组带状疱疹疫苗
+重组带状疱疹疫苗可以预防带状疱疹。 重组带状疱疹疫苗对带状疱疹有很强的保护作用。
+herpes zoster zoster 通过预防带状疱疹，重组带状疱疹疫苗还可以预防
+带状疱疹（也称为 或仅 ）是一种 PHN
+与其他并发症。
+引起疼痛的皮疹，通常伴有水疱。除了皮疹以外，带
+状疱疹可以引起发烧、头痛、发冷或胃部不适。在罕 建议以下群体接受重组带状疱疹疫苗接种：
+� 50
+见情况下，带状疱疹可导致并发症（例如：肺炎、听力 所有 岁及以上的成年人
+�
+问题、失明、脑部炎症[脑炎]），或死亡。 因为疾病或治疗而免疫系统弱化的成人（已年满
+19
+岁）
+带状疱疹疫苗以两剂的形式提供。对大多数人而言，
+2 6
+第二剂应在第一剂后 至 个月给予接种。某些免
+疫系统已弱化或将弱化的人可以在接受第一剂后的
+1 2
+至 个月接受第二剂。请向您的医疗保健提供者寻
+求指导。
+建议过去曾患过带状疱疹的人和接种过水痘（水痘）
+疫苗的人接受重组带状疱疹疫苗接种。还建议将该
+疫苗用于已接种过其他类型疱疹疫苗，即活性带状
+疱疹疫苗的人。重组带状疱疹疫苗中不含活病毒。
+带状疱疹疫苗可以和其他疫苗同时接种。
+带状疱疹的风险随年龄增长而增加。带状疱疹
+最常见的并发症是称为带状疱疹后遗神经痛
+postherpetic neuralgia, PHN
+（ ）的长期神经疼痛。
+PHN
+发生在带状疱疹所在部位，并可在该皮疹消退
+PHN
+后持续数月或数年。 引起的疼痛可以很严重，并
+且使人身体衰弱。
+PHN
+的风险随年龄增长而增加。与年轻人相比，患有
+PHN
+带状疱疹的老年人更容易患上 ，并且持续时间
+更长，而疼痛也更严重。
+免疫系统较弱的人有更高风险会患上带状疱疹及此
+病引起的并发症。
+带状疱疹是由水痘-带状疱疹病毒所致，同样的病毒
+也会导致水痘。您出了水痘后，病毒会留在您身体
+里，并可能在以后生活中导致带状疱疹。带状疱疹不
+会人传人，但导致带状疱疹的病毒可能会在从未患
+过水痘或从未接种过水痘疫苗的人身上传播并引起
+水痘。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+3. 5.
+请咨询您的医疗保健提供者 如果出现严重问题怎么办？
+如果接受疫苗接种的人有以下情况，请告知您的疫 过敏反应可能会在接受疫苗接种的人离开诊所后发
+苗接种服务提供者： 生。如果您看到严重过敏反应的体征（荨麻疹、面部
+�
+在先前接受过前一剂重组带状疱疹疫苗后出现过 和喉咙肿胀、呼吸困难、心跳加快、头晕或无力），请
+9 1 1
+敏反应，或出现任何严重、危及性命的过敏 致电 - - ，并把人送到最近的医院。
+�
+目前正在出现带状疱疹发作
+�
+如出现其他让您担心的体征，请致电您的医疗保健
+正在怀孕
+提供者。
+在某些情况下，您的医疗保健提供者可...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">疫苗信息声明
+许多疫苗信息声明有
+重组带状疱疹（生蛇）
+西班牙语和其他语言版本。
+请访问 www.immunize.org/vis
+疫苗：您需要了解的信息 疫苗信息表有西班牙语和
+许多其他语言版本。
+请访问 www.immunize.org/vis
+1. 为什么要接种疫苗？ 2. 重组带状疱疹疫苗
+重组带状疱疹疫苗可以 重组带状疱疹疫苗对带状疱疹提供强效
+预防带状疱疹。 保护。通过预防带状疱疹，重组带状疱疹
+疫苗还可以防止带状疱疹后神经痛和其他并发症。
+带状疱疹（也称为herpes zoster，或简称zoster）
+是一种疼痛的皮疹，通常伴有水疱。除了 重组带状疱疹疫苗建议以下人群接种：
+皮疹外，带状疱疹还可引起发烧、头痛、  50岁及以上成人
+寒战或胃部不适。在罕见情况下，带状疱疹可导致  19岁及以上因疾病或治疗导致免疫系统
+肺炎、听力问题、 减弱的成人
+失明、脑炎或死亡等并发症。
+带状疱疹疫苗需接种两剂。对于大多数
+人来说，第二剂应在第一剂后2至6个月
+接种。一些免疫系统已经减弱或将要减弱的人
+可以在第一剂后1至2个月接种第二剂。
+请咨询您的医疗保健提供者以获得指导。
+
+建议过去患过带状疱疹的人和接种过
+水痘疫苗的人接种重组带状疱疹疫苗。
+该疫苗也建议已经接种过另一种带状疱疹疫苗（活疫苗）的人接种。重组
+带状疱疹疫苗中不含活病毒。
+患带状疱疹的风险随年龄增长而增加。带状疱疹
+最常见的并发症是一种称为带状疱疹后神经痛（PHN） 带状疱疹疫苗可以与其他疫苗同时
+的长期神经痛。PHN发生在 接种。
+带状疱疹皮疹出现的部位，可能在皮疹
+消退后持续数月或数年。PHN
+引起的疼痛可能非常剧烈且使人衰弱。
+
+患PHN的风险随年龄增长而增加。患带状疱疹的
+老年人比年轻人更容易发展为PHN，且疼痛
+持续时间更长、更严重。
+免疫系统减弱的人患带状疱疹和
+疾病并发症的风险也更高。
+
+带状疱疹由水痘-带状疱疹病毒引起，
+与引起水痘的病毒相同。患水痘后，
+病毒会留在体内，并可能在以后的
+生活中引起带状疱疹。带状疱疹不能
+在人与人之间传播，但引起
+带状疱疹的病毒可以传播并在从未患过水痘 美国
+或从未接种过水痘疫苗的人身上引起水痘。 卫生与公众服务部
+疾病控制和
+预防中心
+
+3. 与您的医疗保健 5. 如果出现严重问题
+提供者沟通 怎么办？
+如果接种疫苗的人有以下情况，请告知您的 接种者离开诊所后可能会发生过敏反应。
+疫苗接种提供者： 如果您看到严重过敏反应的迹象（荨麻疹、
+ 在之前接种重组带状疱疹疫苗后发生过过敏反应， 面部和喉咙肿胀、呼吸困难、心跳加快、
+或有任何严重的、危及生命的过敏症 头晕或虚弱），请拨打9-1-1并将此人
+ 目前正处于带状疱疹发作期 送往最近的医院。
+ 怀孕
+如有其他令您担忧的症状，请致电您的医疗
+在某些情况下，您的医疗保健提供者可能会决定 保健提供者。
+将带状疱疹疫苗接种推迟到以后就诊时进行。
+不良反应应报告至疫苗不良事件报告系统
+患有轻微疾病（如感冒）的人可以 （VAERS）。您的医疗保健提供者通常会提交
+接种疫苗。患有中度或重度疾病的人 此报告，或者您可以自己提交。请访问VAERS
+通常应等到康复后再接种 网站 www.vaers.hhs.gov 或拨打1-800-822-7967。
+重组带状疱疹疫苗。 VAERS仅用于报告反应，VAERS工作人员
+不提供医疗建议。
+您的医疗保健提供者可以为您提供更多
+信息。 6. 如何了解更多信息？
+ 咨询您的医疗保健提供者。
+4. 疫苗反应的风险  致电您当地或所在州的卫生部门。
+ 接种重组带状疱疹...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Recombinant Zoster (Shingles)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Hojas de información sobre vacunas están
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant zoster (shingles) vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles,
+recombinant shingles vaccine also protects against PHN
+Shingles (also called herpes zoster, or just zoster)
+and other complications.
+is a painful skin rash, usually with blisters. In addition
+to the rash, shingles can cause fever, headache, Recombinant shingles vaccine is recommended for:
+chills, or upset stomach. Rarely, shingles can lead to  Adults 50 years and older
+complications such as pneumonia, hearing problems,  Adults 19 years and older who have a weakened
+blindness, brain inflammation (encephalitis), or death. immune system because of disease or treatments
+Shingles vaccine is given as a two-dose series. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people who have or will have
+a weakened immune system can get the second dose
+1 to 2 months after the first dose. Ask your health care
+provider for guidance.
+People who have had shingles in the past and people
+who have received varicella (chickenpox) vaccin...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">Vaccine Information Statement
+Many Vaccine Information Statements are
+Recombinant Shingles (Shingrix)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Vaccine Information Statements are available
+in Spanish and many other languages.
+See www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant shingles vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles, recombinant shingles
+vaccine can also prevent post-herpetic neuralgia and other complications.
+
+Shingles (also called herpes zoster, or just zoster)
+is a painful rash, usually with blisters. In addition to Recombinant shingles vaccine is recommended for the following people:
+the rash, shingles can cause fever, headache,  Adults 50 years and older
+chills, or upset stomach. In rare cases, shingles can lead to  Adults 19 years and older with weakened immune systems
+pneumonia, hearing problems, because of disease or treatment
+blindness, encephalitis, or death and other complications.
+
+Shingles vaccine requires two doses. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people whose immune systems are already weakened or will be weakened
+can get the second dose 1 to 2 months after the first dose.
+Consult your health care provider for guidance.
+
+People who have had shingles in the past and people who have received
+chickenpox vaccine are rec...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Gemini 3 Pro</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 10.6</span>
+                <span class="metrics-badge">COMET: 0.858</span>
+                <span class="metrics-badge">BERTScore: 0.717</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">Simplified Chinese
+疫苗信息声明
+Many vaccine information statements are
+Recombinant
+available in Simplified Chinese and other
+languages. See www.immunize.org/vis
+重组带状疱疹疫苗（
+Zoster Vaccine, RZV
+许多疫苗信息声明均提供 简体中文和
+）：须知事宜
+其ww他w语.im言mu的ni版ze.本org。/请vis参阅
+1. 2.
+为何接种疫苗？ 重组带状疱疹疫苗
+重组带状疱疹疫苗可以预防带状疱疹。 重组带状疱疹疫苗对带状疱疹有很强的保护作用。
+herpes zoster zoster 通过预防带状疱疹，重组带状疱疹疫苗还可以预防
+带状疱疹（也称为 或仅 ）是一种 PHN
+与其他并发症。
+引起疼痛的皮疹，通常伴有水疱。除了皮疹以外，带
+状疱疹可以引起发烧、头痛、发冷或胃部不适。在罕 建议以下群体接受重组带状疱疹疫苗接种：
+� 50
+见情况下，带状疱疹可导致并发症（例如：肺炎、听力 所有 岁及以上的成年人
+�
+问题、失明、脑部炎症[脑炎]），或死亡。 因为疾病或治疗而免疫系统弱化的成人（已年满
+19
+岁）
+带状疱疹疫苗以两剂的形式提供。对大多数人而言，
+2 6
+第二剂应在第一剂后 至 个月给予接种。某些免
+疫系统已弱化或将弱化的人可以在接受第一剂后的
+1 2
+至 个月接受第二剂。请向您的医疗保健提供者寻
+求指导。
+建议过去曾患过带状疱疹的人和接种过水痘（水痘）
+疫苗的人接受重组带状疱疹疫苗接种。还建议将该
+疫苗用于已接种过其他类型疱疹疫苗，即活性带状
+疱疹疫苗的人。重组带状疱疹疫苗中不含活病毒。
+带状疱疹疫苗可以和其他疫苗同时接种。
+带状疱疹的风险随年龄增长而增加。带状疱疹
+最常见的并发症是称为带状疱疹后遗神经痛
+postherpetic neuralgia, PHN
+（ ）的长期神经疼痛。
+PHN
+发生在带状疱疹所在部位，并可在该皮疹消退
+PHN
+后持续数月或数年。 引起的疼痛可以很严重，并
+且使人身体衰弱。
+PHN
+的风险随年龄增长而增加。与年轻人相比，患有
+PHN
+带状疱疹的老年人更容易患上 ，并且持续时间
+更长，而疼痛也更严重。
+免疫系统较弱的人有更高风险会患上带状疱疹及此
+病引起的并发症。
+带状疱疹是由水痘-带状疱疹病毒所致，同样的病毒
+也会导致水痘。您出了水痘后，病毒会留在您身体
+里，并可能在以后生活中导致带状疱疹。带状疱疹不
+会人传人，但导致带状疱疹的病毒可能会在从未患
+过水痘或从未接种过水痘疫苗的人身上传播并引起
+水痘。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+3. 5.
+请咨询您的医疗保健提供者 如果出现严重问题怎么办？
+如果接受疫苗接种的人有以下情况，请告知您的疫 过敏反应可能会在接受疫苗接种的人离开诊所后发
+苗接种服务提供者： 生。如果您看到严重过敏反应的体征（荨麻疹、面部
+�
+在先前接受过前一剂重组带状疱疹疫苗后出现过 和喉咙肿胀、呼吸困难、心跳加快、头晕或无力），请
+9 1 1
+敏反应，或出现任何严重、危及性命的过敏 致电 - - ，并把人送到最近的医院。
+�
+目前正在出现带状疱疹发作
+�
+如出现其他让您担心的体征，请致电您的医疗保健
+正在怀孕
+提供者。
+在某些情况下，您的医疗保健提供者可...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">**疫苗信息声明**
+
+许多疫苗信息声明提供西班牙语和其他语言版本。
+请访问 www.immunize.org/vis
+
+**重组带状疱疹（Shingles）疫苗：须知事项**
+
+**1. 为什么要接种疫苗？**
+
+**重组带状疱疹（shingles）疫苗**可以预防带状疱疹。
+
+**带状疱疹**（也称为 herpes zoster 或简称 zoster）是一种疼痛的皮疹，通常伴有水疱。除了皮疹外，带状疱疹还可能引起发烧、头痛、发冷或胃部不适。在极少数情况下，带状疱疹可能导致肺炎、听力问题、失明、脑部炎症（脑炎）或死亡等并发症。
+
+患带状疱疹的风险随年龄增长而增加。带状疱疹最常见的并发症是一种称为**带状疱疹后神经痛 (PHN)** 的长期神经疼痛。PHN 发生在带状疱疹皮疹出现的部位，并且在皮疹消失后可能持续数月或数年。PHN 引起的疼痛可能非常剧烈且令人衰弱。
+
+患 PHN 的风险随年龄增长而增加。与年轻人相比，患有带状疱疹的老年人更有可能患上 PHN，且疼痛持续时间更长、更剧烈。
+
+免疫系统较弱的人患带状疱疹及其并发症的风险也较高。
+
+带状疱疹是由**水痘-带状疱疹病毒**引起的，这种病毒也是引起水痘的病毒。得过水痘后，病毒会留在体内，并在日后引起带状疱疹。带状疱疹不会在人与人之间传播，但引起带状疱疹的病毒可以传播，并导致从未得过水痘或从未接种过水痘疫苗的人患上水痘。
+
+美国卫生与公众服务部
+疾病控制与预防中心
+
+**2. 重组带状疱疹疫苗**
+
+重组带状疱疹疫苗可提供针对带状疱疹的强力保护。通过预防带状疱疹，重组带状疱疹疫苗还可以预防 PHN 和其他并发症。
+
+建议以下人群接种重组带状疱疹疫苗：
+*   **50 岁及以上的成年人**
+*   **因疾病或治疗导致免疫系统较弱的 19 岁及以上成年人**
+
+带状疱疹疫苗分**两剂**接种。对于大多数人，第二剂应在第一剂后 2 至 6 个月接种。一些免疫系统已经或将会减弱的人可以在第一剂后 1 至 2 个月接种第二剂。请咨询您的医疗保健提供者以获取指导。
+
+建议过去患过带状疱疹的人和接种过水痘（chickenpox）疫苗的人接种重组带状疱疹疫苗。
+
+也建议已经接种过另一种带状疱疹疫苗（带状疱疹减毒活疫苗）的人接种该疫苗。重组带状疱疹疫苗中**不含活病毒**。
+
+带状疱疹疫苗可以与其他疫苗同时接种。
+
+**3. 咨询您的医疗保健提供者**
+
+如果接种疫苗的人有以下情况，请告知您的疫苗接种提供者：
+*   **在接种上一剂重组带状疱疹疫苗后出现过过敏反应**，或有任何**严重、危及生命的过敏症**
+*   **目前正患有带状疱疹**
+*   **怀孕**
+
+在某些情况下，您的医疗保健提供者可能会决定推迟带状疱疹疫苗接种至以后的就诊。
+
+患有轻微疾病（如感冒）的人可以接种疫苗。患有中度或重度疾病的人通常应等到康复后再接种重组带状疱疹疫苗。
+
+您的医疗保健提供者可以为您提供更多信息。
+
+**4. 疫苗反应风险**
+
+*   接种重组带状疱疹疫苗后，**手臂酸痛**并伴有轻度或中度疼痛是非常常见的。注射部位也可能出现红肿。
+*   **疲劳、肌肉疼痛、头痛、颤抖、发烧、胃痛和恶心**是接种重组带状疱疹疫苗后的常见反应。
+
+这些副作用可能会暂时妨碍接种者进行日常活动。症状通常会在 2 到 3 天内自行消失。即使您在接种第一剂后出现了上述反应之一，您仍应接种第二剂重组带状疱疹疫苗。
+
+据报道，接种重组带状疱疹疫苗后极少出现格林-巴利综合征 (GBS)，这是一种严重的神经系统疾病。
+
+人们有时会在医疗程序（...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Recombinant Zoster (Shingles)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Hojas de información sobre vacunas están
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant zoster (shingles) vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles,
+recombinant shingles vaccine also protects against PHN
+Shingles (also called herpes zoster, or just zoster)
+and other complications.
+is a painful skin rash, usually with blisters. In addition
+to the rash, shingles can cause fever, headache, Recombinant shingles vaccine is recommended for:
+chills, or upset stomach. Rarely, shingles can lead to  Adults 50 years and older
+complications such as pneumonia, hearing problems,  Adults 19 years and older who have a weakened
+blindness, brain inflammation (encephalitis), or death. immune system because of disease or treatments
+Shingles vaccine is given as a two-dose series. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people who have or will have
+a weakened immune system can get the second dose
+1 to 2 months after the first dose. Ask your health care
+provider for guidance.
+People who have had shingles in the past and people
+who have received varicella (chickenpox) vaccin...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">**Vaccine Information Statement**
+
+Many vaccine information statements are available in Spanish and other languages.
+Please visit www.immunize.org/vis
+
+**Recombinant Shingles (Shingles) Vaccine: What You Need to Know**
+
+**1. Why get vaccinated?**
+
+**Recombinant shingles (shingles) vaccine** can prevent shingles.
+
+**Shingles** (also known as herpes zoster or simply zoster) is a painful skin rash, usually accompanied by blisters. In addition to the rash, shingles can also cause fever, headache, chills, or stomach upset. In rare cases, shingles can lead to complications such as pneumonia, hearing problems, blindness, brain inflammation (encephalitis), or death.
+
+The risk of getting shingles increases with age. The most common complication of shingles is a long-term nerve pain called **postherpetic neuralgia (PHN)**. PHN occurs in the areas where the shingles rash appeared, and can last for months or years after the rash disappears. The pain caused by PHN can be very severe and debilitating.
+
+The risk of getting PHN increases with age. Compared to younger people, older adults with shingles are more likely to develop PHN, and the pain lasts longer and is more severe.
+
+People with weakened immune systems also have a higher risk of getting shingles and its complications.
+
+Shingles is caused by the **varicella-zoster virus**, which is also the virus that causes chickenpox. After having chickenpox, the virus stays in the body and can cause shingles later in life. Shingles does not spr...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-section">
+            <h3>Kimi K2</h3>
+            
+            <p>
+                <span class="metrics-badge">BLEU: 4.7</span>
+                <span class="metrics-badge">COMET: 0.878</span>
+                <span class="metrics-badge">BERTScore: 0.763</span>
+            </p>
+
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Professional Translation</div>
+                    <div class="text-box professional">Simplified Chinese
+疫苗信息声明
+Many vaccine information statements are
+Recombinant
+available in Simplified Chinese and other
+languages. See www.immunize.org/vis
+重组带状疱疹疫苗（
+Zoster Vaccine, RZV
+许多疫苗信息声明均提供 简体中文和
+）：须知事宜
+其ww他w语.im言mu的ni版ze.本org。/请vis参阅
+1. 2.
+为何接种疫苗？ 重组带状疱疹疫苗
+重组带状疱疹疫苗可以预防带状疱疹。 重组带状疱疹疫苗对带状疱疹有很强的保护作用。
+herpes zoster zoster 通过预防带状疱疹，重组带状疱疹疫苗还可以预防
+带状疱疹（也称为 或仅 ）是一种 PHN
+与其他并发症。
+引起疼痛的皮疹，通常伴有水疱。除了皮疹以外，带
+状疱疹可以引起发烧、头痛、发冷或胃部不适。在罕 建议以下群体接受重组带状疱疹疫苗接种：
+� 50
+见情况下，带状疱疹可导致并发症（例如：肺炎、听力 所有 岁及以上的成年人
+�
+问题、失明、脑部炎症[脑炎]），或死亡。 因为疾病或治疗而免疫系统弱化的成人（已年满
+19
+岁）
+带状疱疹疫苗以两剂的形式提供。对大多数人而言，
+2 6
+第二剂应在第一剂后 至 个月给予接种。某些免
+疫系统已弱化或将弱化的人可以在接受第一剂后的
+1 2
+至 个月接受第二剂。请向您的医疗保健提供者寻
+求指导。
+建议过去曾患过带状疱疹的人和接种过水痘（水痘）
+疫苗的人接受重组带状疱疹疫苗接种。还建议将该
+疫苗用于已接种过其他类型疱疹疫苗，即活性带状
+疱疹疫苗的人。重组带状疱疹疫苗中不含活病毒。
+带状疱疹疫苗可以和其他疫苗同时接种。
+带状疱疹的风险随年龄增长而增加。带状疱疹
+最常见的并发症是称为带状疱疹后遗神经痛
+postherpetic neuralgia, PHN
+（ ）的长期神经疼痛。
+PHN
+发生在带状疱疹所在部位，并可在该皮疹消退
+PHN
+后持续数月或数年。 引起的疼痛可以很严重，并
+且使人身体衰弱。
+PHN
+的风险随年龄增长而增加。与年轻人相比，患有
+PHN
+带状疱疹的老年人更容易患上 ，并且持续时间
+更长，而疼痛也更严重。
+免疫系统较弱的人有更高风险会患上带状疱疹及此
+病引起的并发症。
+带状疱疹是由水痘-带状疱疹病毒所致，同样的病毒
+也会导致水痘。您出了水痘后，病毒会留在您身体
+里，并可能在以后生活中导致带状疱疹。带状疱疹不
+会人传人，但导致带状疱疹的病毒可能会在从未患
+过水痘或从未接种过水痘疫苗的人身上传播并引起
+水痘。
+U.S. Department of
+Health and Human Services
+Centers for Disease
+Control and Prevention
+Simplified Chinese
+
+3. 5.
+请咨询您的医疗保健提供者 如果出现严重问题怎么办？
+如果接受疫苗接种的人有以下情况，请告知您的疫 过敏反应可能会在接受疫苗接种的人离开诊所后发
+苗接种服务提供者： 生。如果您看到严重过敏反应的体征（荨麻疹、面部
+�
+在先前接受过前一剂重组带状疱疹疫苗后出现过 和喉咙肿胀、呼吸困难、心跳加快、头晕或无力），请
+9 1 1
+敏反应，或出现任何严重、危及性命的过敏 致电 - - ，并把人送到最近的医院。
+�
+目前正在出现带状疱疹发作
+�
+如出现其他让您担心的体征，请致电您的医疗保健
+正在怀孕
+提供者。
+在某些情况下，您的医疗保健提供者可...</div>
+                </div>
+                <div>
+                    <div class="label">LLM Translation</div>
+                    <div class="text-box llm">---
+疫苗信息声明
+许多疫苗信息声明有
+重组带状疱疹（带状疱疹）
+西班牙语和其他语言版本。
+疫苗：您需要了解的信息 请访问 www.immunize.org/vis
+1. 为什么要接种疫苗？ 2. 重组带状疱疹疫苗
+重组带状疱疹疫苗可以预防带状疱疹。 重组带状疱疹疫苗可为预防带状疱疹提供强有力的保护。通过预防带状疱疹，重组带状疱疹疫苗还可预防PHN和其他并发症。
+
+带状疱疹（也称为带状疱疹，或简称带状疱疹）是一种疼痛性皮疹，通常伴有水疱。除了皮疹外，带状疱疹还可引起发热、头痛、寒战或胃部不适。极少数情况下，带状疱疹可能导致肺炎、听力问题、失明、脑炎（脑炎）或死亡等并发症。
+
+重组带状疱疹疫苗推荐给：
+ 50岁及以上的成年人
+ 19岁及以上因疾病或治疗导致免疫系统减弱的成年人
+
+患带状疱疹的风险随年龄增长而增加。带状疱疹最常见的并发症是称为带状疱疹后神经痛（PHN）的长期神经疼痛。PHN发生在带状疱疹皮疹出现的部位，可能在皮疹消失后持续数月或数年。PHN的疼痛可能很严重并使人丧失活动能力。
+
+带状疱疹疫苗分两次接种。对大多数人来说，第二剂应在第一剂后2至6个月接种。一些已经或即将出现免疫系统减弱的人可在第一剂后1至2个月接种第二剂。请咨询您的医疗保健提供者以获得指导。
+
+患PHN的风险随年龄增长而增加。患有带状疱疹的老年人比年轻人更容易发生PHN，且疼痛持续时间更长、更严重。
+
+过去患过带状疱疹的人以及接种过水痘疫苗的人建议接种重组带状疱疹疫苗。
+该疫苗也推荐给已经接种过另一种带状疱疹疫苗（活带状疱疹疫苗）的人。重组带状疱疹疫苗中不含活病毒。
+
+免疫系统较弱的人患带状疱疹及该病并发症的风险也更高。
+
+带状疱疹疫苗可与其他疫苗同时接种。
+
+带状疱疹由水痘-带状疱疹病毒引起，这种病毒与水痘的致病病毒相同。患水痘后，病毒会留在体内，并可能在日后引发带状疱疹。带状疱疹不会从一个人传染给另一个人，但引起带状疱疹的病毒可以传播，并从从未患过水痘或从未接种过水痘疫苗的人身上引发水痘。
+
+美国卫生与公众服务部
+疾病控制和预防中心
+
+3. 与您的医疗保健提供者沟通 5. 如果出现严重问题怎么办？
+请告知疫苗接种人员接种者是否： 接种者离开诊所后仍可能发生过敏反应。如果您看到严重过敏反应的迹象（荨麻疹、面部和喉咙肿胀、呼吸困难、心跳加快、头晕或虚弱），请拨打9-1-1并将患者送往最近的医院。
+
+ 在接种前一剂重组带状疱疹疫苗后出现过过敏反应，或有任何严重、危及生命的过敏史
+ 目前正在经历带状疱疹发作
+ 已怀孕
+对于其他令您担忧的症状，请致电您的医疗保健提供者。
+
+在某些情况下，您的医疗保健提供者可能会决定将带状疱疹疫苗接种推迟到以后的就诊时。
+
+不良反应应报告给疫苗不良事件报告系统（VAERS）。您的医疗保健提供者通常会提交此报告，或者您也可以自行提交。请访问VAERS网站www.vaers.hhs.gov或致电1-800-822-7967。VAERS仅用于报告反应，VAERS工作人员不提供医疗建议。
+
+患有轻微疾病（如感冒）的人可以接种疫苗。中度或重度疾病患者通常应等到康复后再接种重组带状疱疹疫苗。
+
+您的医疗保健提供者可以为您提供更多信息。
+6. 如何获取更多信息？
+ 咨询您的医疗保健提供者。
+ 致电您当地或州卫生部门。
+ 访问食品药品监督管理局（FDA）网站获取疫苗说明书和更多信息，网址为www.fda.gov/vaccines-blood-biologics/vaccines。
+ 联系疾病控制和预防中心（CDC）：
+- 致电1-800-23...</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <div class="label">Original English (reference)</div>
+                    <div class="text-box original">VACCINE INFORMATION STATEMENT
+Many vaccine information statements are
+Recombinant Zoster (Shingles)
+available in Spanish and other languages.
+See www.immunize.org/vis
+Vaccine: What You Need to Know Hojas de información sobre vacunas están
+disponibles en español y en muchos otros
+idiomas. Visite www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant zoster (shingles) vaccine can Recombinant shingles vaccine provides strong
+prevent shingles. protection against shingles. By preventing shingles,
+recombinant shingles vaccine also protects against PHN
+Shingles (also called herpes zoster, or just zoster)
+and other complications.
+is a painful skin rash, usually with blisters. In addition
+to the rash, shingles can cause fever, headache, Recombinant shingles vaccine is recommended for:
+chills, or upset stomach. Rarely, shingles can lead to  Adults 50 years and older
+complications such as pneumonia, hearing problems,  Adults 19 years and older who have a weakened
+blindness, brain inflammation (encephalitis), or death. immune system because of disease or treatments
+Shingles vaccine is given as a two-dose series. For most
+people, the second dose should be given 2 to 6 months
+after the first dose. Some people who have or will have
+a weakened immune system can get the second dose
+1 to 2 months after the first dose. Ask your health care
+provider for guidance.
+People who have had shingles in the past and people
+who have received varicella (chickenpox) vaccin...</div>
+                </div>
+                <div>
+                    <div class="label">Back-Translation to English</div>
+                    <div class="text-box backtrans">---
+---
+Vaccine Information Statement
+Many vaccine information statements have
+Recombinant shingles (shingles)
+Spanish and other language versions.
+Vaccine: What You Need to Know Please visit www.immunize.org/vis
+1. Why get vaccinated? 2. Recombinant shingles vaccine
+Recombinant shingles vaccine can prevent shingles. Recombinant shingles vaccine can provide strong protection for preventing shingles. By preventing shingles, recombinant shingles vaccine can also prevent PHN and other complications.
+
+Shingles (also called shingles, or simply shingles) is a painful rash, usually with blisters. In addition to rash, shingles can also cause fever, headache, chills or stomach upset. In very rare cases, shingles may cause complications such as pneumonia, hearing problems, blindness, encephalitis (encephalitis) or death.
+
+Recombinant shingles vaccine is recommended for:
+ Adults 50 years and older
+ Adults 19 years and older with weakened immune systems due to illness or treatment
+
+The risk of getting shingles increases with age. The most common complication of shingles is long-term nerve pain called postherpetic neuralgia (PHN). PHN occurs where the shingles rash appears and may last for months or years after the rash disappears. PHN pain can be severe and disabling.
+
+The shingles vaccine is given in two doses. For most people, the second dose should be given 2 to 6 months after the first dose. Some people who have or will have weakened immune systems can get the second dose 1 to 2 mo...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
