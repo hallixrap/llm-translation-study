@@ -1,197 +1,131 @@
-# MedlinePlus Back-Translation Evaluation Study
+# LLM Back-Translation Study: MedlinePlus Health Materials
 
-## Executive Summary
+A comprehensive evaluation of how well frontier LLMs translate patient health education materials, using back-translation methodology and comparison with professional human translations.
 
-This study evaluates **4 frontier LLMs** on medical translation quality across **8 languages** using **22 professionally-translated health documents** from MedlinePlus (CDC vaccine information) and the American Cancer Society.
+**Live Results:** [https://hallixrap.github.io/llm-translation-study/](https://hallixrap.github.io/llm-translation-study/)
 
-### Key Findings
+## Study Overview
 
-1. **All models achieve high semantic preservation** (>92% back-translation similarity), indicating LLMs reliably preserve medical meaning through round-trip translation.
+| Dimension | Details |
+|-----------|---------|
+| **Documents** | 22 health documents (11 CDC Vaccine VIS + 11 American Cancer Society materials) |
+| **Languages** | Spanish, Chinese (Simplified), Vietnamese, Russian, Arabic, Korean, Tagalog, Haitian Creole |
+| **Models** | Claude Opus 4.5, GPT-5.1, Gemini 3 Pro, Kimi K2 |
+| **Translation Pairs** | 704 (22 docs × 8 languages × 4 models) |
+| **API Calls** | 2,112 (3 translations per pair) |
 
-2. **Claude Opus 4.5** achieves the highest translation quality (COMET: 0.831), while **Gemini 3 Pro** leads in lexical overlap (BLEU: 31.8).
+## Three Evaluation Goals
 
-3. **Chinese (Simplified)** shows the strongest LLM-professional agreement (COMET: 0.865), while **Arabic** remains most challenging (COMET: 0.718).
+### Goal 1: LLM Meaning Preservation
+**LLM back-translation vs Original English**
 
-4. **Script complexity matters**: Languages using Latin script (Spanish, Vietnamese, Tagalog) consistently outperform those with non-Latin scripts (Arabic, Chinese, Korean).
+Measures how well meaning is preserved through the LLM's translation round-trip (English → Target → English).
 
----
+| Model | BLEU | LaBSE | BERTScore |
+|-------|------|-------|-----------|
+| **Claude Opus 4.5** | **67.8** | **0.983** | **0.946** |
+| GPT-5.1 | 63.7 | 0.953 | 0.927 |
+| Gemini 3 Pro | 61.2 | 0.916 | 0.915 |
+| Kimi K2 | 54.7 | 0.934 | 0.916 |
 
-## Study Design
+### Goal 2: Professional Alignment
+**LLM translation vs Professional human translation**
 
-### Documents
-- **22 health education documents** (198 PDFs total)
-  - 11 Vaccine Information Statements (VIS) from CDC/Immunize.org
-  - 11 Cancer education materials from American Cancer Society
-- **9 language versions** per document (English + 8 translations)
+Measures how closely LLM translations match professional human translations (same target language comparison).
 
-### Languages Evaluated
-| Language | Script | Resource Level |
-|----------|--------|----------------|
-| Spanish | Latin | High |
-| Chinese (Simplified) | Hanzi | High |
-| Vietnamese | Latin (+ diacritics) | Medium |
-| Russian | Cyrillic | High |
-| Arabic | Arabic (RTL) | Medium |
-| Korean | Hangul | High |
-| Tagalog | Latin | Low |
-| Haitian Creole | Latin | Low |
+| Model | BLEU | COMET | BERTScore |
+|-------|------|-------|-----------|
+| **Gemini 3 Pro** | **38.2** | **0.867** | 0.839 |
+| Claude Opus 4.5 | 35.8 | 0.864 | **0.853** |
+| GPT-5.1 | 34.8 | 0.862 | 0.838 |
+| Kimi K2 | 34.5 | 0.864 | 0.835 |
 
-### Models Tested
-| Model | Provider |
-|-------|----------|
-| GPT-5.1 | OpenAI |
-| Claude Opus 4.5 | Anthropic |
-| Gemini 3 Pro | Google |
-| Kimi K2 | Moonshot AI |
+### Goal 3: Professional Baseline
+**Professional back-translation vs Original English**
 
----
+Establishes upper bound by measuring how well professional translations back-translate (using LLM as back-translator).
 
-## Methodology
+| Model (back-translator) | BLEU | LaBSE | BERTScore |
+|-------------------------|------|-------|-----------|
+| GPT-5.1 | **54.8** | 0.936 | 0.913 |
+| Claude Opus 4.5 | 53.7 | **0.938** | **0.919** |
+| Gemini 3 Pro | 46.7 | 0.923 | 0.908 |
+| Kimi K2 | 42.5 | 0.929 | 0.906 |
 
-### Translation Pipeline
-1. **Forward Translation**: English → Target Language (LLM)
-2. **Back-Translation**: Target Language → English (LLM)
-3. **Evaluation**: Compare LLM output vs professional translations
+## Key Findings
 
-### Metrics
+1. **All LLMs preserve health information reliably** — LaBSE scores of 0.91-0.98 indicate core medical content is maintained across translations.
 
-#### Same-Language Metrics (LLM vs Professional Translation)
-| Metric | Description | Range |
-|--------|-------------|-------|
-| BLEU | N-gram overlap | 0-100 |
-| chrF | Character n-gram F-score | 0-100 |
-| BERTScore | Contextual embedding similarity | 0-1 |
-| COMET | Neural translation quality | 0-1 |
+2. **Claude Opus 4.5 excels at faithful translation** — Best at preserving exact meaning through the round-trip (Goal 1).
 
-#### Back-Translation Semantic Metrics (LLM Back-Translation vs Original English)
-These metrics compare the English back-translation to the original English text, measuring how well meaning is preserved through the round-trip translation. Despite using multilingual models (for robustness), this is an **English-to-English comparison**.
+3. **Gemini 3 Pro writes most like human translators** — Closest stylistic match to professional translations (Goal 2).
 
-| Metric | Description | Range |
-|--------|-------------|-------|
-| XLM-RoBERTa | Semantic similarity (multilingual encoder) | 0-1 |
-| LaBSE | Sentence embedding similarity | 0-1 |
-| mBERT | Contextual embedding similarity | 0-1 |
-| COMET-QE | Reference-free quality estimation | -1 to 1 |
+4. **LLM translations are surprisingly "stable"** — LLM back-translations (Goal 1) score higher than professional back-translations (Goal 3), suggesting LLMs produce more consistent round-trip results.
 
----
+5. **Script type matters for BLEU, not for semantics** — Chinese/Korean show lower BLEU due to tokenization differences, but semantic scores (LaBSE) remain high.
 
-## Results
+## Metrics Explained
 
-### Model Performance Summary
+| Metric | What It Measures | Range | Best For |
+|--------|-----------------|-------|----------|
+| **BLEU** | N-gram word overlap | 0-100 | Exact wording similarity |
+| **LaBSE** | Semantic meaning similarity | 0-1 | Cross-script comparison |
+| **BERTScore** | Contextual embedding similarity | 0-1 | Overall quality |
+| **COMET** | Human judgment correlation | 0-1 | Translation quality rating |
 
-| Model | BLEU | chrF | BERTScore | COMET |
-|-------|------|------|-----------|-------|
-| Gemini 3 Pro | **31.8** | **59.9** | 0.805 | 0.828 |
-| Claude Opus 4.5 | 30.0 | 59.1 | **0.830** | **0.831** |
-| GPT-5.1 | 29.4 | 57.8 | 0.812 | 0.826 |
-| Kimi K2 | 28.8 | 57.5 | 0.807 | 0.829 |
+## Pipeline Architecture
 
-### Language Performance Summary
-
-| Language | BLEU | chrF | BERTScore | COMET |
-|----------|------|------|-----------|-------|
-| Spanish | **49.3** | **75.3** | **0.847** | 0.819 |
-| Vietnamese | 47.1 | 65.4 | 0.831 | 0.857 |
-| Tagalog | 39.7 | 71.1 | 0.817 | 0.850 |
-| Haitian Creole | 33.7 | 62.3 | 0.824 | 0.800 |
-| Russian | 30.4 | 64.5 | 0.815 | 0.854 |
-| Korean | 19.7 | 42.0 | 0.801 | **0.863** |
-| Chinese | 10.8 | 41.6 | 0.820 | 0.865 |
-| Arabic | 9.6 | 46.6 | 0.752 | 0.718 |
-
----
-
-## Visualizations
-
-### Model Comparison
-![Model Comparison](charts/model_comparison_same_lang.png)
-
-### Language Comparison
-![Language Comparison](charts/language_comparison_same_lang.png)
-
-### Back-Translation Semantic Similarity
-![Back-Translation Similarity](charts/back_translation_similarity.png)
-
-### COMET Score Heatmap
-![Heatmap](charts/comet_heatmap.png)
-
----
-
-## Key Insights
-
-### 1. Model Differentiation is Subtle
-All four frontier models perform within a narrow band (~3% COMET spread), suggesting that for medical translation, model selection is less critical than language pair selection.
-
-### 2. Script Type Dominates Performance
-Languages using Latin-based scripts (Spanish, Vietnamese, Tagalog, Haitian Creole) consistently show higher BLEU/chrF scores, likely due to shared tokenization advantages with English training data.
-
-### 3. Semantic Metrics Tell a Different Story
-While BLEU varies widely by language (9.6 to 49.3), COMET scores are more consistent (0.72 to 0.87), suggesting LLMs preserve meaning even when surface forms differ from professional translations.
-
-### 4. Low-Resource Languages Hold Their Own
-Tagalog and Haitian Creole—traditionally considered low-resource—achieve competitive scores, indicating frontier LLMs have strong coverage of these languages.
-
-### 5. Arabic Remains Challenging
-Arabic shows the lowest same-language scores across all metrics, reflecting the compound challenges of RTL script, morphological complexity, and potential training data imbalances.
-
----
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    TRANSLATION PIPELINE (per combination)           │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  Step 1: Forward Translation                                        │
+│  ┌───────────────┐      ┌───────────────┐                          │
+│  │ English       │ ──── │ Target        │                          │
+│  │ Original      │ LLM  │ Language      │                          │
+│  └───────────────┘      └───────────────┘                          │
+│                                │                                    │
+│  Step 2: LLM Back-Translation  │                                    │
+│                                ▼                                    │
+│                         ┌───────────────┐                          │
+│                         │ LLM Back-     │ ──→ Compare vs Original   │
+│                         │ Translation   │     (Goal 1)              │
+│                         └───────────────┘                          │
+│                                                                     │
+│  Step 3: Professional Back-Translation                              │
+│  ┌───────────────┐      ┌───────────────┐                          │
+│  │ Professional  │ ──── │ Prof Back-    │ ──→ Compare vs Original   │
+│  │ Translation   │ LLM  │ Translation   │     (Goal 3)              │
+│  └───────────────┘      └───────────────┘                          │
+│                                                                     │
+│  Goal 2: Compare LLM Translation vs Professional Translation        │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `medlineplus_backtranslation_report.xlsx` | Full Excel report with all metrics |
-| `charts/` | Visualization PNG files |
+| `index.html` | Interactive results page |
 | `all_metrics.json` | Raw metrics data (JSON) |
 | `summary.json` | Aggregated summary statistics |
-| `PIPELINE_REVIEW.md` | Technical documentation for NLP review |
+| `all_results.json` | Full translation data |
 
----
+## Data Sources
 
-## Human Review Materials
-
-We have prepared side-by-side comparisons for bilingual reviewers:
-
-| Language | Review File | Documents Selected |
-|----------|-------------|-------------------|
-| Chinese (Simplified) | `human_review/review_chinese_simplified.html` | 2 documents with highest model variance |
-| Spanish | `human_review/review_spanish.html` | 2 documents with highest model variance |
-
-### Review Instructions
-1. Open the HTML file in a browser
-2. Compare Professional Translation vs LLM Translation side-by-side
-3. Check for: accuracy, fluency, medical terminology, cultural appropriateness
-4. Review back-translation vs original English for semantic preservation
-5. Note any issues: missing info, mistranslations, errors
-
----
-
-## NLP Pipeline Review
-
-For technical review of the evaluation pipeline, see [PIPELINE_REVIEW.md](PIPELINE_REVIEW.md).
-
-This document covers:
-- Pipeline architecture
-- Metric implementations (BLEU, chrF, BERTScore, COMET, XLM-RoBERTa, LaBSE, etc.)
-- Data flow and code locations
-- Known limitations
-- Validation checklist
-
----
+- **Vaccine VIS**: CDC Vaccine Information Statements from Immunize.org
+- **Cancer Materials**: American Cancer Society patient education documents
+- **Professional Translations**: Official translations from MedlinePlus in all 8 languages
 
 ## Citation
 
-If you use this dataset or methodology, please cite:
-
 ```
-MedlinePlus Back-Translation Evaluation Study
-Stanford University, 2025
+LLM Back-Translation Study for MedlinePlus Health Materials
+Stanford University, December 2025
 ```
-
----
 
 ## Contact
 
 For questions about this study, please contact the research team.
-
-*Generated: 2025-12-14 19:33*
