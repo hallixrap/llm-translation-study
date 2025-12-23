@@ -1,14 +1,16 @@
-# MedlinePlus Professional Translations - FINAL (Haitian Creole Set)
+# Source Documents
+
+Professional translations used in the LLM translation study.
 
 ## Summary
 
-| Source | Topics | Status |
-|--------|--------|--------|
-| Immunize.org Vaccine VIS | 11 | ✅ All 8 languages |
-| American Cancer Society | 12 | ✅ All 8 languages |
-| **TOTAL** | **23 topics** | |
+| Source | Topics | Languages |
+|--------|--------|-----------|
+| Immunize.org Vaccine VIS | 11 | 8 |
+| American Cancer Society | 11 | 8 |
+| **Total** | **22** | **8** |
 
-**Translation pairs:** 23 topics × 8 languages × 4 models = **736 pairs** ✅
+**Translation pairs evaluated:** 22 documents × 8 languages × 4 models = **704 pairs**
 
 ---
 
@@ -381,6 +383,3 @@ Two of the eight languages are considered low-resource:
 - **Cancer Treatment (2):** Chemotherapy, nausea management
 - **Skin Cancer (4):** Detection, living with, treatment, procedures
 
-## Dropped Topics
-- "You Can Help Prevent Colorectal Cancer" - missing Vietnamese translation
-- "You Can Prevent Cervical Cancer" - missing most language translations
