@@ -43,5 +43,8 @@ output/medlineplus_results/checkpoint.json
 
 # Large binary files
 data/pdfs/
-*.png
+/*.png
 *.pdf
+
+# Allow chart images
+!output/github_pages/charts/*.png
