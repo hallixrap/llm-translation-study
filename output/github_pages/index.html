@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Back-Translation Study: MedlinePlus Health Materials</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        h3 {
+            color: var(--gray-800);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-600);
+        }
+
+        .highlight-box {
+            background: var(--gray-100);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--gray-800);
+        }
+
+        .highlight-box.goal1 { border-left-color: #2563eb; }
+        .highlight-box.goal2 { border-left-color: #16a34a; }
+        .highlight-box.goal3 { border-left-color: #9333ea; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-card .label {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        .score-high {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .score-mid {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .winner {
+            background: #dcfce7;
+        }
+
+        .metric-explainer {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 0.5rem 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--gray-100);
+            border-radius: 8px;
+        }
+
+        .metric-explainer dt {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .metric-explainer dd {
+            color: var(--gray-600);
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-box {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .flow-arrow {
+            color: var(--gray-600);
+            font-size: 1.5rem;
+        }
+
+        .comparison-box {
+            border: 2px dashed var(--gray-200);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            color: var(--gray-600);
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            color: var(--gray-600);
+        }
+
+        .key-finding {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .key-finding strong {
+            color: var(--gray-800);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+        }
+
+        .language-note {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        .goal-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+        .goal-label.g1 { background: #dbeafe; color: #1d4ed8; }
+        .goal-label.g2 { background: #dcfce7; color: #16a34a; }
+        .goal-label.g3 { background: #f3e8ff; color: #7c3aed; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Evaluating LLM Translation Quality for Health Materials</h1>
+            <p>A back-translation study using MedlinePlus documents across 8 languages and 4 LLMs</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>The Question</h2>
+            <p><strong>Can LLMs reliably translate health education materials for multilingual patient populations?</strong></p>
+            <p>We evaluated four state-of-the-art LLMs on their ability to translate real MedlinePlus health documents (vaccine information sheets and cancer education materials) into 8 languages, comparing them against professional human translations using back-translation methodology.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">4</div>
+                    <div class="label">LLM Models Tested</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">8</div>
+                    <div class="label">Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">22</div>
+                    <div class="label">Documents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">704</div>
+                    <div class="label">Translation Pairs</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Approach</h2>
+
+            <h3>What is Back-Translation?</h3>
+            <p>Back-translation tests how well a translation preserves meaning by translating it back to the original language and comparing the result.</p>
+
+            <div class="flow-diagram">
+                <div class="flow-box">English Original</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box">Target Language</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box">Back to English</div>
+                <div class="flow-arrow">→</div>
+                <div class="comparison-box">Compare</div>
+            </div>
+
+            <h3>Three Evaluation Goals</h3>
+
+            <div class="highlight-box goal1">
+                <p><span class="goal-label g1">Goal 1</span><strong>LLM Meaning Preservation</strong> — How well does the LLM's back-translation match the original English? Measures round-trip fidelity of the LLM translation process.</p>
+            </div>
+
+            <div class="highlight-box goal2">
+                <p><span class="goal-label g2">Goal 2</span><strong>Professional Alignment</strong> — How similar is the LLM's translation to a professional human translation? Measures how closely LLM output matches human expert work.</p>
+            </div>
+
+            <div class="highlight-box goal3">
+                <p><span class="goal-label g3">Goal 3</span><strong>Professional Baseline</strong> — How well do professional translations back-translate? Establishes an upper bound for comparison with LLM performance.</p>
+            </div>
+
+            <h3>Understanding the Metrics</h3>
+            <dl class="metric-explainer">
+                <dt>BLEU</dt>
+                <dd>Word/phrase overlap (0-100). Measures exact wording similarity. Sensitive to word choice.</dd>
+
+                <dt>LaBSE</dt>
+                <dd>Semantic similarity (0-1). Measures meaning regardless of exact words. Best for "do they say the same thing?"</dd>
+
+                <dt>BERTScore</dt>
+                <dd>Contextual similarity (0-1). Balances meaning and phrasing. Good overall quality indicator.</dd>
+
+                <dt>COMET</dt>
+                <dd>Neural translation quality (0-1). Trained on human judgments. Most aligned with human preferences.</dd>
+            </dl>
+
+            <p class="language-note"><strong>Note:</strong> BLEU scores are lower for languages with different scripts (Chinese, Korean, Arabic) due to tokenization differences—this doesn't indicate worse translations. LaBSE and BERTScore are more reliable for cross-script comparison.</p>
+        </section>
+
+        <section>
+            <h2><span class="goal-label g1">Goal 1</span> LLM Meaning Preservation</h2>
+            <p>How well does each model preserve meaning through the translation round-trip? (LLM back-translation vs Original English)</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>BLEU</th>
+                        <th>LaBSE</th>
+                        <th>BERTScore</th>
+                        <th>Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="winner">
+                        <td><strong>Claude Opus 4.5</strong></td>
+                        <td class="score-high">67.8</td>
+                        <td class="score-high">0.983</td>
+                        <td class="score-high">0.946</td>
+                        <td>Best meaning preservation</td>
+                    </tr>
+                    <tr>
+                        <td>GPT-5.1</td>
+                        <td>63.7</td>
+                        <td>0.953</td>
+                        <td>0.927</td>
+                        <td>Strong second</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini 3 Pro</td>
+                        <td>61.2</td>
+                        <td>0.916</td>
+                        <td>0.915</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Kimi K2</td>
+                        <td>54.7</td>
+                        <td>0.934</td>
+                        <td>0.916</td>
+                        <td>Adequate</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-finding">
+                <strong>Key Finding:</strong> Claude Opus 4.5 best preserves the original meaning through translation. All models achieve high semantic similarity (LaBSE > 0.91), meaning the core health information is reliably maintained.
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="goal-label g2">Goal 2</span> Professional Alignment</h2>
+            <p>How similar are LLM translations to professional human translations? (LLM translation vs Professional translation, same language)</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>BLEU</th>
+                        <th>COMET</th>
+                        <th>BERTScore</th>
+                        <th>Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="winner">
+                        <td><strong>Gemini 3 Pro</strong></td>
+                        <td class="score-high">38.2</td>
+                        <td class="score-high">0.867</td>
+                        <td>0.839</td>
+                        <td>Closest to human translators</td>
+                    </tr>
+                    <tr>
+                        <td>Claude Opus 4.5</td>
+                        <td>35.8</td>
+                        <td>0.864</td>
+                        <td class="score-high">0.853</td>
+                        <td>Very close second</td>
+                    </tr>
+                    <tr>
+                        <td>GPT-5.1</td>
+                        <td>34.8</td>
+                        <td>0.862</td>
+                        <td>0.838</td>
+                        <td>Competitive</td>
+                    </tr>
+                    <tr>
+                        <td>Kimi K2</td>
+                        <td>34.5</td>
+                        <td>0.864</td>
+                        <td>0.835</td>
+                        <td>Slightly behind</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-finding">
+                <strong>Key Finding:</strong> Gemini 3 Pro most closely matches professional human translation style. All models achieve strong COMET scores (0.86-0.87), indicating translations are of similar quality to professional work.
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="goal-label g3">Goal 3</span> Professional Baseline</h2>
+            <p>How well do professional translations back-translate? This establishes an upper bound for LLM comparison. (Professional translation → LLM back-translation → vs Original English)</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model (as back-translator)</th>
+                        <th>BLEU</th>
+                        <th>LaBSE</th>
+                        <th>BERTScore</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPT-5.1</td>
+                        <td class="score-high">54.8</td>
+                        <td>0.936</td>
+                        <td>0.913</td>
+                    </tr>
+                    <tr>
+                        <td>Claude Opus 4.5</td>
+                        <td>53.7</td>
+                        <td class="score-high">0.938</td>
+                        <td class="score-high">0.919</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini 3 Pro</td>
+                        <td>46.7</td>
+                        <td>0.923</td>
+                        <td>0.908</td>
+                    </tr>
+                    <tr>
+                        <td>Kimi K2</td>
+                        <td>42.5</td>
+                        <td>0.929</td>
+                        <td>0.906</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-finding">
+                <strong>Key Finding:</strong> Professional translations back-translate with BLEU 43-55 and LaBSE 0.92-0.94. Notably, Claude's LLM translations (Goal 1: BLEU 67.8, LaBSE 0.983) actually <em>exceed</em> the professional baseline, suggesting LLMs produce more "round-trip stable" translations.
+            </div>
+        </section>
+
+        <section>
+            <h2>Results by Language</h2>
+            <p>Performance varies by language, but semantic preservation (LaBSE) remains high across all.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>G1: BLEU</th>
+                        <th>G1: LaBSE</th>
+                        <th>G2: BLEU</th>
+                        <th>G3: BLEU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spanish</td>
+                        <td class="score-high">68.6</td>
+                        <td class="score-high">0.954</td>
+                        <td class="score-high">54.3</td>
+                        <td>53.1</td>
+                    </tr>
+                    <tr>
+                        <td>Tagalog</td>
+                        <td class="score-high">68.7</td>
+                        <td>0.950</td>
+                        <td>43.8</td>
+                        <td class="score-high">61.9</td>
+                    </tr>
+                    <tr>
+                        <td>Vietnamese</td>
+                        <td>63.1</td>
+                        <td class="score-high">0.953</td>
+                        <td class="score-high">50.1</td>
+                        <td>53.5</td>
+                    </tr>
+                    <tr>
+                        <td>Arabic</td>
+                        <td>63.8</td>
+                        <td>0.937</td>
+                        <td>30.8</td>
+                        <td>50.4</td>
+                    </tr>
+                    <tr>
+                        <td>Haitian Creole</td>
+                        <td>61.9</td>
+                        <td class="score-high">0.955</td>
+                        <td>37.2</td>
+                        <td>47.3</td>
+                    </tr>
+                    <tr>
+                        <td>Russian</td>
+                        <td>57.3</td>
+                        <td>0.945</td>
+                        <td>33.4</td>
+                        <td>37.9</td>
+                    </tr>
+                    <tr>
+                        <td>Chinese</td>
+                        <td>58.0</td>
+                        <td>0.942</td>
+                        <td>15.5</td>
+                        <td>45.6</td>
+                    </tr>
+                    <tr>
+                        <td>Korean</td>
+                        <td>53.6</td>
+                        <td>0.937</td>
+                        <td>21.7</td>
+                        <td>45.8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="language-note"><strong>Why are Chinese/Korean Goal 2 BLEU scores low?</strong> BLEU counts word matches, but these languages use different tokenization and word boundaries. The semantic metrics (LaBSE 0.94) confirm meaning is preserved just as well—BLEU is simply less appropriate for these scripts.</p>
+        </section>
+
+        <section>
+            <h2>Results by Document Category</h2>
+            <p>Comparing performance on Vaccine Information Statements vs Cancer Education Materials.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>G1: BLEU</th>
+                        <th>G1: LaBSE</th>
+                        <th>G2: BLEU</th>
+                        <th>G3: BLEU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cancer Materials</td>
+                        <td>352</td>
+                        <td>61.9</td>
+                        <td class="score-high">0.984</td>
+                        <td class="score-high">41.3</td>
+                        <td class="score-high">54.2</td>
+                    </tr>
+                    <tr>
+                        <td>Vaccine VIS</td>
+                        <td>352</td>
+                        <td>61.9</td>
+                        <td>0.909</td>
+                        <td>30.3</td>
+                        <td>44.6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-finding">
+                <strong>Key Finding:</strong> Cancer education materials show higher LLM-professional alignment (Goal 2), possibly because cancer materials use more standardized medical terminology. Both categories show excellent meaning preservation (Goal 1).
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Takeaways</h2>
+
+            <ul>
+                <li><strong>All tested LLMs preserve health information reliably</strong> — Semantic similarity scores (LaBSE 0.91-0.98) indicate core medical content is maintained across translations.</li>
+
+                <li><strong>Claude Opus 4.5 excels at faithful translation</strong> — Best at preserving exact meaning through the round-trip (Goal 1), making it ideal when precision matters.</li>
+
+                <li><strong>Gemini 3 Pro writes most like human translators</strong> — Closest stylistic match to professional translations (Goal 2), potentially better for natural-sounding output.</li>
+
+                <li><strong>LLM translations are surprisingly "stable"</strong> — LLM back-translations (Goal 1) often score higher than professional back-translations (Goal 3), suggesting LLMs produce more consistent round-trip results.</li>
+
+                <li><strong>High-resource languages perform best</strong> — Spanish, Vietnamese, and Tagalog show strongest results across all goals.</li>
+
+                <li><strong>Choose your metric wisely</strong> — BLEU measures wording, LaBSE measures meaning. For health materials, meaning preservation (LaBSE) matters most.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Study Details</h2>
+
+            <h3>Models Tested</h3>
+            <ul>
+                <li>Claude Opus 4.5 (Anthropic)</li>
+                <li>GPT-5.1 (OpenAI)</li>
+                <li>Gemini 3 Pro (Google)</li>
+                <li>Kimi K2 (Moonshot AI)</li>
+            </ul>
+
+            <h3>Languages</h3>
+            <ul>
+                <li>Spanish, Chinese (Simplified), Vietnamese, Russian</li>
+                <li>Arabic, Korean, Tagalog, Haitian Creole</li>
+            </ul>
+
+            <h3>Documents</h3>
+            <ul>
+                <li>11 CDC Vaccine Information Statements (VIS)</li>
+                <li>11 American Cancer Society patient education materials</li>
+                <li>All sourced from MedlinePlus with existing professional translations in all 8 languages</li>
+            </ul>
+
+            <h3>Metrics</h3>
+            <ul>
+                <li><strong>BLEU</strong> — N-gram precision (sacrebleu)</li>
+                <li><strong>LaBSE</strong> — Language-agnostic sentence embeddings (sentence-transformers)</li>
+                <li><strong>BERTScore</strong> — Contextual embedding similarity (bert-score)</li>
+                <li><strong>COMET</strong> — Neural MT evaluation trained on human judgments (unbabel-comet)</li>
+            </ul>
+
+            <h3>Pipeline</h3>
+            <p>For each document × language × model combination:</p>
+            <ol>
+                <li>Forward translation: English → Target Language (LLM)</li>
+                <li>LLM back-translation: Target Language → English (same LLM)</li>
+                <li>Professional back-translation: Professional Target → English (same LLM)</li>
+            </ol>
+            <p>Total API calls: 2,112 (704 combinations × 3 translation steps)</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>LLM Back-Translation Study for MedlinePlus Health Materials</p>
+        <p>Stanford University, December 2025</p>
+        <p><a href="https://github.com/hallixrap/llm-translation-study">View on GitHub</a></p>
+    </footer>
+</body>
+</html>

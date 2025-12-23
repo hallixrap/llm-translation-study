@@ -1,1 +1,47 @@
 .DS_Store
+Thumbs.db
+
+# Virtual environment
+backtranslation_env/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets - DO NOT COMMIT
+# Make sure to remove API keys from config.py before committing
+# Or use environment variables instead
+
+# Checkpoints (can be regenerated)
+output/translations/checkpoint.json
+output/medlineplus_metrics/metrics_checkpoint.json
+output/medlineplus_results/checkpoint.json
+
+# Large model caches
+.cache/
+*.ckpt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Large binary files
+data/pdfs/
+*.png
+*.pdf

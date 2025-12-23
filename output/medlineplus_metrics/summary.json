@@ -1,0 +1,198 @@
+{
+  "by_model": {
+    "claude-opus-4.5": {
+      "same_lang_bleu": 37.25372855150343,
+      "same_lang_chrf": 63.11978964543068,
+      "same_lang_bertscore": 0.8589323149408613,
+      "same_lang_comet": 0.8734085570062909,
+      "cross_lang_xlm_roberta": 0.9829606638635908,
+      "cross_lang_labse": 0.9870813274383545,
+      "cross_lang_mbert": 0.9656738230160304,
+      "cross_lang_comet_qe": 0.24396194956132344,
+      "backtrans_bleu": 68.56070396038089,
+      "backtrans_bertscore": 0.9504468400137766,
+      "prof_backtrans_bleu": 54.688959598958746,
+      "prof_backtrans_bertscore": 0.9238406910215106,
+      "prof_backtrans_labse": 0.9423489332199096,
+      "llm_vs_prof_backtrans_bleu": 59.71127762403068,
+      "llm_vs_prof_backtrans_labse": 0.9416646054812841
+    },
+    "gemini-3-pro": {
+      "same_lang_bleu": 39.438577535107214,
+      "same_lang_chrf": 64.61722488401473,
+      "same_lang_bertscore": 0.8448073291643099,
+      "same_lang_comet": 0.8755702511830763,
+      "cross_lang_xlm_roberta": 0.9348160468719222,
+      "cross_lang_labse": 0.9213788566941564,
+      "cross_lang_mbert": 0.9082153629172932,
+      "cross_lang_comet_qe": 0.34727067343721335,
+      "backtrans_bleu": 61.45400279320863,
+      "backtrans_bertscore": 0.9193805388428948,
+      "prof_backtrans_bleu": 48.30826125310376,
+      "prof_backtrans_bertscore": 0.9130001305179163,
+      "prof_backtrans_labse": 0.9280505183745514,
+      "llm_vs_prof_backtrans_bleu": 53.60505827125698,
+      "llm_vs_prof_backtrans_labse": 0.9182971797206185
+    },
+    "gpt-5.1": {
+      "same_lang_bleu": 36.02247274226496,
+      "same_lang_chrf": 61.68236255988939,
+      "same_lang_bertscore": 0.8437420112842863,
+      "same_lang_comet": 0.8714156039059162,
+      "cross_lang_xlm_roberta": 0.9626099731434475,
+      "cross_lang_labse": 0.9567646279253743,
+      "cross_lang_mbert": 0.9477725770663131,
+      "cross_lang_comet_qe": 0.30125837548720563,
+      "backtrans_bleu": 64.27573235840516,
+      "backtrans_bertscore": 0.9307847432792187,
+      "prof_backtrans_bleu": 55.833745922624196,
+      "prof_backtrans_bertscore": 0.9186029359698296,
+      "prof_backtrans_labse": 0.940321318466555,
+      "llm_vs_prof_backtrans_bleu": 60.20528813495517,
+      "llm_vs_prof_backtrans_labse": 0.9283716455101967
+    },
+    "kimi-k2": {
+      "same_lang_bleu": 35.98578434831646,
+      "same_lang_chrf": 61.86047918856843,
+      "same_lang_bertscore": 0.8400813166437477,
+      "same_lang_comet": 0.8724519384318384,
+      "cross_lang_xlm_roberta": 0.9393014969496891,
+      "cross_lang_labse": 0.9401674815293016,
+      "cross_lang_mbert": 0.9066921595869393,
+      "cross_lang_comet_qe": 0.3070041868279035,
+      "backtrans_bleu": 54.9488584217974,
+      "backtrans_bertscore": 0.920592973972189,
+      "prof_backtrans_bleu": 43.881852749743636,
+      "prof_backtrans_bertscore": 0.9115805355615394,
+      "prof_backtrans_labse": 0.933861369656962,
+      "llm_vs_prof_backtrans_bleu": 51.442658920352116,
+      "llm_vs_prof_backtrans_labse": 0.9246859411860622
+    }
+  },
+  "by_language": {
+    "arabic": {
+      "same_lang_bleu": 41.56752432908783,
+      "backtrans_bleu": 67.58083742928476,
+      "cross_lang_labse": 0.9758031943509745,
+      "prof_backtrans_bleu": 60.825587212423194,
+      "prof_backtrans_labse": 0.9649297380170156
+    },
+    "chinese_simplified": {
+      "same_lang_bleu": 15.517193697886631,
+      "backtrans_bleu": 58.01916622290478,
+      "cross_lang_labse": 0.9421939958225597,
+      "prof_backtrans_bleu": 45.61287342375598,
+      "prof_backtrans_labse": 0.9303141825578429
+    },
+    "haitian_creole": {
+      "same_lang_bleu": 37.24268123525712,
+      "backtrans_bleu": 61.91035900332983,
+      "cross_lang_labse": 0.9545858082446185,
+      "prof_backtrans_bleu": 47.302868645984944,
+      "prof_backtrans_labse": 0.9338312826373361
+    },
+    "korean": {
+      "same_lang_bleu": 21.692257445944282,
+      "backtrans_bleu": 53.57741864318616,
+      "cross_lang_labse": 0.9372609040953896,
+      "prof_backtrans_bleu": 45.800350852455374,
+      "prof_backtrans_labse": 0.9285677359862761
+    },
+    "russian": {
+      "same_lang_bleu": 33.39898416394198,
+      "backtrans_bleu": 57.28249061397534,
+      "cross_lang_labse": 0.9446339458227158,
+      "prof_backtrans_bleu": 37.87777284972999,
+      "prof_backtrans_labse": 0.9212011331799387
+    },
+    "spanish": {
+      "same_lang_bleu": 54.3130285841445,
+      "backtrans_bleu": 68.62973518601838,
+      "cross_lang_labse": 0.9538726163181391,
+      "prof_backtrans_bleu": 53.07099211325435,
+      "prof_backtrans_labse": 0.9424558532508936
+    },
+    "tagalog": {
+      "same_lang_bleu": 43.80579044945527,
+      "backtrans_bleu": 68.69933164267505,
+      "cross_lang_labse": 0.9496468524823244,
+      "prof_backtrans_bleu": 61.92631440352879,
+      "prof_backtrans_labse": 0.9354880308282787
+    },
+    "vietnamese": {
+      "same_lang_bleu": 50.06497942434248,
+      "backtrans_bleu": 63.06792207276978,
+      "cross_lang_labse": 0.953171780840917,
+      "prof_backtrans_bleu": 53.51747461241664,
+      "prof_backtrans_labse": 0.9328490879343844
+    }
+  },
+  "by_category": {
+    "cancer": {
+      "count": 352,
+      "same_lang_bleu": 41.36564989275874,
+      "backtrans_bleu": 61.81628248937498,
+      "cross_lang_labse": 0.9834963879124685,
+      "prof_backtrans_bleu": 54.16662714634828,
+      "prof_backtrans_labse": 0.9740184799514033
+    },
+    "immunize": {
+      "count": 352,
+      "same_lang_bleu": 32.95520074408762,
+      "backtrans_bleu": 62.83188111427922,
+      "cross_lang_labse": 0.9188850969503124,
+      "prof_backtrans_bleu": 47.20630291120237,
+      "prof_backtrans_labse": 0.8977353234455977
+    }
+  },
+  "by_model_category": {
+    "claude-opus-4.5|cancer": {
+      "same_lang_bleu": 41.809180941455516,
+      "backtrans_bleu": 67.59564785251372,
+      "cross_lang_labse": 0.9890398254448717,
+      "prof_backtrans_bleu": 57.554670148660854
+    },
+    "claude-opus-4.5|immunize": {
+      "same_lang_bleu": 32.64591463982775,
+      "backtrans_bleu": 69.5368526671891,
+      "cross_lang_labse": 0.985100317960498,
+      "prof_backtrans_bleu": 51.79030984753596
+    },
+    "gemini-3-pro|cancer": {
+      "same_lang_bleu": 44.3112420326605,
+      "backtrans_bleu": 59.65222494859018,
+      "cross_lang_labse": 0.9752326323227449,
+      "prof_backtrans_bleu": 51.88979347889258
+    },
+    "gemini-3-pro|immunize": {
+      "same_lang_bleu": 34.56591303755392,
+      "backtrans_bleu": 63.255780637827066,
+      "cross_lang_labse": 0.867525081065568,
+      "prof_backtrans_bleu": 44.726729027314995
+    },
+    "gpt-5.1|cancer": {
+      "same_lang_bleu": 39.38681583860201,
+      "backtrans_bleu": 65.2459625359137,
+      "cross_lang_labse": 0.9875431880354881,
+      "prof_backtrans_bleu": 60.43760054020168
+    },
+    "gpt-5.1|immunize": {
+      "same_lang_bleu": 32.65812964592789,
+      "backtrans_bleu": 63.30550218089659,
+      "cross_lang_labse": 0.9259860678152605,
+      "prof_backtrans_bleu": 51.22989130504674
+    },
+    "kimi-k2|cancer": {
+      "same_lang_bleu": 39.95536075831696,
+      "backtrans_bleu": 54.77129462048217,
+      "cross_lang_labse": 0.9821699058467691,
+      "prof_backtrans_bleu": 46.78444441763799
+    },
+    "kimi-k2|immunize": {
+      "same_lang_bleu": 31.92389220785082,
+      "backtrans_bleu": 55.13055161384096,
+      "cross_lang_labse": 0.8971882566463115,
+      "prof_backtrans_bleu": 40.84104243099715
+    }
+  }
+}
