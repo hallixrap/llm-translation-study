@@ -104,16 +104,16 @@ These metrics compare the English back-translation to the original English text,
 ## Visualizations
 
 ### Model Comparison
-![Model Comparison](charts/model_comparison_same_lang.png)
+![Model Comparison](output/github_pages/charts/model_comparison_same_lang.png)
 
 ### Language Comparison
-![Language Comparison](charts/language_comparison_same_lang.png)
+![Language Comparison](output/github_pages/charts/language_comparison_same_lang.png)
 
 ### Back-Translation Semantic Similarity
-![Back-Translation Similarity](charts/back_translation_similarity.png)
+![Back-Translation Similarity](output/github_pages/charts/back_translation_similarity.png)
 
 ### COMET Score Heatmap
-![Heatmap](charts/comet_heatmap.png)
+![Heatmap](output/github_pages/charts/comet_heatmap.png)
 
 ---
 
@@ -140,10 +140,12 @@ Arabic shows the lowest same-language scores across all metrics, reflecting the 
 
 | File | Description |
 |------|-------------|
-| `medlineplus_backtranslation_report.xlsx` | Full Excel report with all metrics |
-| `charts/` | Visualization PNG files |
-| `all_metrics.json` | Raw metrics data (JSON) |
-| `summary.json` | Aggregated summary statistics |
+| `output/github_pages/medlineplus_backtranslation_report.xlsx` | Full Excel report with all metrics (includes Kevin Scorecard) |
+| `output/github_pages/charts/` | Visualization PNG files |
+| `output/medlineplus_metrics/all_metrics.json` | Raw metrics data (JSON) |
+| `output/medlineplus_metrics/summary.json` | Aggregated summary statistics |
+| `output/human_review/` | Human review HTML files (Spanish, Chinese, Arabic) |
+| `data/extracted_text/` | Source text files (22 docs × 9 languages) |
 
 ---
 
