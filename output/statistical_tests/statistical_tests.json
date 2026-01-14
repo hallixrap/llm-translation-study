@@ -1,0 +1,396 @@
+{
+  "model_comparisons": [
+    {
+      "Metric": "LaBSE (Goal 1)",
+      "metric_key": "cross_lang_labse",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 0.9567646279253743,
+          "std": 0.04522981822583383,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 0.9870813274383545,
+          "std": 0.01348471802892998,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 0.9213788566941564,
+          "std": 0.06496573719630089,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 0.9401674815293016,
+          "std": 0.05256085813957653,
+          "n": 174
+        }
+      },
+      "kruskal_wallis_H": 155.36236721538216,
+      "kruskal_wallis_p": 1.83599904721528e-33,
+      "significant": "True",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 3.1890369268791065e-29,
+          "gpt-5.1": 2.2803874776655246e-10,
+          "kimi-k2": 5.1436781023795614e-23
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 3.1890369268791065e-29,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0822744946888326e-05,
+          "kimi-k2": 1.0
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 2.2803874776655246e-10,
+          "gemini-3-pro": 1.0822744946888326e-05,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 0.003135022134555497
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 5.1436781023795614e-23,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 0.003135022134555497,
+          "kimi-k2": 1.0
+        }
+      }
+    },
+    {
+      "Metric": "BLEU Back-trans (Goal 1)",
+      "metric_key": "backtrans_bleu",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 64.27573235840515,
+          "std": 7.373180481835286,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 68.56070396038088,
+          "std": 8.327529015066714,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 61.45400279320863,
+          "std": 9.30128487834886,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 54.94885842179742,
+          "std": 8.696913340238671,
+          "n": 174
+        }
+      },
+      "kruskal_wallis_H": 169.40188671970418,
+      "kruskal_wallis_p": 1.7131217914997613e-36,
+      "significant": "True",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.1480911809671445e-10,
+          "gpt-5.1": 0.000345992798274144,
+          "kimi-k2": 5.86237307789706e-36
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 1.1480911809671445e-10,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 0.042340856522455096,
+          "kimi-k2": 1.3739544793051259e-08
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 0.000345992798274144,
+          "gemini-3-pro": 0.042340856522455096,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 2.7759267374839714e-17
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 5.86237307789706e-36,
+          "gemini-3-pro": 1.3739544793051259e-08,
+          "gpt-5.1": 2.7759267374839714e-17,
+          "kimi-k2": 1.0
+        }
+      }
+    },
+    {
+      "Metric": "COMET (Goal 2)",
+      "metric_key": "same_lang_comet",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 0.8714156039059162,
+          "std": 0.05215265415632281,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 0.8734085570062909,
+          "std": 0.05418485248767512,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 0.8755702511830763,
+          "std": 0.05361156569773956,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 0.8724519384318384,
+          "std": 0.0524098467143805,
+          "n": 174
+        }
+      },
+      "kruskal_wallis_H": 2.0440064316121607,
+      "kruskal_wallis_p": 0.5633234250639312,
+      "significant": "False",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 0.9786097867803509,
+          "kimi-k2": 1.0
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.9786097867803509,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        }
+      }
+    },
+    {
+      "Metric": "BLEU (Goal 2)",
+      "metric_key": "same_lang_bleu",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 36.02247274226496,
+          "std": 13.786555165816804,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 37.25372855150343,
+          "std": 14.438577739161081,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 39.4385775351072,
+          "std": 14.888926204947579,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 35.98578434831646,
+          "std": 14.345235972907492,
+          "n": 174
+        }
+      },
+      "kruskal_wallis_H": 5.4430411192756765,
+      "kruskal_wallis_p": 0.14208535924183402,
+      "significant": "False",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 0.24445304122344372,
+          "kimi-k2": 0.32358561669235597
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.24445304122344372,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.32358561669235597,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        }
+      }
+    },
+    {
+      "Metric": "BERTScore (Goal 2)",
+      "metric_key": "same_lang_bertscore",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 0.8437420112842863,
+          "std": 0.052318514396356666,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 0.8589323149408613,
+          "std": 0.04297978252477706,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 0.8448073291643099,
+          "std": 0.059497637708274584,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 0.8400813166437477,
+          "std": 0.05151265115502662,
+          "n": 174
+        }
+      },
+      "kruskal_wallis_H": 13.032757906933966,
+      "kruskal_wallis_p": 0.00456629746046251,
+      "significant": "True",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.14346610239363855,
+          "gpt-5.1": 0.041655991776203966,
+          "kimi-k2": 0.003863019606967437
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 0.14346610239363855,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 0.041655991776203966,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 0.003863019606967437,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        }
+      }
+    },
+    {
+      "Metric": "LaBSE Prof (Goal 3)",
+      "metric_key": "prof_backtrans_labse",
+      "model_stats": {
+        "gpt-5.1": {
+          "mean": 0.940321318466555,
+          "std": 0.04419356428249256,
+          "n": 176
+        },
+        "claude-opus-4.5": {
+          "mean": 0.9423489332199096,
+          "std": 0.043997994755322435,
+          "n": 175
+        },
+        "gemini-3-pro": {
+          "mean": 0.9280505183745514,
+          "std": 0.05329244888234207,
+          "n": 176
+        },
+        "kimi-k2": {
+          "mean": 0.933861369656962,
+          "std": 0.048436221786206546,
+          "n": 172
+        }
+      },
+      "kruskal_wallis_H": 7.529507225270208,
+      "kruskal_wallis_p": 0.056805112682628396,
+      "significant": "False",
+      "dunn_results": {
+        "claude-opus-4.5": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.0928787636034302,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 0.4946634632607496
+        },
+        "gemini-3-pro": {
+          "claude-opus-4.5": 0.0928787636034302,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 0.2974803357194225,
+          "kimi-k2": 1.0
+        },
+        "gpt-5.1": {
+          "claude-opus-4.5": 1.0,
+          "gemini-3-pro": 0.2974803357194225,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        },
+        "kimi-k2": {
+          "claude-opus-4.5": 0.4946634632607496,
+          "gemini-3-pro": 1.0,
+          "gpt-5.1": 1.0,
+          "kimi-k2": 1.0
+        }
+      }
+    }
+  ],
+  "language_comparisons": [
+    {
+      "Metric": "LaBSE (Goal 1)",
+      "High-Resource Mean": 0.9444903655147011,
+      "Low-Resource Mean": 0.9521304416656494,
+      "Difference": 0.007640076150948305,
+      "Mann-Whitney U": 25757.0,
+      "p-value": 0.0021922192360788774,
+      "Significant": "True",
+      "Interpretation": "Low-resource BETTER"
+    },
+    {
+      "Metric": "BLEU Back-trans (Goal 1)",
+      "High-Resource Mean": 59.377202666521164,
+      "Low-Resource Mean": 65.28544825831858,
+      "Difference": 5.908245591797417,
+      "Mann-Whitney U": 19711.0,
+      "p-value": 1.6360667048125836e-11,
+      "Significant": "True",
+      "Interpretation": "Low-resource BETTER"
+    },
+    {
+      "Metric": "COMET (Goal 2)",
+      "High-Resource Mean": 0.879026152024215,
+      "Low-Resource Mean": 0.8368875292369298,
+      "Difference": -0.042138622787285196,
+      "Mann-Whitney U": 44185.0,
+      "p-value": 4.296278684797002e-16,
+      "Significant": "True",
+      "Interpretation": "High-resource BETTER"
+    },
+    {
+      "Metric": "BLEU (Goal 2)",
+      "High-Resource Mean": 31.23036597297935,
+      "Low-Resource Mean": 40.505484101744216,
+      "Difference": 9.275118128764866,
+      "Mann-Whitney U": 18405.0,
+      "p-value": 5.1300208325705086e-14,
+      "Significant": "True",
+      "Interpretation": "Low-resource BETTER"
+    },
+    {
+      "Metric": "BERTScore (Goal 2)",
+      "High-Resource Mean": 0.8427904588593678,
+      "Low-Resource Mean": 0.8338369502340044,
+      "Difference": -0.008953508625363371,
+      "Mann-Whitney U": 33914.0,
+      "p-value": 0.05860072152922906,
+      "Significant": "False",
+      "Interpretation": "No significant difference"
+    },
+    {
+      "Metric": "LaBSE Prof (Goal 3)",
+      "High-Resource Mean": 0.9306616025772529,
+      "Low-Resource Mean": 0.9346549231665475,
+      "Difference": 0.00399332058929458,
+      "Mann-Whitney U": 29143.0,
+      "p-value": 0.3394305684075063,
+      "Significant": "False",
+      "Interpretation": "No significant difference"
+    }
+  ]
+}

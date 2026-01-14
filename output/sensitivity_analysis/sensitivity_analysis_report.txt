@@ -1,0 +1,421 @@
+================================================================================
+SENTENCE REORDERING SENSITIVITY ANALYSIS REPORT
+================================================================================
+
+OBJECTIVE:
+Test whether LLM translation performance is due to memorization or true
+translation capability by randomly shuffling sentence order.
+
+HYPOTHESIS:
+- If memorized: Performance should drop significantly
+- If truly translating: Semantic scores should remain similar
+
+--------------------------------------------------------------------------------
+
+METRIC: LABSE_SCORE
+----------------------------------------
+
+Model: gpt-5.1 | Language: spanish
+  Original:  0.9914 ± 0.0041
+  Shuffled:  0.9922 ± 0.0068
+  Difference: +0.0009 (+0.1%)
+  t-statistic: -0.343, p-value: 0.7398
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: chinese_simplified
+  Original:  0.9830 ± 0.0071
+  Shuffled:  0.9850 ± 0.0054
+  Difference: +0.0020 (+0.2%)
+  t-statistic: -0.567, p-value: 0.5847
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: tagalog
+  Original:  0.9910 ± 0.0039
+  Shuffled:  0.9890 ± 0.0069
+  Difference: -0.0020 (-0.2%)
+  t-statistic: 0.828, p-value: 0.4290
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: spanish
+  Original:  0.9935 ± 0.0060
+  Shuffled:  0.9576 ± 0.0576
+  Difference: -0.0358 (-3.6%)
+  t-statistic: 1.959, p-value: 0.0818
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: chinese_simplified
+  Original:  0.9885 ± 0.0062
+  Shuffled:  0.9435 ± 0.0729
+  Difference: -0.0450 (-4.6%)
+  t-statistic: 1.990, p-value: 0.0778
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: tagalog
+  Original:  0.9967 ± 0.0013
+  Shuffled:  0.9369 ± 0.0782
+  Difference: -0.0597 (-6.0%)
+  t-statistic: 2.387, p-value: 0.0408
+  Result: SIGNIFICANT DROP - suggests memorization
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: spanish
+  Original:  0.9804 ± 0.0233
+  Shuffled:  0.9899 ± 0.0127
+  Difference: +0.0095 (+1.0%)
+  t-statistic: -1.618, p-value: 0.1400
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: chinese_simplified
+  Original:  0.9574 ± 0.0330
+  Shuffled:  0.9784 ± 0.0244
+  Difference: +0.0210 (+2.2%)
+  t-statistic: -1.398, p-value: 0.1957
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: tagalog
+  Original:  0.9570 ± 0.0317
+  Shuffled:  0.9856 ± 0.0153
+  Difference: +0.0286 (+3.0%)
+  t-statistic: -2.662, p-value: 0.0260
+  Result: SIGNIFICANT INCREASE - unexpected
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: spanish
+  Original:  0.9806 ± 0.0215
+  Shuffled:  0.9499 ± 0.0865
+  Difference: -0.0307 (-3.1%)
+  t-statistic: 1.139, p-value: 0.2841
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: chinese_simplified
+  Original:  0.9784 ± 0.0214
+  Shuffled:  0.9803 ± 0.0083
+  Difference: +0.0019 (+0.2%)
+  t-statistic: -0.269, p-value: 0.7943
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: tagalog
+  Original:  0.9757 ± 0.0451
+  Shuffled:  0.9807 ± 0.0127
+  Difference: +0.0050 (+0.5%)
+  t-statistic: -0.326, p-value: 0.7518
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+
+METRIC: BLEU_SCORE
+----------------------------------------
+
+Model: gpt-5.1 | Language: spanish
+  Original:  0.7479 ± 0.0222
+  Shuffled:  0.7678 ± 0.0263
+  Difference: +0.0198 (+2.7%)
+  t-statistic: -1.946, p-value: 0.0836
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: chinese_simplified
+  Original:  0.6034 ± 0.0614
+  Shuffled:  0.6326 ± 0.0887
+  Difference: +0.0292 (+4.8%)
+  t-statistic: -1.745, p-value: 0.1149
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: tagalog
+  Original:  0.7338 ± 0.0269
+  Shuffled:  0.7595 ± 0.0418
+  Difference: +0.0257 (+3.5%)
+  t-statistic: -3.136, p-value: 0.0120
+  Result: SIGNIFICANT INCREASE - unexpected
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: spanish
+  Original:  0.8147 ± 0.0237
+  Shuffled:  0.8117 ± 0.0401
+  Difference: -0.0030 (-0.4%)
+  t-statistic: 0.207, p-value: 0.8405
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: chinese_simplified
+  Original:  0.6938 ± 0.1164
+  Shuffled:  0.6618 ± 0.0551
+  Difference: -0.0320 (-4.6%)
+  t-statistic: 0.938, p-value: 0.3726
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: tagalog
+  Original:  0.8283 ± 0.0703
+  Shuffled:  0.7820 ± 0.0490
+  Difference: -0.0463 (-5.6%)
+  t-statistic: 3.185, p-value: 0.0111
+  Result: SIGNIFICANT DROP - suggests memorization
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: spanish
+  Original:  0.7366 ± 0.0431
+  Shuffled:  0.8004 ± 0.0608
+  Difference: +0.0638 (+8.7%)
+  t-statistic: -2.658, p-value: 0.0261
+  Result: SIGNIFICANT INCREASE - unexpected
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: chinese_simplified
+  Original:  0.6017 ± 0.0637
+  Shuffled:  0.6448 ± 0.1202
+  Difference: +0.0431 (+7.2%)
+  t-statistic: -1.613, p-value: 0.1412
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: tagalog
+  Original:  0.6681 ± 0.0630
+  Shuffled:  0.7813 ± 0.0822
+  Difference: +0.1132 (+16.9%)
+  t-statistic: -3.488, p-value: 0.0068
+  Result: SIGNIFICANT INCREASE - unexpected
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: spanish
+  Original:  0.6600 ± 0.0507
+  Shuffled:  0.6602 ± 0.0497
+  Difference: +0.0002 (+0.0%)
+  t-statistic: -0.011, p-value: 0.9915
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: chinese_simplified
+  Original:  0.5204 ± 0.0541
+  Shuffled:  0.5384 ± 0.0621
+  Difference: +0.0180 (+3.5%)
+  t-statistic: -1.043, p-value: 0.3243
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: tagalog
+  Original:  0.6586 ± 0.0459
+  Shuffled:  0.6299 ± 0.1096
+  Difference: -0.0288 (-4.4%)
+  t-statistic: 0.689, p-value: 0.5084
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+
+METRIC: XLM_ROBERTA_SCORE
+----------------------------------------
+
+Model: gpt-5.1 | Language: spanish
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: chinese_simplified
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: tagalog
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: spanish
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: chinese_simplified
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: tagalog
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: spanish
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: chinese_simplified
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: tagalog
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: spanish
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: chinese_simplified
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: tagalog
+  Original:  0.0000 ± 0.0000
+  Shuffled:  0.0000 ± 0.0000
+  Difference: +0.0000 (+0.0%)
+  t-statistic: nan, p-value: nan
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+
+METRIC: MBERT_SCORE
+----------------------------------------
+
+Model: gpt-5.1 | Language: spanish
+  Original:  0.9653 ± 0.0191
+  Shuffled:  0.9693 ± 0.0376
+  Difference: +0.0041 (+0.4%)
+  t-statistic: -0.315, p-value: 0.7600
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: chinese_simplified
+  Original:  0.9698 ± 0.0170
+  Shuffled:  0.9521 ± 0.0357
+  Difference: -0.0177 (-1.8%)
+  t-statistic: 1.627, p-value: 0.1381
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gpt-5.1 | Language: tagalog
+  Original:  0.9736 ± 0.0192
+  Shuffled:  0.9692 ± 0.0183
+  Difference: -0.0044 (-0.5%)
+  t-statistic: 0.448, p-value: 0.6644
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: spanish
+  Original:  0.9653 ± 0.0223
+  Shuffled:  0.8914 ± 0.1563
+  Difference: -0.0739 (-7.7%)
+  t-statistic: 1.421, p-value: 0.1892
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: chinese_simplified
+  Original:  0.9625 ± 0.0239
+  Shuffled:  0.8727 ± 0.1672
+  Difference: -0.0898 (-9.3%)
+  t-statistic: 1.612, p-value: 0.1414
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: claude-opus-4.5 | Language: tagalog
+  Original:  0.9959 ± 0.0051
+  Shuffled:  0.8055 ± 0.2125
+  Difference: -0.1905 (-19.1%)
+  t-statistic: 2.831, p-value: 0.0197
+  Result: SIGNIFICANT DROP - suggests memorization
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: spanish
+  Original:  0.9461 ± 0.0407
+  Shuffled:  0.9643 ± 0.0495
+  Difference: +0.0182 (+1.9%)
+  t-statistic: -1.746, p-value: 0.1147
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: chinese_simplified
+  Original:  0.9373 ± 0.0510
+  Shuffled:  0.9462 ± 0.0503
+  Difference: +0.0088 (+0.9%)
+  t-statistic: -0.471, p-value: 0.6486
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: gemini-3-pro | Language: tagalog
+  Original:  0.9518 ± 0.0403
+  Shuffled:  0.9719 ± 0.0246
+  Difference: +0.0201 (+2.1%)
+  t-statistic: -1.579, p-value: 0.1487
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: spanish
+  Original:  0.9635 ± 0.0173
+  Shuffled:  0.8423 ± 0.2093
+  Difference: -0.1212 (-12.6%)
+  t-statistic: 1.853, p-value: 0.0968
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: chinese_simplified
+  Original:  0.9441 ± 0.0444
+  Shuffled:  0.9485 ± 0.0431
+  Difference: +0.0045 (+0.5%)
+  t-statistic: -0.370, p-value: 0.7202
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+Model: kimi-k2 | Language: tagalog
+  Original:  0.9501 ± 0.0397
+  Shuffled:  0.9601 ± 0.0308
+  Difference: +0.0100 (+1.0%)
+  t-statistic: -0.596, p-value: 0.5656
+  Result: NO SIGNIFICANT CHANGE - suggests true translation
+  (n=10 pairs)
+
+
+================================================================================
+INTERPRETATION GUIDE:
+--------------------------------------------------------------------------------
+p < 0.05 with negative difference: Evidence FOR memorization
+p >= 0.05: Evidence AGAINST memorization (true translation)
+Small % change (<5%): Strong evidence of robust translation
+================================================================================
