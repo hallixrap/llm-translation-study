@@ -48,3 +48,21 @@ data/pdfs/
 
 # Allow chart images
 !output/github_pages/charts/*.png
+
+# Internal working documents (not for public repo)
+HANDOFF_TO_NEW_INSTANCE.md
+SENSITIVITY_ANALYSIS_README.md
+manuscript_edits/
+translation_project_group_transcript_0108.txt
+scripts/SENSITIVITY_ANALYSIS_GUIDE.md
+scripts/config_original.py
+scripts/retry_failed_sensitivity.py
+OLD SCRIPTS/
+
+# Large checkpoint files (can be regenerated)
+output/sensitivity_analysis/checkpoint.json
+output/sensitivity_analysis/all_sensitivity_results.json
+output/sensitivity_analysis/all_sensitivity_results_with_metrics.json
+
+# Binary/Word documents
+*.docx
