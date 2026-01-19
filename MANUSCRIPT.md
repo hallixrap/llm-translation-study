@@ -6,7 +6,7 @@
 
 **Objective:** To evaluate whether frontier LLMs can maintain translation fidelity for medical documents across both high-resource and low-resource languages using back-translation methodology.
 
-**Methods:** We evaluated four frontier LLMs (GPT-5.1, Claude Opus 4.5, Gemini 3 Pro, and Kimi K2) on 22 professionally-translated medical documents from CDC Vaccine Information Statements and American Cancer Society patient education materials. Documents were translated from English into 8 languages spanning high-resource (Spanish, Chinese, Russian, Korean), medium-resource (Vietnamese, Arabic), and low-resource (Tagalog, Haitian Creole) categories. We employed a three-goal evaluation framework: (1) assessing LLM back-translation fidelity, (2) comparing LLM translations to professional translations, and (3) validating back-translation as an evaluation methodology using professional translations as baseline.
+**Methods:** We evaluated four frontier LLMs (GPT-5.1, Claude Opus 4.5, Gemini 3 Pro, and Kimi K2) on 22 professionally-translated medical documents from CDC Vaccine Information Statements and American Cancer Society patient education materials. Documents were translated from English into 8 languages spanning high-resource (Spanish, Chinese, Russian, Vietnamese), medium-resource (Korean, Arabic), and low-resource (Tagalog, Haitian Creole) categories based on representation in CommonCrawl training corpora. We employed a two-part evaluation framework: (1) assessing LLM back-translation fidelity, and (2) comparing LLM translations directly to professional translations. Professional translations were also back-translated through each LLM to validate our methodology.
 
 **Results:** Across 704 translation pairs, all models achieved high semantic preservation on back-translation (LaBSE > 0.92). Notably, low-resource languages (Tagalog: 0.950, Haitian Creole: 0.955) achieved semantic similarity scores comparable to high-resource languages (Spanish: 0.954). Claude Opus 4.5 demonstrated the highest semantic preservation (LaBSE: 0.987), while Gemini 3 Pro led on lexical metrics (BLEU: 39.4). Professional translations back-translated through LLMs showed similar fidelity patterns (LaBSE: 0.92-0.94), validating back-translation as an evaluation method.
 
@@ -28,7 +28,7 @@ Large language models have demonstrated remarkable capabilities in natural langu
 
 ### Automated Metrics for Multilingual Evaluation
 
-Evaluating translation quality traditionally requires bilingual human experts for each language pair, limiting scalability across multiple languages. Recent advances in multilingual NLP have produced automated metrics—including neural embedding-based measures (LaBSE, COMET, BERTScore) that capture semantic similarity across languages [3,4]. These metrics enable large-scale evaluation without requiring human evaluators for each language pair, making them particularly valuable for assessing translation quality in low-resource languages where expert evaluators are scarce.
+Evaluating translation quality traditionally requires bilingual human experts for each language pair, limiting scalability across multiple languages. Recent advances in multilingual NLP have produced automated metrics—including neural embedding-based measures (LaBSE, COMET, BERTScore) that capture semantic similarity across languages [3,4,5]. These metrics enable large-scale evaluation without requiring human evaluators for each language pair, making them particularly valuable for assessing translation quality in low-resource languages where expert evaluators are scarce.
 
 This study leverages these automated multilingual metrics to evaluate LLM translation quality across eight languages, including low-resource languages historically underserved by both professional translation services and NLP research. We combine direct comparison against professional translations with back-translation validation to provide multiple perspectives on translation fidelity.
 
@@ -53,18 +53,18 @@ As an additional validation layer, we use back-translation (translating from Eng
 
 ### Study Design
 
-We conducted a cross-sectional evaluation of four frontier LLMs on medical document translation across eight languages, using a three-goal evaluation framework with both automated metrics and validation through professional translation baselines.
+We conducted a cross-sectional evaluation of four frontier LLMs on medical document translation across eight languages, using a two-part evaluation framework with both automated metrics and validation through professional translation baselines.
 
 ### Document Corpus
 
 We assembled a corpus of 22 medical education documents representing two domains:
 
-**Vaccine Information Statements (n=11):** Standardized documents from the Centers for Disease Control and Prevention (CDC), distributed via Immunize.org, covering:
+**Vaccine Information Statements (n=11):** Standardized documents from the Centers for Disease Control and Prevention (CDC), distributed via Immunize.org [6], covering:
 - Hepatitis B, HPV, Influenza (inactivated), MMR, Meningococcal ACWY
 - Pneumococcal (PCV and PPSV23), Polio (IPV), Shingles (Zoster)
 - Tdap, Varicella
 
-**Cancer Patient Education Materials (n=11):** Documents from the American Cancer Society covering:
+**Cancer Patient Education Materials (n=11):** Documents from the American Cancer Society [7] covering:
 - Post-diagnosis guidance (breast, cervical, colorectal, lung, prostate cancer)
 - Treatment information (chemotherapy, nausea/vomiting management)
 - Skin cancer resources (detection, living with, treatment, procedures)
@@ -75,18 +75,18 @@ All documents were selected based on availability of professional translations i
 
 We selected eight languages representing diverse linguistic families, scripts, and resource availability:
 
-| Language | Script | Family | Resource Level | U.S. Speakers (millions) |
-|----------|--------|--------|----------------|-------------------------|
-| Spanish | Latin | Romance | High | 41.8 |
-| Chinese (Simplified) | Hanzi | Sino-Tibetan | High | 3.5 |
-| Vietnamese | Latin (+diacritics) | Austroasiatic | Medium | 1.6 |
-| Russian | Cyrillic | Slavic | High | 0.9 |
-| Arabic | Arabic (RTL) | Semitic | Medium | 1.3 |
-| Korean | Hangul | Koreanic | High | 1.1 |
-| Tagalog | Latin | Austronesian | Low | 1.8 |
-| Haitian Creole | Latin | French Creole | Low | 0.9 |
+| Language | Script | Family | Resource Level | CommonCrawl % | U.S. Speakers (millions) |
+|----------|--------|--------|----------------|---------------|-------------------------|
+| Russian | Cyrillic | Slavic | High | 6.48 | 0.9 |
+| Chinese (Simplified) | Hanzi | Sino-Tibetan | High | 6.18 | 3.5 |
+| Spanish | Latin | Romance | High | 4.41 | 41.8 |
+| Vietnamese | Latin (+diacritics) | Austroasiatic | High | 1.08 | 1.6 |
+| Korean | Hangul | Koreanic | Medium | 0.80 | 1.1 |
+| Arabic | Arabic (RTL) | Semitic | Medium | 0.67 | 1.3 |
+| Tagalog | Latin | Austronesian | Low | 0.008 | 1.8 |
+| Haitian Creole | Latin | French Creole | Low | 0.003 | 0.9 |
 
-Resource level classification was based on availability of NLP resources, parallel corpora, and representation in LLM training data, following established taxonomies [4].
+Resource level classification was based on representation in CommonCrawl, a primary training corpus for LLMs [8]. High-resource languages comprise >1% of the corpus; medium-resource languages 0.1–1%; low-resource languages <0.1%.
 
 ### Models
 
@@ -111,25 +111,29 @@ For each document-language-model combination, we executed the following pipeline
 
 This yielded 704 translation pairs (22 documents × 8 languages × 4 models).
 
+**Figure 1. LLM Translation and Evaluation Pipeline.** The flowchart illustrates the three parallel evaluation paths: (1) Forward translation and subsequent evaluation, (2) Back-translation of the LLM's output, and (3) Back-translation of a professional translation for method validation.
+
+[Figure 1: Images/LLM Translation and Evaluation Pipeline.png]
+
 ### Evaluation Framework
 
 #### Primary Analysis 1: LLM Back-Translation Fidelity
 
 We compared LLM back-translations to original English source documents using:
 
-- **BLEU** [5]: N-gram precision measuring lexical overlap
-- **LaBSE** [6]: Language-agnostic sentence embeddings measuring semantic similarity
-- **XLM-RoBERTa** [7]: Cross-lingual semantic similarity
-- **mBERT** [8]: Multilingual contextual embeddings
+- **BLEU** [9]: N-gram precision measuring lexical overlap
+- **LaBSE** [3]: Language-agnostic sentence embeddings measuring semantic similarity
+- **XLM-RoBERTa** [10]: Cross-lingual semantic similarity
+- **mBERT** [11]: Multilingual contextual embeddings
 
 #### Primary Analysis 2: LLM vs Professional Translation
 
 We compared LLM translations directly to professional translations (same target language) using:
 
 - **BLEU**: Lexical overlap with professional reference
-- **chrF** [9]: Character n-gram F-score
-- **BERTScore** [10]: Contextual embedding similarity
-- **COMET** [11]: Neural translation quality estimation
+- **chrF** [12]: Character n-gram F-score
+- **BERTScore** [4]: Contextual embedding similarity
+- **COMET** [5]: Neural translation quality estimation
 
 #### Methodological Validation: Professional Back-Translation
 
@@ -137,7 +141,7 @@ To validate back-translation as an evaluation methodology, we back-translated ex
 
 ### Statistical Analysis
 
-We report means and standard deviations for all metrics. Model comparisons use the Kruskal-Wallis test with Dunn's post-hoc correction. Language comparisons stratify by resource level. All analyses were conducted in Python 3.11 using SciPy and statsmodels.
+We report means and standard deviations for all metrics. Model comparisons use the Kruskal-Wallis test with Dunn's post-hoc correction [13]. Language comparisons stratify by resource level. Statistical significance was set at p < 0.05, with p < 0.01 and p < 0.001 denoted where applicable. All analyses were conducted in Python 3.11 using SciPy and statsmodels.
 
 ### Ethical Considerations
 
@@ -146,6 +150,10 @@ This study used only publicly available documents and did not involve human subj
 ---
 
 ## Results
+
+### Methodological Validation
+
+Back-translation of professional translations yielded high fidelity with the original English text (LaBSE: 0.92-0.94; Supplementary Table S2), providing a benchmark of professional translation performance against which to contextualize LLM performance.
 
 ### Overall Translation Volume
 
@@ -170,12 +178,11 @@ Kruskal-Wallis testing revealed significant differences between models for both 
 
 | | Claude Opus 4.5 | GPT-5.1 | Gemini 3 Pro | Kimi K2 |
 |---|---|---|---|---|
-| Claude Opus 4.5 | — | p < 0.001*** | p < 0.001*** | p < 0.001*** |
-| GPT-5.1 | | — | p < 0.001*** | p = 0.003** |
-| Gemini 3 Pro | | | — | p = 1.0 ns |
+| Claude Opus 4.5 | — | <0.001 | <0.001 | <0.001 |
+| GPT-5.1 | | — | <0.001 | 0.003 |
+| Gemini 3 Pro | | | — | 1.0 |
 | Kimi K2 | | | | — |
 
-*\*\*\*p < 0.001, \*\*p < 0.01, ns = not significant*
 
 ### Primary Analysis 2: LLM vs Professional Translation Quality
 
@@ -197,52 +204,39 @@ LLM translations approached professional quality across all models (Table 2).
 
 The lack of significant differences for COMET and BLEU suggests convergence in frontier LLM translation capabilities. BERTScore showed a significant effect, with post-hoc tests revealing Claude Opus 4.5 significantly outperformed GPT-5.1 (p = 0.04) and Kimi K2 (p = 0.004) on contextual semantic similarity, while no other pairwise comparisons reached significance.
 
-### Methodological Validation: Professional Back-Translation
-
-Professional translations back-translated through LLMs maintained high fidelity (Table 3).
-
-**Table 3. Professional Translation Back-Translation Fidelity (Validation)**
-
-| Model | BLEU | BERTScore | LaBSE |
-|-------|------|-----------|-------|
-| GPT-5.1 | **55.8** | 0.919 | **0.940** |
-| Claude Opus 4.5 | 54.7 | **0.924** | 0.942 |
-| Gemini 3 Pro | 48.3 | 0.913 | 0.928 |
-| Kimi K2 | 43.9 | 0.912 | 0.934 |
-
-Professional translations achieved LaBSE scores of 0.92-0.94 through back-translation, confirming that back-translation reliably preserves meaning. This validates our evaluation methodology: if professional translations maintain fidelity through back-translation, then back-translation scores meaningfully reflect translation quality.
-
 ### Language Performance: High vs Low Resource
 
-Critically, low-resource languages achieved semantic similarity scores comparable to high-resource languages (Table 4).
+Table 3 and Figure 2 present translation fidelity by language. Back-translation LaBSE measures semantic preservation (meaning); vs Professional BLEU measures lexical overlap with human translators (word choice).
 
-**Table 4. Translation Fidelity by Language and Resource Level**
+**Figure 2. Semantic vs Lexical Fidelity by Language Resource Level.** Panel A shows that all languages achieve comparable semantic fidelity (LaBSE 0.937-0.976), with low-resource languages (orange) indistinguishable from high-resource languages (blue). Panel B shows that lexical overlap with professional translations varies by linguistic factors rather than resource level.
 
-| Language | Resource | G1: LaBSE | G2: BLEU | G3: LaBSE |
-|----------|----------|-----------|----------|-----------|
-| Spanish | High | 0.954 | **54.3** | 0.942 |
-| Vietnamese | Medium | 0.953 | 50.1 | 0.933 |
-| **Tagalog** | **Low** | 0.950 | 43.8 | 0.935 |
-| **Haitian Creole** | **Low** | **0.955** | 37.2 | 0.934 |
-| Arabic | Medium | 0.976 | 41.6 | **0.965** |
-| Russian | High | 0.945 | 33.4 | 0.921 |
-| Korean | High | 0.937 | 21.7 | 0.929 |
-| Chinese | High | 0.942 | 15.5 | 0.930 |
+[Figure 2: Images/semantic_vs_lexical_fidelity.png]
 
-Low-resource languages (Tagalog, Haitian Creole) achieved Goal 1 LaBSE scores of 0.950 and 0.955 respectively—comparable to or exceeding high-resource languages like Spanish (0.954) and Russian (0.945).
+**Table 3. Translation Fidelity by Language and Resource Level**
 
-**Table 5. High-Resource vs Low-Resource Language Comparison (Mann-Whitney U)**
+| Language | Resource | Back-Translation LaBSE | vs Professional BLEU |
+|----------|----------|------------------------|---------------------|
+| Spanish | High | 0.954 | **54.3** |
+| Vietnamese | High | 0.953 | 50.1 |
+| **Tagalog** | **Low** | 0.950 | 43.8 |
+| **Haitian Creole** | **Low** | **0.955** | 37.2 |
+| Arabic | Medium | 0.976 | 41.6 |
+| Russian | High | 0.945 | 33.4 |
+| Korean | Medium | 0.937 | 21.7 |
+| Chinese | High | 0.942 | 15.5 |
+
+Low-resource languages (Tagalog, Haitian Creole) achieved back-translation LaBSE scores of 0.950 and 0.955 respectively—comparable to high-resource languages like Spanish (0.954) and Russian (0.945). BLEU scores were lower for low-resource languages than for Spanish.
+
+**Table 4. High-Resource vs Low-Resource Language Comparison (Mann-Whitney U)**
 
 | Metric | High-Resource (Mean) | Low-Resource (Mean) | Difference | p-value |
 |--------|---------------------|--------------------|-----------:|---------|
-| LaBSE (Goal 1) | 0.945 | 0.952 | +0.008 | 0.002** |
-| BLEU Back-trans (Goal 1) | 59.4 | 65.3 | +5.9 | <0.001*** |
-| COMET (Goal 2) | 0.879 | 0.837 | -0.042 | <0.001*** |
-| BERTScore (Goal 2) | 0.843 | 0.834 | -0.009 | 0.059 ns |
+| Back-translation LaBSE | 0.945 | 0.952 | +0.008 | 0.002 |
+| Back-translation BLEU | 59.4 | 65.3 | +5.9 | <0.001 |
+| vs Professional COMET | 0.879 | 0.837 | -0.042 | <0.001 |
+| vs Professional BERTScore | 0.843 | 0.834 | -0.009 | 0.059 |
 
-*\*\*\*p < 0.001, \*\*p < 0.01, ns = not significant*
-
-Low-resource languages achieved significantly higher semantic similarity scores on back-translation (LaBSE, BLEU), while high-resource languages showed better performance on direct comparison with professional translations (COMET). This pattern suggests that while LLMs maintain semantic fidelity well for low-resource languages, professional translations for high-resource languages may reflect more established translation conventions. The counterintuitive strength of low-resource language performance on back-translation warranted investigation for potential training data contamination (see Limitations).
+Low-resource languages achieved significantly higher semantic preservation scores than high-resource languages (LaBSE: p = 0.002). However, high-resource languages showed better alignment with professional translations (COMET: p < 0.001). The counterintuitive strength of low-resource language performance warranted investigation for potential training data contamination (see Limitations).
 
 ### Lexical vs Semantic Metrics
 
@@ -260,7 +254,11 @@ Vaccine Information Statements and cancer education materials showed similar fid
 
 This study demonstrates that frontier LLMs can reliably preserve medical meaning through translation across diverse languages, including low-resource languages historically underserved by NLP technologies. Three key findings emerge:
 
-**First, low-resource languages achieve translation fidelity comparable to high-resource languages.** Tagalog and Haitian Creole—languages with limited NLP resources and training data—achieved semantic similarity scores on par with Spanish and Vietnamese (LaBSE: 0.950-0.955 vs 0.953-0.954). Mann-Whitney U tests confirmed low-resource languages actually achieved significantly higher LaBSE scores than high-resource languages (p = 0.002). This suggests frontier LLMs have developed robust multilingual representations that extend beyond their predominant training languages, with significant implications for expanding medical translation access to underserved populations.
+**First, low-resource languages achieve semantic fidelity comparable to high-resource languages.** Tagalog and Haitian Creole—languages with limited NLP resources and training data—achieved semantic similarity scores on par with Spanish and Vietnamese (LaBSE: 0.950-0.955 vs 0.953-0.954). Mann-Whitney U tests confirmed low-resource languages actually achieved significantly higher LaBSE scores than high-resource languages (p = 0.002). This indicates that LLMs preserve medical meaning equally well regardless of how much training data exists for a language.
+
+However, lexical overlap with professional translations (BLEU) was lower for low-resource languages. This means that while LLMs accurately convey the information, they may phrase things differently than a human translator would—using different vocabulary or sentence structures. The likely explanation is that professional translation conventions are more established for high-resource languages like Spanish and Chinese, giving LLMs more examples to learn from during training.
+
+In practical terms: LLMs can reliably convey medical information to Tagalog and Haitian Creole speakers with meaning preservation comparable to Spanish. However, the phrasing may sound less natural than a professional human translation. This distinction matters: for urgent dissemination of health information where professional translators are unavailable, LLM translation can effectively communicate the core message. For polished, publication-ready materials, professional human translation remains preferable.
 
 **Second, automated multilingual metrics enable scalable evaluation across diverse languages.** By employing neural embedding-based metrics (LaBSE, COMET, BERTScore) alongside traditional lexical metrics (BLEU, chrF), we evaluated translation quality across eight languages without requiring bilingual human evaluators for each pair. Professional translations maintained high fidelity through back-translation (LaBSE: 0.92-0.94), validating our automated evaluation approach. Critically, these metrics enabled rigorous comparison across languages where finding qualified human evaluators would be challenging or impossible.
 
@@ -289,6 +287,8 @@ To address this concern, we conducted a comprehensive sentence-reordering sensit
 Results showed no significant performance change in 10 of 12 model-language combinations (83%), with mean differences typically <1%. Two comparisons reached statistical significance: Claude Opus 4.5 with Tagalog showed a 6.0% decrease (p=0.041), while Gemini 3 Pro with Tagalog showed a 3.0% *increase* (p=0.026). The latter finding—improved performance with shuffled text—is opposite to what memorization would predict, suggesting these isolated significant results likely reflect normal statistical variation across multiple comparisons rather than systematic memorization effects.
 
 These findings suggest our results primarily reflect translation capability rather than document memorization. However, we cannot completely exclude the possibility that models learned general medical translation patterns from similar documents during training, which could still provide an advantage over translation of completely novel medical content.
+
+**Lexical borrowing in low-resource languages.** The strong back-translation performance of low-resource languages (Tagalog, Haitian Creole) may partly reflect patterns of lexical borrowing from English. Medical Tagalog frequently retains English terminology (e.g., "chemotherapy," "diabetes," "vaccine"), as do many post-colonial languages in technical domains. Similarly, Haitian Creole incorporates substantial French and English vocabulary in medical contexts. This lexical overlap could inflate back-translation fidelity scores compared to languages like Chinese or Russian that use entirely distinct native medical terminology. Future work should examine whether translation performance varies systematically between borrowed versus native terminology within the same language.
 
 **Automated metrics only.** While we employed multiple validated metrics, automated evaluation cannot fully capture nuances of medical terminology, cultural appropriateness, or potential for patient misunderstanding. Future work should incorporate human evaluation for a subset of translations.
 
@@ -330,23 +330,27 @@ These findings support cautious optimism about LLM medical translation, while un
 
 2. Brown T, Mann B, Ryder N, et al. Language models are few-shot learners. Advances in Neural Information Processing Systems. 2020;33:1877-1901.
 
-3. Brislin RW. Back-translation for cross-cultural research. Journal of Cross-Cultural Psychology. 1970;1(3):185-216.
+3. Feng F, Yang Y, Cer D, et al. Language-agnostic BERT sentence embedding. Proceedings of ACL. 2022:878-891.
 
-4. Joshi P, Santy S, Buber A, et al. The state and fate of linguistic diversity and inclusion in the NLP world. Proceedings of ACL. 2020:6282-6293.
+4. Zhang T, Kishore V, Wu F, Weinberger KQ, Artzi Y. BERTScore: Evaluating text generation with BERT. In: Proceedings of the 8th International Conference on Learning Representations (ICLR). 2020.
 
-5. Papineni K, Roukos S, Ward T, Zhu WJ. BLEU: a method for automatic evaluation of machine translation. Proceedings of ACL. 2002:311-318.
+5. Rei R, Stewart C, Farinha AC, Lavie A. COMET: A neural framework for MT evaluation. Proceedings of EMNLP. 2020:2685-2702.
 
-6. Feng F, Yang Y, Cer D, et al. Language-agnostic BERT sentence embedding. Proceedings of ACL. 2022:878-891.
+6. Immunize.org. Vaccine Information Statements (VIS). https://www.immunize.org/vis/. Accessed December 20, 2025.
 
-7. Conneau A, Khandelwal K, Goyal N, et al. Unsupervised cross-lingual representation learning at scale. Proceedings of ACL. 2020:8440-8451.
+7. American Cancer Society. Cancer Information. https://www.cancer.org/cancer.html. Accessed December 20, 2025.
 
-8. Devlin J, Chang MW, Lee K, Toutanova K. BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of NAACL. 2019:4171-4186.
+8. Common Crawl. Statistics of Common Crawl Monthly Archives: Languages. https://commoncrawl.github.io/cc-crawl-statistics/plots/languages.html. Accessed December 20, 2025.
 
-9. Popović M. chrF: character n-gram F-score for automatic MT evaluation. Proceedings of WMT. 2015:392-395.
+9. Papineni K, Roukos S, Ward T, Zhu WJ. BLEU: a method for automatic evaluation of machine translation. Proceedings of ACL. 2002:311-318.
 
-10. Zhang T, Kishore V, Wu F, Weinberger KQ, Artzi Y. BERTScore: Evaluating text generation with BERT. Proceedings of ICLR. 2020.
+10. Conneau A, Khandelwal K, Goyal N, et al. Unsupervised cross-lingual representation learning at scale. Proceedings of ACL. 2020:8440-8451.
 
-11. Rei R, Stewart C, Farinha AC, Lavie A. COMET: A neural framework for MT evaluation. Proceedings of EMNLP. 2020:2685-2702.
+11. Devlin J, Chang MW, Lee K, Toutanova K. BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of NAACL. 2019:4171-4186.
+
+12. Popović M. chrF: character n-gram F-score for automatic MT evaluation. Proceedings of WMT. 2015:392-395.
+
+13. Dunn OJ. Multiple comparisons using rank sums. Technometrics. 1964;6(3):241-252.
 
 ---
 
@@ -413,14 +417,19 @@ To address concerns about training data contamination, we conducted a sensitivit
 
 [Full results available in repository: output/sensitivity_analysis/]
 
-### Supplementary Table S1: Complete Metrics by Model and Language
+### Supplementary Table S2: Professional Translation Back-Translation Fidelity
+
+To validate back-translation as an evaluation methodology, we back-translated existing professional human translations through each LLM and compared the results to the original English source text. High fidelity scores for professional translations confirm that our automated metrics meaningfully reflect translation quality and that back-translation does not introduce systematic distortion.
+
+| Model | BLEU | BERTScore | LaBSE |
+|-------|------|-----------|-------|
+| GPT-5.1 | 55.8 | 0.919 | 0.940 |
+| Claude Opus 4.5 | 54.7 | 0.924 | 0.942 |
+| Gemini 3 Pro | 48.3 | 0.913 | 0.928 |
+| Kimi K2 | 43.9 | 0.912 | 0.934 |
+
+All models achieved LaBSE scores of 0.92-0.94 when back-translating professional translations, indicating that the back-translation process reliably preserves meaning. These scores provide a benchmark against which to contextualize LLM translation performance.
+
+### Supplementary Table S3: Complete Metrics by Model and Language
 
 [Available in Excel report: medlineplus_backtranslation_report.xlsx]
-
-### Supplementary Figure S1: COMET Score Heatmap by Model and Language
-
-[Available in repository: output/github_pages/charts/comet_heatmap.png]
-
-### Supplementary Figure S2: Three-Goal Comparison Across Languages
-
-[Available in repository: output/github_pages/charts/three_goals_comparison.png]

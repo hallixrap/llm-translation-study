@@ -22,7 +22,7 @@ from datetime import datetime
 # PATHS
 # =============================================================================
 
-BASE_DIR = Path("/Users/chukanya/Documents/Coding/Back translation project")
+BASE_DIR = Path("/Users/chukanya/Library/Mobile Documents/com~apple~CloudDocs/Coding/Back translation project")
 METRICS_DIR = BASE_DIR / "output" / "medlineplus_metrics"
 OUTPUT_DIR = BASE_DIR / "output" / "github_pages"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -412,26 +412,26 @@ def generate_charts(df, summary):
     plt.savefig(charts_dir / 'category_comparison.png', dpi=150, bbox_inches='tight')
     plt.close()
 
-    # Chart 6: Three Goals Comparison
+    # Chart 6: Translation Fidelity Comparison
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 
-    # Goal 1: LLM Meaning Preservation
+    # Analysis 1: Back-Translation Fidelity
     ax = axes[0]
     g1_scores = [summary['by_model'][m].get('backtrans_bleu', 0) for m in MODEL_NAMES.keys()]
     colors = ['#2ecc71', '#3498db', '#e74c3c', '#9b59b6']
     bars = ax.bar(MODEL_NAMES.values(), g1_scores, color=colors, edgecolor='black')
-    ax.set_title('Goal 1: LLM Meaning Preservation\n(Back-translation BLEU)', fontsize=11, fontweight='bold')
+    ax.set_title('Back-Translation Fidelity\n(BLEU Score)', fontsize=11, fontweight='bold')
     ax.set_ylabel('BLEU Score')
     ax.tick_params(axis='x', rotation=15)
     for bar, score in zip(bars, g1_scores):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5, f'{score:.1f}',
                ha='center', va='bottom', fontsize=10)
 
-    # Goal 2: Professional Alignment
+    # Analysis 2: Professional Translation Alignment
     ax = axes[1]
     g2_scores = [summary['by_model'][m].get('same_lang_comet', 0) for m in MODEL_NAMES.keys()]
     bars = ax.bar(MODEL_NAMES.values(), g2_scores, color=colors, edgecolor='black')
-    ax.set_title('Goal 2: Professional Alignment\n(COMET Score)', fontsize=11, fontweight='bold')
+    ax.set_title('Professional Alignment\n(COMET Score)', fontsize=11, fontweight='bold')
     ax.set_ylabel('COMET Score')
     ax.tick_params(axis='x', rotation=15)
     ax.set_ylim(0.8, 0.9)
@@ -439,11 +439,11 @@ def generate_charts(df, summary):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.002, f'{score:.3f}',
                ha='center', va='bottom', fontsize=10)
 
-    # Goal 3: Professional Baseline
+    # Validation: Professional Back-Translation Baseline
     ax = axes[2]
     g3_scores = [summary['by_model'][m].get('prof_backtrans_bleu', 0) for m in MODEL_NAMES.keys()]
     bars = ax.bar(MODEL_NAMES.values(), g3_scores, color=colors, edgecolor='black')
-    ax.set_title('Goal 3: Professional Baseline\n(Prof Back-trans BLEU)', fontsize=11, fontweight='bold')
+    ax.set_title('Validation: Professional Baseline\n(Back-trans BLEU)', fontsize=11, fontweight='bold')
     ax.set_ylabel('BLEU Score')
     ax.tick_params(axis='x', rotation=15)
     for bar, score in zip(bars, g3_scores):
@@ -451,10 +451,10 @@ def generate_charts(df, summary):
                ha='center', va='bottom', fontsize=10)
 
     plt.tight_layout()
-    plt.savefig(charts_dir / 'three_goals_comparison.png', dpi=150, bbox_inches='tight')
+    plt.savefig(charts_dir / 'translation_fidelity_comparison.png', dpi=150, bbox_inches='tight')
     plt.close()
 
-    # Chart 7: Goal 1 vs Goal 3 (LLM vs Professional stability)
+    # Chart 7: LLM vs Professional Back-Translation Stability
     fig, ax = plt.subplots(figsize=(12, 6))
 
     x = np.arange(len(MODEL_NAMES))
@@ -463,8 +463,8 @@ def generate_charts(df, summary):
     g1_bleu = [summary['by_model'][m].get('backtrans_bleu', 0) for m in MODEL_NAMES.keys()]
     g3_bleu = [summary['by_model'][m].get('prof_backtrans_bleu', 0) for m in MODEL_NAMES.keys()]
 
-    bars1 = ax.bar(x - width/2, g1_bleu, width, label='Goal 1: LLM Back-trans', color='#3498db', edgecolor='black')
-    bars2 = ax.bar(x + width/2, g3_bleu, width, label='Goal 3: Prof Back-trans', color='#9b59b6', edgecolor='black')
+    bars1 = ax.bar(x - width/2, g1_bleu, width, label='LLM Back-translation', color='#3498db', edgecolor='black')
+    bars2 = ax.bar(x + width/2, g3_bleu, width, label='Professional Back-translation', color='#9b59b6', edgecolor='black')
 
     ax.set_xlabel('Model')
     ax.set_ylabel('BLEU Score')

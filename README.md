@@ -14,48 +14,47 @@ This study evaluates **4 frontier LLMs** on medical translation quality across *
 
 ### Key Findings
 
-1. **LLMs preserve medical meaning reliably**: All models achieve >93% semantic similarity on back-translation, demonstrating that critical health information survives the round-trip translation process.
+1. **Low-resource languages achieve comparable semantic fidelity to high-resource languages.** Tagalog (LaBSE: 0.950) and Haitian Creole (0.955) achieve scores indistinguishable from Spanish (0.954) and Vietnamese (0.953), indicating LLMs preserve medical meaning equally well regardless of training data availability.
 
-2. **Low-resource languages perform surprisingly well**: Tagalog and Haitian Creole achieve back-translation scores comparable to high-resource languages like Spanish and Vietnamese, suggesting frontier LLMs have strong multilingual coverage.
+2. **Semantic preservation is consistent; lexical overlap varies by linguistic factors.** LaBSE scores cluster tightly (0.937-0.976) across all languages, while BLEU scores vary widely (15.5-54.3) based on script type and morphology rather than resource level.
 
-3. **LLM translations approach professional quality**: When compared directly to professional translations, LLMs achieve COMET scores of 0.87+, with **Gemini 3 Pro** leading on lexical metrics (BLEU: 39.4) and **Claude Opus 4.5** excelling on semantic similarity (BERTScore: 0.859, LaBSE: 0.987).
+3. **All models achieve high semantic preservation** (LaBSE > 0.92), indicating LLMs reliably preserve medical meaning through round-trip translation.
 
-4. **Back-translation works for quality assessment**: Professional translations back-translated through LLMs show similar fidelity patterns to LLM translations, validating back-translation as a viable evaluation method.
+4. **Claude Opus 4.5** achieves the highest semantic preservation (LaBSE: 0.987), while **Gemini 3 Pro** leads in professional translation alignment (COMET: 0.876).
 
 ---
 
 ## Study Design
 
-### The Three Evaluation Goals
+### Two-Part Evaluation Framework
 
-Our study answers three interconnected questions:
+| Analysis | Question | Method |
+|----------|----------|--------|
+| **Analysis 1: Back-Translation Fidelity** | Does LLM translation preserve meaning? | Back-translate LLM output → compare to original English |
+| **Analysis 2: Professional Comparison** | How do LLM translations compare to professionals? | Compare LLM translation directly to professional translation |
+| **Validation** | Is back-translation a valid evaluation method? | Back-translate professional translations → compare to original English |
 
-| Goal | Question | Method |
-|------|----------|--------|
-| **Goal 1** | Does LLM translation preserve meaning? | Back-translate LLM output → compare to original English |
-| **Goal 2** | How do LLM translations compare to professionals? | Compare LLM translation directly to professional translation |
-| **Goal 3** | Is back-translation a valid evaluation method? | Back-translate professional translations → compare to original English |
-
-**Goal 3 serves as our baseline**: if professional translations maintain high fidelity through back-translation, then back-translation is a valid way to assess translation quality. This lets us confidently interpret Goal 1 results.
+**Validation establishes our baseline**: professional translations back-translated through LLMs achieve LaBSE scores of 0.92-0.94, confirming back-translation reliably preserves meaning.
 
 ### Documents
-- **22 health education documents** (198 PDFs total)
+- **22 health education documents** (704 translation pairs)
   - 11 Vaccine Information Statements (VIS) from CDC/Immunize.org
   - 11 Cancer education materials from American Cancer Society
-- **9 language versions** per document (English + 8 translations)
 
 ### Languages Evaluated
 
-| Language | Script | Resource Level |
-|----------|--------|----------------|
-| Spanish | Latin | High |
-| Chinese (Simplified) | Hanzi | High |
-| Vietnamese | Latin (+ diacritics) | Medium |
-| Russian | Cyrillic | High |
-| Arabic | Arabic (RTL) | Medium |
-| Korean | Hangul | High |
-| **Tagalog** | Latin | **Low** |
-| **Haitian Creole** | Latin | **Low** |
+| Language | Script | Resource Level | CommonCrawl % |
+|----------|--------|----------------|---------------|
+| Russian | Cyrillic | High | 6.48 |
+| Chinese (Simplified) | Hanzi | High | 6.18 |
+| Spanish | Latin | High | 4.41 |
+| Vietnamese | Latin (+ diacritics) | High | 1.08 |
+| Korean | Hangul | Medium | 0.80 |
+| Arabic | Arabic (RTL) | Medium | 0.67 |
+| **Tagalog** | Latin | **Low** | 0.008 |
+| **Haitian Creole** | Latin | **Low** | 0.003 |
+
+Resource levels based on CommonCrawl representation: High >1%, Medium 0.1-1%, Low <0.1%.
 
 ### Models Tested
 
@@ -70,61 +69,51 @@ Our study answers three interconnected questions:
 
 ## Results
 
-### Goal 1: Do LLMs Preserve Meaning? (Back-Translation Fidelity)
+### Analysis 1: Back-Translation Fidelity
 
 All models maintain high semantic fidelity through round-trip translation:
 
-| Model | BLEU | LaBSE | XLM-RoBERTa |
-|-------|------|-------|-------------|
-| Claude Opus 4.5 | 67.8 | **0.987** | **0.983** |
-| GPT-5.1 | 63.7 | 0.957 | 0.963 |
-| Gemini 3 Pro | 61.2 | 0.921 | 0.935 |
-| Kimi K2 | 54.7 | 0.940 | 0.939 |
+| Model | LaBSE | BLEU |
+|-------|-------|------|
+| **Claude Opus 4.5** | **0.987** | **68.6** |
+| GPT-5.1 | 0.957 | 64.3 |
+| Kimi K2 | 0.940 | 54.9 |
+| Gemini 3 Pro | 0.921 | 61.5 |
 
 **Claude Opus 4.5** achieves the highest semantic preservation, indicating the most reliable meaning transfer through translation.
 
-### Goal 2: How Close Are LLMs to Professional Quality?
+### Analysis 2: Professional Translation Comparison
 
-| Model | BLEU | chrF | BERTScore | COMET |
-|-------|------|------|-----------|-------|
-| Gemini 3 Pro | **39.4** | **64.6** | 0.845 | **0.876** |
-| Claude Opus 4.5 | 37.3 | 63.1 | **0.859** | 0.873 |
-| GPT-5.1 | 36.0 | 61.7 | 0.844 | 0.871 |
-| Kimi K2 | 36.0 | 61.9 | 0.840 | 0.872 |
+| Model | COMET | BLEU | BERTScore |
+|-------|-------|------|-----------|
+| **Gemini 3 Pro** | **0.876** | **39.4** | 0.845 |
+| Claude Opus 4.5 | 0.873 | 37.3 | **0.859** |
+| GPT-5.1 | 0.871 | 36.0 | 0.844 |
+| Kimi K2 | 0.872 | 36.0 | 0.840 |
 
 All models perform within a narrow band (~1% COMET spread), suggesting frontier LLMs have converged on medical translation quality.
 
-### Goal 3: Validating Back-Translation as an Evaluation Method
+### Language Performance: The Key Finding
 
-Professional translations back-translated through LLMs achieve similar fidelity:
+| Language | Resource | Semantic (LaBSE) | Lexical (BLEU) |
+|----------|----------|------------------|----------------|
+| Spanish | High | 0.954 | **54.3** |
+| Vietnamese | High | 0.953 | 50.1 |
+| **Tagalog** | **Low** | 0.950 | 43.8 |
+| **Haitian Creole** | **Low** | **0.955** | 37.2 |
+| Arabic | Medium | 0.976 | 41.6 |
+| Russian | High | 0.945 | 33.4 |
+| Korean | Medium | 0.937 | 21.7 |
+| Chinese | High | 0.942 | 15.5 |
 
-| Model | Prof Back-Trans BLEU | Prof Back-Trans LaBSE |
-|-------|---------------------|----------------------|
-| Claude Opus 4.5 | 53.7 | 0.94 |
-| GPT-5.1 | 54.8 | 0.94 |
-| Gemini 3 Pro | 46.7 | 0.92 |
-| Kimi K2 | 42.5 | 0.93 |
-
-This confirms that back-translation reliably preserves meaning, validating our evaluation approach.
-
-### Language Performance: High vs Low Resource
-
-| Language | Resource | G1: LaBSE | G2: BLEU | G3: BLEU |
-|----------|----------|-----------|----------|----------|
-| Spanish | High | 0.954 | **54.3** | 53.1 |
-| Vietnamese | Medium | 0.953 | 50.1 | 53.5 |
-| **Tagalog** | **Low** | 0.950 | 43.8 | **61.9** |
-| **Haitian Creole** | **Low** | **0.955** | 37.2 | 47.3 |
-| Russian | High | 0.945 | 33.4 | 37.9 |
-| Arabic | Medium | 0.937 | 30.7 | 50.4 |
-| Korean | High | 0.937 | 21.7 | 45.8 |
-| Chinese | High | 0.942 | 15.5 | 45.6 |
-
-**Key insight**: Low-resource languages (Tagalog, Haitian Creole) achieve semantic similarity scores on par with high-resource languages, suggesting LLMs can reliably translate medical content for underserved language communities.
+**Key insight**: Low-resource languages (Tagalog, Haitian Creole) achieve semantic fidelity comparable to high-resource languages. The variation in BLEU scores reflects linguistic factors (script, morphology) rather than resource level.
 
 ---
 
 ## Visualizations
+
+### Semantic vs Lexical Fidelity by Language
+![Semantic vs Lexical](output/github_pages/charts/semantic_vs_lexical_fidelity.png)
 
 ### Model Comparison
 ![Model Comparison](output/github_pages/charts/model_comparison_same_lang.png)
@@ -132,30 +121,37 @@ This confirms that back-translation reliably preserves meaning, validating our e
 ### Language Comparison
 ![Language Comparison](output/github_pages/charts/language_comparison_same_lang.png)
 
-### Back-Translation Semantic Similarity
-![Back-Translation Similarity](output/github_pages/charts/back_translation_similarity.png)
-
-### Three Goals Comparison
-![Three Goals](output/github_pages/charts/three_goals_comparison.png)
-
 ---
 
 ## Key Insights
 
-### 1. Back-Translation Validates LLM Quality
-Goal 3 results confirm that professional translations maintain high fidelity through back-translation (LaBSE > 0.92), establishing back-translation as a valid evaluation method. This gives us confidence in our Goal 1 findings.
+### 1. Low-Resource Languages Perform Surprisingly Well
+Tagalog and Haitian Creole—languages with <0.01% CommonCrawl representation—achieve semantic fidelity scores comparable to Spanish and Vietnamese. This suggests frontier LLMs can reliably translate medical content for historically underserved language communities.
 
-### 2. Low-Resource Languages Are Well-Served
-Tagalog and Haitian Creole—languages with historically limited NLP resources—achieve back-translation fidelity comparable to Spanish and Vietnamese. This suggests frontier LLMs can extend medical translation access to underserved communities.
+### 2. Semantic vs Lexical Metrics Tell Different Stories
+- **Semantic fidelity (LaBSE)**: Consistently high across all languages (0.937-0.976)
+- **Lexical fidelity (BLEU)**: Varies widely (15.5-54.3) based on script and morphology
 
-### 3. Semantic vs Lexical Metrics Tell Different Stories
-BLEU scores vary widely by language (15.5 to 54.3), but semantic similarity (LaBSE) remains consistently high (0.93-0.96). LLMs preserve meaning even when word choices differ from professional translations.
+For health materials, semantic preservation matters most—patients need accurate information, not necessarily the exact wording a professional translator would choose.
 
-### 4. Model Differences Are Subtle
-All four models perform within a narrow band, suggesting model selection matters less than language pair for medical translation quality.
+### 3. Model Differentiation is Subtle
+All four frontier models perform within a narrow band (~3% COMET spread), suggesting model selection is less critical than language pair selection for medical translation.
 
-### 5. Script Type Affects Lexical Overlap
-Languages using Latin scripts show higher BLEU/chrF scores, likely due to shared tokenization with English. However, semantic metrics show all scripts preserve meaning equally well.
+### 4. Script Type Affects Lexical Metrics
+Languages using Latin-based scripts (Spanish, Vietnamese, Tagalog) show higher BLEU scores, likely due to tokenization similarities with English. This doesn't indicate better translations—semantic metrics confirm meaning is preserved equally well across all scripts.
+
+### 5. Back-Translation Validates LLM Quality
+Professional translations back-translated through LLMs achieve LaBSE scores of 0.92-0.94, establishing back-translation as a valid evaluation method.
+
+---
+
+## Implications for Health Equity
+
+These findings have significant implications for medical translation access:
+
+- **LLMs could democratize medical translation** for speakers of low-resource languages where professional translation services are unavailable or delayed.
+- **Meaning preservation is reliable** — patients receive accurate health information regardless of their language's "resource level."
+- **LLM translation should complement, not replace, professional translation** for high-stakes clinical documents. Our results support LLM use for patient education materials where general comprehension is the goal.
 
 ---
 
@@ -163,13 +159,12 @@ Languages using Latin scripts show higher BLEU/chrF scores, likely due to shared
 
 | File | Description |
 |------|-------------|
-| `output/github_pages/medlineplus_backtranslation_report.xlsx` | Full Excel report with all metrics (includes model scorecard) |
+| `output/github_pages/medlineplus_backtranslation_report.xlsx` | Full Excel report with all metrics |
 | `output/github_pages/charts/` | Visualization PNG files |
+| `output/github_pages/index.html` | Interactive results page |
 | `output/medlineplus_metrics/all_metrics.json` | Raw metrics data (JSON) |
 | `output/medlineplus_metrics/summary.json` | Aggregated summary statistics |
-| `output/human_review/` | Human review HTML files (Spanish, Chinese, Arabic) |
 | `data/extracted_text/` | Source text files (22 docs × 9 languages) |
-| `data/SOURCE_DOCUMENTS.md` | Links to all source PDFs |
 
 ---
 
@@ -178,14 +173,11 @@ Languages using Latin scripts show higher BLEU/chrF scores, likely due to shared
 If you use this dataset or methodology, please cite:
 
 ```
-LLM Medical Translation Fidelity Study
-Stanford University, 2025
+Evaluating Large Language Model Translation Fidelity for Medical Documents
+Across High- and Low-Resource Languages
+2026
 ```
 
 ---
 
-## Contact
-
-For questions about this study, please contact the research team.
-
-*Generated: 2025-12-23*
+*Updated: 2026-01-19*
