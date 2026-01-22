@@ -1,0 +1,744 @@
+{
+  "summary": {
+    "mean_original_vs_shuffled_labse": 0.8128778040409088,
+    "std": 0.049827269156023056,
+    "min": 0.7322291731834412,
+    "max": 0.8757675886154175,
+    "n_documents": 10,
+    "interpretation": "Sentence shuffling reduces LaBSE similarity to 0.813. If models memorized originals, shuffled back-translations should score around 0.813. Both conditions scoring ~0.95 suggests models translate content rather than recall memorized text."
+  },
+  "by_document": {
+    "immunize/polio_ipv": 0.8002029657363892,
+    "immunize/varicella": 0.778542697429657,
+    "immunize/zoster_recombinant": 0.7322291731834412,
+    "immunize/meningococcal_acwy": 0.7733154296875,
+    "immunize/hpv": 0.8757675886154175,
+    "cancer/after-a-breast-cancer-diagnosis": 0.7587034702301025,
+    "cancer/skin-cancer-treatments": 0.8743874430656433,
+    "cancer/checking-your-skin": 0.8433949947357178,
+    "cancer/skin-cancer-tests-and-procedures": 0.8744385838508606,
+    "cancer/after-a-colorectal-cancer-diagnosis": 0.8177956938743591
+  },
+  "all_comparisons": [
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/polio_ipv",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8002029657363892
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/varicella",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.778542697429657
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/zoster_recombinant",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7322291731834412
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/meningococcal_acwy",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7733154296875
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "immunize/hpv",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8757675886154175
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/after-a-breast-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.7587034702301025
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/checking-your-skin",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8433949947357178
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/skin-cancer-tests-and-procedures",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8744385838508606
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gpt-5.1",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/after-a-colorectal-cancer-diagnosis",
+      "model": "kimi-k2",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8177956938743591
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "claude-opus-4.5",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "claude-opus-4.5",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "claude-opus-4.5",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gemini-3-pro",
+      "language": "spanish",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gemini-3-pro",
+      "language": "chinese_simplified",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    },
+    {
+      "doc_id": "cancer/skin-cancer-treatments",
+      "model": "gemini-3-pro",
+      "language": "tagalog",
+      "original_vs_shuffled_labse": 0.8743874430656433
+    }
+  ]
+}

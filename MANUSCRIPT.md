@@ -413,6 +413,26 @@ To address concerns about training data contamination, we conducted a sensitivit
 - **1/12**: Claude Opus 4.5 + Tagalog showed 6% decrease (p=0.041), potentially consistent with some memorization
 - **1/12**: Gemini 3 Pro + Tagalog showed 3% *increase* (p=0.026), inconsistent with memorization
 
+**Metric Sensitivity Validation (Negative Control):** To confirm that LaBSE is sensitive to sentence reordering, we directly compared original documents to their shuffled versions without any translation. This establishes the expected similarity score if a model were to memorize and reproduce the original document structure when given shuffled input.
+
+**Table S1.2: Direct Original vs Shuffled Document Similarity (No Translation)**
+
+| Document | LaBSE (Original vs Shuffled) |
+|----------|------------------------------|
+| immunize/polio_ipv | 0.800 |
+| immunize/varicella | 0.779 |
+| immunize/zoster_recombinant | 0.732 |
+| immunize/meningococcal_acwy | 0.773 |
+| immunize/hpv | 0.876 |
+| cancer/after-a-breast-cancer-diagnosis | 0.759 |
+| cancer/skin-cancer-treatments | 0.874 |
+| cancer/checking-your-skin | 0.843 |
+| cancer/skin-cancer-tests-and-procedures | 0.874 |
+| cancer/after-a-colorectal-cancer-diagnosis | 0.818 |
+| **Mean ± SD** | **0.813 ± 0.050** |
+
+Sentence shuffling reduces LaBSE similarity from 1.0 to 0.81 on average (range: 0.73–0.88), representing a 19% decrease. This confirms that LaBSE is sensitive to structural changes in document organization. Critically, back-translations from both original and shuffled conditions achieved scores of ~0.95—well above the 0.81 baseline. If models had memorized original documents and "unscrambled" shuffled input during translation, we would expect shuffled back-translations to score around 0.81 (matching the shuffled structure) rather than 0.95. The equivalent high scores for both conditions indicate that models preserve semantic content through translation rather than recalling memorized text structures.
+
 **Conclusion:** The predominant finding across 240 translations is that sentence reordering does not significantly affect translation quality, providing evidence against widespread document memorization. The isolated significant results (2/12 comparisons) likely reflect normal statistical variation given multiple comparisons, particularly since one showed improvement rather than the degradation expected from memorization. These findings support the validity of our main results.
 
 [Full results available in repository: output/sensitivity_analysis/]
