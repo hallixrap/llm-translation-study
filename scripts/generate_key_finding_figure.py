@@ -99,14 +99,13 @@ def create_figure(lang_data):
     ax.set_title('A. Semantic Fidelity\n(meaning preservation)', fontsize=12, fontweight='bold')
     ax.set_xticks(range(len(sorted_langs)))
     ax.set_xticklabels(lang_names, rotation=45, ha='right', fontsize=9)
-    ax.set_ylim(0.85, 1.0)  # Narrow range to show actual variation
+    ax.set_ylim(0.5, 1.05)  # Start at 0.5, extend to 1.05 to give room for labels
     ax.axhline(y=0.95, color='gray', linestyle='--', alpha=0.5, linewidth=1)
-    ax.text(7.5, 0.952, 'High fidelity threshold', fontsize=8, color='gray', ha='right')
 
-    # Add value labels
+    # Add value labels inside the bars to avoid cutoff
     for i, (bar, val) in enumerate(zip(bars, labse_vals)):
-        ax.text(bar.get_x() + bar.get_width()/2, val + 0.008, f'{val:.3f}',
-                ha='center', va='bottom', fontsize=8)
+        ax.text(bar.get_x() + bar.get_width()/2, val - 0.02, f'{val:.3f}',
+                ha='center', va='top', fontsize=8, fontweight='bold', color='white')
 
     # Panel B: Lexical Fidelity (BLEU vs Professional)
     ax = axes[1]
@@ -129,15 +128,17 @@ def create_figure(lang_data):
         ax.text(bar.get_x() + bar.get_width()/2, val + 1.5, f'{val:.1f}',
                 ha='center', va='bottom', fontsize=8)
 
-    # Add legend
+    # Add legend with high fidelity threshold note
     from matplotlib.patches import Patch
+    from matplotlib.lines import Line2D
     legend_elements = [
         Patch(facecolor=colors["High"], edgecolor='black', label='High-resource (>1% CommonCrawl)'),
         Patch(facecolor=colors["Medium"], edgecolor='black', label='Medium-resource (0.1-1%)'),
         Patch(facecolor=colors["Low"], edgecolor='black', label='Low-resource (<0.1%)'),
+        Line2D([0], [0], color='gray', linestyle='--', alpha=0.5, label='High fidelity threshold (0.95)'),
     ]
-    fig.legend(handles=legend_elements, loc='upper center', ncol=3,
-               bbox_to_anchor=(0.5, 0.02), frameon=True, fontsize=9)
+    fig.legend(handles=legend_elements, loc='upper center', ncol=4,
+               bbox_to_anchor=(0.5, 0.02), frameon=True, fontsize=8)
 
     plt.tight_layout()
     plt.subplots_adjust(bottom=0.25)
