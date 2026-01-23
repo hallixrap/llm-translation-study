@@ -90,7 +90,7 @@ LANGUAGES = {
         "code": "vi",
         "name": "Vietnamese",
         "script": "Latin (diacritics)",
-        "resource_level": "medium",
+        "resource_level": "high",  # 1.08% CommonCrawl (>1% threshold)
     },
     "russian": {
         "code": "ru",
@@ -108,7 +108,7 @@ LANGUAGES = {
         "code": "ko",
         "name": "Korean",
         "script": "Non-Latin",
-        "resource_level": "high",
+        "resource_level": "medium",  # 0.80% CommonCrawl (0.1-1% threshold)
     },
     "tagalog": {
         "code": "tl",

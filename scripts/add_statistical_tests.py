@@ -19,7 +19,7 @@ from scipy import stats
 from scipy.stats import kruskal, mannwhitneyu
 import scikit_posthocs as sp
 
-BASE_DIR = Path("/Users/chukanya/Documents/Coding/Back translation project")
+BASE_DIR = Path(__file__).parent.parent
 METRICS_FILE = BASE_DIR / "output" / "medlineplus_metrics" / "all_metrics.json"
 OUTPUT_DIR = BASE_DIR / "output" / "statistical_tests"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -29,10 +29,10 @@ MODELS = ["gpt-5.1", "claude-opus-4.5", "gemini-3-pro", "kimi-k2"]
 LANGUAGES = {
     "spanish": "high",
     "chinese_simplified": "high",
-    "vietnamese": "medium",
+    "vietnamese": "high",     # 1.08% CommonCrawl (>1% threshold)
     "russian": "high",
     "arabic": "medium",
-    "korean": "high",
+    "korean": "medium",       # 0.80% CommonCrawl (0.1-1% threshold)
     "tagalog": "low",
     "haitian_creole": "low"
 }
