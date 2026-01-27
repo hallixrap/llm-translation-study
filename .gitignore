@@ -52,7 +52,6 @@ data/pdfs/
 # Internal working documents (not for public repo)
 HANDOFF_TO_NEW_INSTANCE.md
 SENSITIVITY_ANALYSIS_README.md
-manuscript_edits/
 translation_project_group_transcript_0108.txt
 scripts/SENSITIVITY_ANALYSIS_GUIDE.md
 scripts/config_original.py
