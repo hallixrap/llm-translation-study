@@ -41,11 +41,11 @@ Federal law recognizes these disparities. Section 1557 of the Affordable Care Ac
 
 Large language models have demonstrated remarkable capabilities in translation.11 Given their ready accessibility, these technologies could address critical gaps in medical information availability. However, medical translation presents unique challenges: terminology must be precise, instructions unambiguous, and errors can have serious consequences.12 Early evaluations suggest LLM translation quality varies by language: a recent study found ChatGPT and Google Translate performed comparably to professional translation for Spanish and Portuguese discharge instructions but had significantly more clinically significant errors for Haitian Creole.13 The reliability of LLMs across languages, particularly low-resource languages with limited training data, requires systematic evaluation.
 
-Evaluating this technology is an ongoing need given its rapid evolution. Physicians and patients require timely data on translation performance to inform patient education strategies. Such evaluations must assess performance across diverse languages, including those that have historically been underserved by both professional translation services and natural language processing research.
+Evaluating this technology is an ongoing need given its rapid evolution. Recent survey data show that 57% of U.S. physicians are already using or planning to adopt AI translation services within the next year—a faster adoption rate than any other AI use case surveyed.14 This creates urgency: clinicians are deploying tools with variable performance across languages, yet lack systematic data to guide their use. Physicians and patients require timely data on translation performance to inform patient education strategies. Such evaluations must assess performance across diverse languages, including those that have historically been underserved by both professional translation services and natural language processing research.
 
-Traditional translation evaluation requires a bilingual human expert for each language pair, thereby limiting scalability. Recent advances in multilingual natural language processing (NLP) have produced automated metrics (including LaBSE, COMET, and BERTScore) that capture semantic similarity across languages.14-16 These metrics enable evaluation without requiring human evaluators for each language pair, making them particularly valuable for assessing low-resource languages where expert evaluators are scarce.
+Traditional translation evaluation requires a bilingual human expert for each language pair, thereby limiting scalability. Recent advances in multilingual natural language processing (NLP) have produced automated metrics (including LaBSE, COMET, and BERTScore) that capture semantic similarity across languages.15-17 These metrics enable evaluation without requiring human evaluators for each language pair, making them particularly valuable for assessing low-resource languages where expert evaluators are scarce.
 
-This study reports a systematic assessment of LLM translation performance using automated multilingual metrics across eight languages. We focus on English-to-target translation, reflecting clinical scenarios where English-language materials must be made accessible to non-English-speaking patients. We employed back-translation validation (translating text to the target language and back to confirm meaning preservation), a methodology aligned with established cross-cultural adaptation frameworks.17,18
+This study reports a systematic assessment of LLM translation performance using automated multilingual metrics across eight languages. We focus on English-to-target translation, reflecting clinical scenarios where English-language materials must be made accessible to non-English-speaking patients. We employed back-translation validation (translating text to the target language and back to confirm meaning preservation), a methodology aligned with established cross-cultural adaptation frameworks.18,19
 
 ---
 
@@ -69,15 +69,15 @@ We conducted a cross-sectional evaluation of four frontier LLMs for medical docu
 
 We assembled 22 medical education documents from two domains:
 
-**Vaccine Information Statements (n=11):** CDC documents distributed via Immunize.org covering Hepatitis B, HPV, Influenza, MMR, Meningococcal ACWY, Pneumococcal vaccines, Polio, Shingles, Tdap, and Varicella.19
+**Vaccine Information Statements (n=11):** CDC documents distributed via Immunize.org covering Hepatitis B, HPV, Influenza, MMR, Meningococcal ACWY, Pneumococcal vaccines, Polio, Shingles, Tdap, and Varicella.20
 
-**Cancer Education Materials (n=11):** American Cancer Society documents covering post-diagnosis guidance (breast, cervical, colorectal, lung, prostate cancer), treatment side effects, and skin cancer resources.20
+**Cancer Education Materials (n=11):** American Cancer Society documents covering post-diagnosis guidance (breast, cervical, colorectal, lung, prostate cancer), treatment side effects, and skin cancer resources.21
 
 Documents were selected based on the availability of professional translations in all eight target languages.
 
 ### Language Classification
 
-Languages were classified by CommonCrawl representation, a primary LLM training corpus:21,22 high-resource (>1%: Spanish, Chinese, Russian, Vietnamese), medium-resource (0.1-1%: Korean, Arabic), and low-resource (<0.1%: Tagalog, Haitian Creole). See Supplementary Table S1 for detailed classification criteria including CommonCrawl percentages and U.S. speaker populations.
+Languages were classified by CommonCrawl representation, a primary LLM training corpus:22,23 high-resource (>1%: Spanish, Chinese, Russian, Vietnamese), medium-resource (0.1-1%: Korean, Arabic), and low-resource (<0.1%: Tagalog, Haitian Creole). See Supplementary Table S1 for detailed classification criteria including CommonCrawl percentages and U.S. speaker populations.
 
 ### Translation Pipeline
 
@@ -97,13 +97,13 @@ Translation quality can be assessed through two complementary lenses: *lexical f
 
 **Methodological Validation:** Back-translating professional translations through each LLM established a benchmark; high fidelity scores confirm that the methodology meaningfully reflects translation quality.
 
-**Back-Translation Fidelity:** We compared back-translations to original English using BLEU (lexical overlap, 0-100 scale; scores above 50 indicate strong word-level agreement),23 LaBSE (semantic similarity, 0-1 scale),14 XLM-RoBERTa,24 and mBERT.25 LaBSE scores >0.90 indicate high semantic preservation; differences of 0.05 represent meaningful variation.
+**Back-Translation Fidelity:** We compared back-translations to original English using BLEU (lexical overlap, 0-100 scale; scores above 50 indicate strong word-level agreement),24 LaBSE (semantic similarity, 0-1 scale),15 XLM-RoBERTa,25 and mBERT.26 LaBSE scores >0.90 indicate high semantic preservation; differences of 0.05 represent meaningful variation.
 
-**Comparison to Professional Translation:** We compared LLM translations to professional references using BLEU, chrF,26 BERTScore,15 and COMET.16
+**Comparison to Professional Translation:** We compared LLM translations to professional references using BLEU, chrF,27 BERTScore,16 and COMET.17
 
 ### Statistical Analysis
 
-We report means and standard deviations. Model comparisons used Kruskal-Wallis tests with Dunn's post-hoc correction.27 Language comparisons stratified by resource level. Significance was set at p < 0.05. Analyses used Python 3.11 with SciPy (v1.13.1) and statsmodels (v0.14.1).
+We report means and standard deviations. Model comparisons used Kruskal-Wallis tests with Dunn's post-hoc correction.28 Language comparisons stratified by resource level. Significance was set at p < 0.05. Analyses used Python 3.11 with SciPy (v1.13.1) and statsmodels (v0.14.1).
 
 ---
 
@@ -145,7 +145,7 @@ This study addressed three research questions regarding LLM medical translation 
 
 ### Key Findings
 
-**Equivalent fidelity for low-resource languages.** Tagalog and Haitian Creole (languages comprising less than 0.01% of CommonCrawl) achieved semantic similarity scores that were not statistically distinguishable from those of Spanish and Vietnamese (p = 0.066). This represents a meaningful advance: earlier evaluations of LLMs demonstrated significant performance degradation for digitally underrepresented languages.21 A 2024 study found that ChatGPT and Google Translate had significantly more clinically significant errors for Haitian Creole compared to Spanish and Portuguese when translating pediatric discharge instructions.13 Our finding of equivalent performance for Haitian Creole suggests frontier models released in 2025 may have substantially improved multilingual capabilities for formal patient education materials.
+**Equivalent fidelity for low-resource languages.** Tagalog and Haitian Creole (languages comprising less than 0.01% of CommonCrawl) achieved semantic similarity scores that were not statistically distinguishable from those of Spanish and Vietnamese (p = 0.066). This represents a meaningful advance: earlier evaluations of LLMs demonstrated significant performance degradation for digitally underrepresented languages.22 A 2024 study found that ChatGPT and Google Translate had significantly more clinically significant errors for Haitian Creole compared to Spanish and Portuguese when translating pediatric discharge instructions.13 Our finding of equivalent performance for Haitian Creole suggests frontier models released in 2025 may have substantially improved multilingual capabilities for formal patient education materials.
 
 However, lexical overlap with professional translations (BLEU) was lower for low-resource languages, indicating that while LLMs accurately convey the information, they may phrase it differently from a human translator. The likely explanation is that professional translation conventions are more established for high-resource languages such as Spanish and Chinese, providing LLMs with more examples to learn from during training.
 
@@ -159,7 +159,7 @@ However, lexical overlap with professional translations (BLEU) was lower for low
 
 These findings have implications for the delivery of equitable healthcare at scale. Medical translation services are often unavailable or delayed for speakers of less common languages, creating barriers to informed healthcare decision-making. Our results suggest that for formal patient education materials, LLMs can reliably convey medical information to Tagalog and Haitian Creole speakers with meaning preservation comparable to that achieved for Spanish.
 
-Recent HHS guidance on Section 1557 acknowledges that "exigent circumstances" may arise where machine translation is used before qualified human review is feasible, provided that "the machine translation must be subsequently checked by a qualified human translator as soon as practicable."28 Our findings provide empirical support for such use: frontier LLMs maintain semantic fidelity across resource levels for the types of standardized materials studied here.
+Recent HHS guidance on Section 1557 acknowledges that "exigent circumstances" may arise where machine translation is used before qualified human review is feasible, provided that "the machine translation must be subsequently checked by a qualified human translator as soon as practicable."29 Our findings provide empirical support for such use: frontier LLMs maintain semantic fidelity across resource levels for the types of standardized materials studied here.
 
 ### Policy Implications
 
@@ -169,7 +169,7 @@ Current federal rules implementing Section 1557 require that machine translation
 
 **Potential training data contamination.** The medical documents evaluated (CDC Vaccine Information Statements, American Cancer Society patient education materials) are publicly available resources that may be present in LLM training corpora. This potential contamination could artificially inflate performance if models memorized specific content rather than developing generalizable translation capabilities. The comparable performance of low-resource languages raised concern about this possibility. To address this, we conducted a sentence-reordering sensitivity analysis (Supplementary Analysis S1): we randomly shuffled sentence order within documents and repeated the translation pipeline. The hypothesis was that memorized documents would show significant performance degradation when the structure was disrupted. Results showed no significant change in 83% of model-language combinations, suggesting our results primarily reflect translation capability rather than memorization.
 
-**Lexical borrowing in low-resource languages.** Strong back-translation performance of Tagalog and Haitian Creole may partly reflect patterns of lexical borrowing from English.29 Medical Tagalog frequently retains English terminology (e.g., "chemotherapy," "diabetes," "vaccine"), as do many post-colonial languages in technical domains. Similarly, Haitian Creole incorporates substantial French and English vocabulary in medical contexts. This lexical overlap could inflate back-translation fidelity scores relative to languages such as Chinese or Russian, which use entirely distinct native medical terminology. Recent work suggests LLMs exhibit bias toward loanwords and struggle to distinguish borrowed from native vocabulary,30 which may compound this effect. Future work should examine whether translation performance varies systematically between borrowed versus native terminology.
+**Lexical borrowing in low-resource languages.** Strong back-translation performance of Tagalog and Haitian Creole may partly reflect patterns of lexical borrowing from English.30 Medical Tagalog frequently retains English terminology (e.g., "chemotherapy," "diabetes," "vaccine"), as do many post-colonial languages in technical domains. Similarly, Haitian Creole incorporates substantial French and English vocabulary in medical contexts. This lexical overlap could inflate back-translation fidelity scores relative to languages such as Chinese or Russian, which use entirely distinct native medical terminology. Recent work suggests LLMs exhibit bias toward loanwords and struggle to distinguish borrowed from native vocabulary,31 which may compound this effect. Future work should examine whether translation performance varies systematically between borrowed versus native terminology.
 
 **Automated metrics only.** While we employed multiple validated metrics, automated evaluation cannot fully capture the nuances of medical terminology, cultural appropriateness, or potential for patient misunderstanding. Future work should incorporate human evaluation for a subset of translations.
 
@@ -229,39 +229,41 @@ All source documents, translation outputs, and evaluation metrics are available 
 
 13. Brewster RC, Gonzalez P, Khazanchi R, et al. Performance of ChatGPT and Google Translate for pediatric discharge instruction translation. Pediatrics. 2024;154(1):e2023065573.
 
-14. Feng F, Yang Y, Cer D, et al. Language-agnostic BERT sentence embedding. Proceedings of ACL. 2022:878-891.
+14. American Medical Association. Physician sentiments around the use of AI in health care: motivations, opportunities, risks, and use cases—Shifts from 2023 to 2024. Published February 2025. https://www.ama-assn.org/system/files/physician-ai-sentiment-report.pdf
 
-15. Zhang T, Kishore V, Wu F, Weinberger KQ, Artzi Y. BERTScore: Evaluating text generation with BERT. Proceedings of ICLR. 2020.
+15. Feng F, Yang Y, Cer D, et al. Language-agnostic BERT sentence embedding. Proceedings of ACL. 2022:878-891.
 
-16. Rei R, Stewart C, Farinha AC, Lavie A. COMET: A neural framework for MT evaluation. Proceedings of EMNLP. 2020:2685-2702.
+16. Zhang T, Kishore V, Wu F, Weinberger KQ, Artzi Y. BERTScore: Evaluating text generation with BERT. Proceedings of ICLR. 2020.
 
-17. Brislin RW. Back-translation for cross-cultural research. Journal of Cross-Cultural Psychology. 1970;1(3):185-216.
+17. Rei R, Stewart C, Farinha AC, Lavie A. COMET: A neural framework for MT evaluation. Proceedings of EMNLP. 2020:2685-2702.
 
-18. Tyupa S. A theoretical framework for back-translation as a quality assessment tool. New Voices in Translation Studies. 2011;7(1):35-46.
+18. Brislin RW. Back-translation for cross-cultural research. Journal of Cross-Cultural Psychology. 1970;1(3):185-216.
 
-19. Immunize.org. Vaccine Information Statements (VIS). https://www.immunize.org/vis/. Accessed December 20, 2025.
+19. Tyupa S. A theoretical framework for back-translation as a quality assessment tool. New Voices in Translation Studies. 2011;7(1):35-46.
 
-20. American Cancer Society. Cancer Information. https://www.cancer.org/cancer.html. Accessed December 20, 2025.
+20. Immunize.org. Vaccine Information Statements (VIS). https://www.immunize.org/vis/. Accessed December 20, 2025.
 
-21. Lai VD, Ngo NT, Pouran Ben Veyseh A, et al. ChatGPT beyond English: towards a comprehensive evaluation of large language models in multilingual learning. Findings of the Association for Computational Linguistics: EMNLP 2023. Singapore: Association for Computational Linguistics; 2023:13171-99.
+21. American Cancer Society. Cancer Information. https://www.cancer.org/cancer.html. Accessed December 20, 2025.
 
-22. Common Crawl. Statistics of Common Crawl Monthly Archives: Languages. https://commoncrawl.github.io/cc-crawl-statistics/plots/languages.html. Accessed December 20, 2025.
+22. Lai VD, Ngo NT, Pouran Ben Veyseh A, et al. ChatGPT beyond English: towards a comprehensive evaluation of large language models in multilingual learning. Findings of the Association for Computational Linguistics: EMNLP 2023. Singapore: Association for Computational Linguistics; 2023:13171-99.
 
-23. Papineni K, Roukos S, Ward T, Zhu WJ. BLEU: a method for automatic evaluation of machine translation. Proceedings of ACL. 2002:311-318.
+23. Common Crawl. Statistics of Common Crawl Monthly Archives: Languages. https://commoncrawl.github.io/cc-crawl-statistics/plots/languages.html. Accessed December 20, 2025.
 
-24. Conneau A, Khandelwal K, Goyal N, et al. Unsupervised cross-lingual representation learning at scale. Proceedings of ACL. 2020:8440-8451.
+24. Papineni K, Roukos S, Ward T, Zhu WJ. BLEU: a method for automatic evaluation of machine translation. Proceedings of ACL. 2002:311-318.
 
-25. Devlin J, Chang MW, Lee K, Toutanova K. BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of NAACL. 2019:4171-4186.
+25. Conneau A, Khandelwal K, Goyal N, et al. Unsupervised cross-lingual representation learning at scale. Proceedings of ACL. 2020:8440-8451.
 
-26. Popović M. chrF: character n-gram F-score for automatic MT evaluation. Proceedings of WMT. 2015:392-395.
+26. Devlin J, Chang MW, Lee K, Toutanova K. BERT: Pre-training of deep bidirectional transformers for language understanding. Proceedings of NAACL. 2019:4171-4186.
 
-27. Dunn OJ. Multiple comparisons using rank sums. Technometrics. 1964;6(3):241-252.
+27. Popović M. chrF: character n-gram F-score for automatic MT evaluation. Proceedings of WMT. 2015:392-395.
 
-28. Office for Civil Rights, U.S. Department of Health and Human Services. Dear Colleague Letter: Language Access and Section 1557 of the Affordable Care Act. October 2024. https://www.hhs.gov/sites/default/files/ocr-dcl-section-1557-language-access.pdf
+28. Dunn OJ. Multiple comparisons using rank sums. Technometrics. 1964;6(3):241-252.
 
-29. Baklanova E. Types of borrowings in Tagalog/Filipino. Kritika Kultura. 2017;28:35-54.
+29. Office for Civil Rights, U.S. Department of Health and Human Services. Dear Colleague Letter: Language Access and Section 1557 of the Affordable Care Act. October 2024. https://www.hhs.gov/sites/default/files/ocr-dcl-section-1557-language-access.pdf
 
-30. Silva MS, Ahmadi S. Language models are borrowing-blind: a multilingual evaluation of loanword identification across 10 languages. arXiv preprint arXiv:2510.26254. 2025.
+30. Baklanova E. Types of borrowings in Tagalog/Filipino. Kritika Kultura. 2017;28:35-54.
+
+31. Silva MS, Ahmadi S. Language models are borrowing-blind: a multilingual evaluation of loanword identification across 10 languages. arXiv preprint arXiv:2510.26254. 2025.
 
 ---
 
