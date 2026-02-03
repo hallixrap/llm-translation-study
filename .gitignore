@@ -63,5 +63,12 @@ output/sensitivity_analysis/checkpoint.json
 output/sensitivity_analysis/all_sensitivity_results.json
 output/sensitivity_analysis/all_sensitivity_results_with_metrics.json
 
-# Binary/Word documents (allow manuscript docx files)
-# *.docx
+# Binary/Word documents
+*.docx
+
+# Working manuscript files (not for public repo)
+manuscript_edits/MANUSCRIPT_FINAL.md
+manuscript_edits/skills.md
+
+# Screenshots
+Images/Screenshot*
