@@ -68,6 +68,9 @@ output/sensitivity_analysis/all_sensitivity_results_with_metrics.json
 
 # Working manuscript files (not for public repo)
 manuscript_edits/MANUSCRIPT_FINAL.md
+manuscript_edits/MANUSCRIPT_JAMA_REVISED.md
+manuscript_edits/SUPPLEMENT.md
+manuscript_edits/STARD_checklist.md
 manuscript_edits/skills.md
 
 # Screenshots
