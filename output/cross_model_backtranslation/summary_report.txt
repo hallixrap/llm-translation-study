@@ -1,0 +1,48 @@
+CROSS-MODEL BACK-TRANSLATION SENSITIVITY ANALYSIS
+============================================================
+Generated: 2026-02-28T07:50:21.589796
+Total cross-model results: 1576
+Successful with LaBSE: 1550
+
+OVERALL LaBSE (Cross-Model)
+----------------------------------------
+  Mean ± SD:  0.9488 ± 0.0544
+  Range:      0.7969 – 0.9990
+
+BY MODEL PAIRING (forward → back)
+----------------------------------------
+  claude-opus-4.5 → gemini-3-pro                0.9784 ± 0.0302  (n=168)
+  claude-opus-4.5 → gpt-5.1                     0.9737 ± 0.0350  (n=175)
+  gemini-3-pro → claude-opus-4.5                0.9242 ± 0.0656  (n=176)
+  gemini-3-pro → gpt-5.1                        0.9245 ± 0.0652  (n=176)
+  gpt-5.1 → claude-opus-4.5                     0.9596 ± 0.0448  (n=174)
+  gpt-5.1 → gemini-3-pro                        0.9498 ± 0.0480  (n=164)
+  kimi-k2 → claude-opus-4.5                     0.9434 ± 0.0529  (n=174)
+  kimi-k2 → gemini-3-pro                        0.9414 ± 0.0543  (n=169)
+  kimi-k2 → gpt-5.1                             0.9452 ± 0.0531  (n=174)
+
+BY LANGUAGE
+----------------------------------------
+  arabic                 [medium]  0.9785 ± 0.0270  (n=185)
+  chinese_simplified     [high  ]  0.9383 ± 0.0603  (n=194)
+  haitian_creole         [low   ]  0.9492 ± 0.0519  (n=195)
+  korean                 [medium]  0.9353 ± 0.0534  (n=195)
+  russian                [high  ]  0.9424 ± 0.0538  (n=196)
+  spanish                [high  ]  0.9525 ± 0.0563  (n=195)
+  tagalog                [low   ]  0.9471 ± 0.0575  (n=193)
+  vietnamese             [high  ]  0.9485 ± 0.0552  (n=197)
+
+BY RESOURCE LEVEL
+----------------------------------------
+  high        0.9454 ± 0.0567  (n=782)
+  low         0.9482 ± 0.0548  (n=388)
+  medium      0.9563 ± 0.0478  (n=380)
+
+SAME-MODEL vs CROSS-MODEL COMPARISON
+----------------------------------------
+  Matched pairs:          1550
+  Same-model LaBSE mean:  0.9497
+  Cross-model LaBSE mean: 0.9488
+  Mean delta (cross-same): -0.0009 ± 0.0195
+
+  Interpretation: Cross-model LaBSE scores are comparable to same-model scores, suggesting results are not driven by circularity.

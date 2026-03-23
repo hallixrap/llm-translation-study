@@ -1,0 +1,166 @@
+================================================================================
+LEXICAL BORROWING ANALYSIS — SUMMARY REPORT
+================================================================================
+
+PURPOSE: Quantify how often English (and French) medical terms are retained
+verbatim in translations, addressing reviewer concern that high LaBSE scores
+for low-resource languages may reflect transliteration rather than translation.
+
+--------------------------------------------------------------------------------
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+  English medical terms in vocabulary: 213
+  French medical terms in vocabulary: 175
+  Total translations analyzed: 704
+  Mean English medical terms per source document: 18.0
+  Overall mean English borrowing rate: 0.271
+
+--------------------------------------------------------------------------------
+BORROWING RATES BY LANGUAGE
+--------------------------------------------------------------------------------
+  Language                     Rate      SD  Resource  Script         
+  -------------------------  ------  ------  --------  ---------------
+  tagalog                     0.682   0.172       low  Latin          
+  vietnamese                  0.251   0.126      high  Latin          
+  haitian_creole              0.243   0.140       low  Latin          
+  korean                      0.222   0.138    medium  Non-Latin      
+  spanish                     0.212   0.114      high  Latin          
+  arabic                      0.202   0.128    medium  Non-Latin      
+  chinese_simplified          0.191   0.108      high  Non-Latin      
+  russian                     0.167   0.094      high  Non-Latin      
+
+--------------------------------------------------------------------------------
+BORROWING RATES BY RESOURCE LEVEL
+--------------------------------------------------------------------------------
+  high        mean=0.205  SD=0.115  n=352
+  low         mean=0.463  SD=0.270  n=176
+  medium      mean=0.212  SD=0.133  n=176
+
+--------------------------------------------------------------------------------
+BORROWING RATES BY SCRIPT TYPE (Latin vs Non-Latin)
+--------------------------------------------------------------------------------
+  Latin            mean=0.347  SD=0.239  n=352
+  Non-Latin        mean=0.195  SD=0.119  n=352
+
+--------------------------------------------------------------------------------
+BORROWING RATES BY MODEL
+--------------------------------------------------------------------------------
+  gpt-5.1               mean=0.346  SD=0.212
+  gemini-3-pro          mean=0.268  SD=0.189
+  claude-opus-4.5       mean=0.240  SD=0.201
+  kimi-k2               mean=0.231  SD=0.192
+
+--------------------------------------------------------------------------------
+HAITIAN CREOLE: FRENCH BORROWING
+--------------------------------------------------------------------------------
+  English borrowing rate: 0.243
+  French borrowing rate:  0.010
+  (French rate = French-specific terms found / English source terms)
+
+--------------------------------------------------------------------------------
+TOP 20 MOST COMMONLY BORROWED ENGLISH TERMS
+--------------------------------------------------------------------------------
+
+  TAGALOG (n=88 translations):
+  Rank   Term                       Count   Frequency
+  1      cancer                        50       56.8%
+  2      cdc                           43       48.9%
+  3      fda                           43       48.9%
+  4      immunize                      43       48.9%
+  5      vaccine                       43       48.9%
+  6      vaccines                      43       48.9%
+  7      allergic                      38       43.2%
+  8      immunotherapy                 32       36.4%
+  9      radiation                     32       36.4%
+  10     therapy                       32       36.4%
+  11     immune                        29       33.0%
+  12     treatment                     26       29.5%
+  13     biopsy                        24       27.3%
+  14     clinical                      24       27.3%
+  15     dose                          22       25.0%
+  16     surgery                       21       23.9%
+  17     vaccination                   20       22.7%
+  18     colonoscopy                   20       22.7%
+  19     screening                     20       22.7%
+  20     pneumonia                     17       19.3%
+
+  HAITIAN_CREOLE (n=88 translations):
+  Rank   Term                       Count   Frequency
+  1      cdc                           44       50.0%
+  2      fda                           44       50.0%
+  3      immunize                      44       50.0%
+  4      vaccines                      44       50.0%
+  5      cancer                        44       50.0%
+  6      vaccine                       22       25.0%
+  7      guillain                      12       13.6%
+  8      immunotherapy                  8        9.1%
+  9      therapy                        8        9.1%
+  10     mmr                            7        8.0%
+  11     clinical                       6        6.8%
+  12     chickenpox                     5        5.7%
+  13     flu                            4        4.5%
+  14     hpv                            4        4.5%
+  15     pneumococcal                   4        4.5%
+  16     tdap                           4        4.5%
+  17     aspirin                        4        4.5%
+  18     zoster                         4        4.5%
+  19     mammogram                      4        4.5%
+  20     papillomavirus                 3        3.4%
+
+  HAITIAN CREOLE — FRENCH-ORIGIN TERMS:
+  Rank   Term                       Count   Frequency
+  1      poumon                        11       12.5%
+  2      zona                           6        6.8%
+
+--------------------------------------------------------------------------------
+STATISTICAL TESTS
+--------------------------------------------------------------------------------
+
+  1. Kruskal-Wallis: Borrowing rate across resource levels
+     H = 120.03, p = 0.000000 (SIGNIFICANT)
+     Groups: {'high': 352, 'medium': 176, 'low': 176}
+
+  2. Mann-Whitney U: Tagalog+Haitian Creole vs others
+     U = 72029.50, p = 0.000000 (SIGNIFICANT)
+     Low-resource mean = 0.463, Others mean = 0.207
+
+  3. Mann-Whitney U: Latin script vs Non-Latin script
+     U = 86803.00, p = 0.000000 (SIGNIFICANT)
+     Latin mean = 0.347, Non-Latin mean = 0.195
+
+  4. Kruskal-Wallis: Borrowing rate across models
+     H = 51.29, p = 0.000000 (SIGNIFICANT)
+
+--------------------------------------------------------------------------------
+CORRELATION: BORROWING RATE vs LaBSE SCORE (KEY HYPOTHESIS TEST)
+--------------------------------------------------------------------------------
+
+  Reviewer hypothesis: If lexical borrowing inflates LaBSE scores,
+  we expect a POSITIVE correlation between borrowing rate and LaBSE.
+
+  Language                           n      rho     p-value   Sig?
+  ------------------------------  ----  -------  ----------  -----
+  arabic                            87   -0.089      0.4143     no
+  chinese_simplified                88   -0.432      0.0000    YES
+  haitian_creole                    88   -0.380      0.0003    YES
+  korean                            88   -0.350      0.0008    YES
+  russian                           88   -0.375      0.0003    YES
+  spanish                           88   -0.583      0.0000    YES
+  tagalog                           87   +0.189      0.0790     no
+  vietnamese                        88   -0.329      0.0017    YES
+  low-resource combined            175   +0.018      0.8167     no
+  OVERALL                          702   -0.219      0.0000    YES
+  HC French borrow→LaBSE            88   -0.005      0.9600     no
+
+--------------------------------------------------------------------------------
+INTERPRETATION
+--------------------------------------------------------------------------------
+
+  FINDING: There is NO significant correlation between borrowing
+  rate and LaBSE score in low-resource languages (rho=+0.018, p=0.817).
+  This suggests that lexical borrowing does NOT meaningfully inflate
+  LaBSE scores, undermining the reviewer's concern.
+
+================================================================================
+END OF REPORT
+================================================================================

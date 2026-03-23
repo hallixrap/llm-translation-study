@@ -1,0 +1,1008 @@
+{
+  "summary_statistics": {
+    "by_language": [
+      {
+        "language": "arabic",
+        "n": 88,
+        "mean_borrowing_rate": 0.201897984161939,
+        "std_borrowing_rate": 0.1283514983313435,
+        "median_borrowing_rate": 0.2,
+        "mean_labse": 0.9760136528946888,
+        "resource_level": "medium",
+        "script_type": "Non-Latin"
+      },
+      {
+        "language": "chinese_simplified",
+        "n": 88,
+        "mean_borrowing_rate": 0.1910222649707768,
+        "std_borrowing_rate": 0.10791597865982323,
+        "median_borrowing_rate": 0.2,
+        "mean_labse": 0.9421939958225597,
+        "resource_level": "high",
+        "script_type": "Non-Latin"
+      },
+      {
+        "language": "haitian_creole",
+        "n": 88,
+        "mean_borrowing_rate": 0.24321138080400004,
+        "std_borrowing_rate": 0.14018529021905868,
+        "median_borrowing_rate": 0.25,
+        "mean_labse": 0.9545858082446185,
+        "resource_level": "low",
+        "script_type": "Latin"
+      },
+      {
+        "language": "korean",
+        "n": 88,
+        "mean_borrowing_rate": 0.22167371456807664,
+        "std_borrowing_rate": 0.13800986727326423,
+        "median_borrowing_rate": 0.21739130434782608,
+        "mean_labse": 0.9372609040953896,
+        "resource_level": "medium",
+        "script_type": "Non-Latin"
+      },
+      {
+        "language": "russian",
+        "n": 88,
+        "mean_borrowing_rate": 0.16739563962748366,
+        "std_borrowing_rate": 0.09351507197201268,
+        "median_borrowing_rate": 0.18181818181818182,
+        "mean_labse": 0.9446339458227158,
+        "resource_level": "high",
+        "script_type": "Non-Latin"
+      },
+      {
+        "language": "spanish",
+        "n": 88,
+        "mean_borrowing_rate": 0.21203936353423466,
+        "std_borrowing_rate": 0.1140648296418064,
+        "median_borrowing_rate": 0.25,
+        "mean_labse": 0.9538726163181391,
+        "resource_level": "high",
+        "script_type": "Latin"
+      },
+      {
+        "language": "tagalog",
+        "n": 88,
+        "mean_borrowing_rate": 0.6822051678302213,
+        "std_borrowing_rate": 0.17190594202362433,
+        "median_borrowing_rate": 0.7142857142857143,
+        "mean_labse": 0.9496468524823244,
+        "resource_level": "low",
+        "script_type": "Latin"
+      },
+      {
+        "language": "vietnamese",
+        "n": 88,
+        "mean_borrowing_rate": 0.25066915952636,
+        "std_borrowing_rate": 0.12624592250811062,
+        "median_borrowing_rate": 0.25,
+        "mean_labse": 0.953171780840917,
+        "resource_level": "high",
+        "script_type": "Latin"
+      }
+    ],
+    "by_resource_level": [
+      {
+        "resource_level": "high",
+        "n": 352,
+        "mean_borrowing_rate": 0.20528160691471378,
+        "std_borrowing_rate": 0.1147530811196155,
+        "median_borrowing_rate": 0.212406015037594
+      },
+      {
+        "resource_level": "low",
+        "n": 176,
+        "mean_borrowing_rate": 0.4627082743171107,
+        "std_borrowing_rate": 0.2700285111012196,
+        "median_borrowing_rate": 0.45227272727272727
+      },
+      {
+        "resource_level": "medium",
+        "n": 176,
+        "mean_borrowing_rate": 0.21178584936500783,
+        "std_borrowing_rate": 0.13325635358300542,
+        "median_borrowing_rate": 0.2
+      }
+    ],
+    "by_model": [
+      {
+        "model": "claude-opus-4.5",
+        "n": 176,
+        "mean_borrowing_rate": 0.240140392588148,
+        "std_borrowing_rate": 0.20069531066000876,
+        "median_borrowing_rate": 0.20416666666666666
+      },
+      {
+        "model": "gemini-3-pro",
+        "n": 176,
+        "mean_borrowing_rate": 0.2675769731147286,
+        "std_borrowing_rate": 0.1892959195229397,
+        "median_borrowing_rate": 0.25
+      },
+      {
+        "model": "gpt-5.1",
+        "n": 176,
+        "mean_borrowing_rate": 0.34607555604444523,
+        "std_borrowing_rate": 0.21236670344129233,
+        "median_borrowing_rate": 0.28869047619047616
+      },
+      {
+        "model": "kimi-k2",
+        "n": 176,
+        "mean_borrowing_rate": 0.23126441576422418,
+        "std_borrowing_rate": 0.19189278702991192,
+        "median_borrowing_rate": 0.2
+      }
+    ],
+    "by_script_type": [
+      {
+        "script_type": "Latin",
+        "n": 352,
+        "mean_borrowing_rate": 0.34703126792370403,
+        "std_borrowing_rate": 0.23903040668276324,
+        "median_borrowing_rate": 0.27525252525252525
+      },
+      {
+        "script_type": "Non-Latin",
+        "n": 352,
+        "mean_borrowing_rate": 0.195497400832069,
+        "std_borrowing_rate": 0.11934630067188991,
+        "median_borrowing_rate": 0.2
+      }
+    ],
+    "by_model_language": [
+      {
+        "model": "claude-opus-4.5",
+        "language": "arabic",
+        "mean_borrowing_rate": 0.16941420786051473
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "chinese_simplified",
+        "mean_borrowing_rate": 0.15843944567657842
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "haitian_creole",
+        "mean_borrowing_rate": 0.1984498950600775
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "korean",
+        "mean_borrowing_rate": 0.1551501624959909
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "russian",
+        "mean_borrowing_rate": 0.15450606974663497
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "spanish",
+        "mean_borrowing_rate": 0.21172364870112642
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "tagalog",
+        "mean_borrowing_rate": 0.6779849323937144
+      },
+      {
+        "model": "claude-opus-4.5",
+        "language": "vietnamese",
+        "mean_borrowing_rate": 0.19545477877054684
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "arabic",
+        "mean_borrowing_rate": 0.1860016700481433
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "chinese_simplified",
+        "mean_borrowing_rate": 0.20636164749222913
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "haitian_creole",
+        "mean_borrowing_rate": 0.2224601171870167
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "korean",
+        "mean_borrowing_rate": 0.23376368790264274
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "russian",
+        "mean_borrowing_rate": 0.17548054043965336
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "spanish",
+        "mean_borrowing_rate": 0.2142091045101667
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "tagalog",
+        "mean_borrowing_rate": 0.6665831834711624
+      },
+      {
+        "model": "gemini-3-pro",
+        "language": "vietnamese",
+        "mean_borrowing_rate": 0.23575583386681478
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "arabic",
+        "mean_borrowing_rate": 0.30515906741975646
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "chinese_simplified",
+        "mean_borrowing_rate": 0.24247189766109783
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "haitian_creole",
+        "mean_borrowing_rate": 0.35972168785276815
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "korean",
+        "mean_borrowing_rate": 0.34263084537768207
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "russian",
+        "mean_borrowing_rate": 0.18706616316199154
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "spanish",
+        "mean_borrowing_rate": 0.21061756250849362
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "tagalog",
+        "mean_borrowing_rate": 0.7508892481518952
+      },
+      {
+        "model": "gpt-5.1",
+        "language": "vietnamese",
+        "mean_borrowing_rate": 0.3700479762218771
+      },
+      {
+        "model": "kimi-k2",
+        "language": "arabic",
+        "mean_borrowing_rate": 0.14701699131934143
+      },
+      {
+        "model": "kimi-k2",
+        "language": "chinese_simplified",
+        "mean_borrowing_rate": 0.15681606905320178
+      },
+      {
+        "model": "kimi-k2",
+        "language": "haitian_creole",
+        "mean_borrowing_rate": 0.19221382311613774
+      },
+      {
+        "model": "kimi-k2",
+        "language": "korean",
+        "mean_borrowing_rate": 0.1551501624959909
+      },
+      {
+        "model": "kimi-k2",
+        "language": "russian",
+        "mean_borrowing_rate": 0.15252978516165475
+      },
+      {
+        "model": "kimi-k2",
+        "language": "spanish",
+        "mean_borrowing_rate": 0.211607138417152
+      },
+      {
+        "model": "kimi-k2",
+        "language": "tagalog",
+        "mean_borrowing_rate": 0.6333633073041136
+      },
+      {
+        "model": "kimi-k2",
+        "language": "vietnamese",
+        "mean_borrowing_rate": 0.20141804924620121
+      }
+    ],
+    "haitian_creole_french_borrowing": {
+      "n": 88,
+      "mean_french_borrowing_rate": 0.009702279672199459,
+      "std_french_borrowing_rate": 0.020458882001436373,
+      "median_french_borrowing_rate": 0.0,
+      "mean_eng_borrowing_rate": 0.24321138080399998
+    }
+  },
+  "top_borrowed_terms": {
+    "tagalog": [
+      {
+        "term": "cancer",
+        "count": 50,
+        "frequency": 0.5681818181818182
+      },
+      {
+        "term": "cdc",
+        "count": 43,
+        "frequency": 0.48863636363636365
+      },
+      {
+        "term": "fda",
+        "count": 43,
+        "frequency": 0.48863636363636365
+      },
+      {
+        "term": "immunize",
+        "count": 43,
+        "frequency": 0.48863636363636365
+      },
+      {
+        "term": "vaccine",
+        "count": 43,
+        "frequency": 0.48863636363636365
+      },
+      {
+        "term": "vaccines",
+        "count": 43,
+        "frequency": 0.48863636363636365
+      },
+      {
+        "term": "allergic",
+        "count": 38,
+        "frequency": 0.4318181818181818
+      },
+      {
+        "term": "immunotherapy",
+        "count": 32,
+        "frequency": 0.36363636363636365
+      },
+      {
+        "term": "radiation",
+        "count": 32,
+        "frequency": 0.36363636363636365
+      },
+      {
+        "term": "therapy",
+        "count": 32,
+        "frequency": 0.36363636363636365
+      },
+      {
+        "term": "immune",
+        "count": 29,
+        "frequency": 0.32954545454545453
+      },
+      {
+        "term": "treatment",
+        "count": 26,
+        "frequency": 0.29545454545454547
+      },
+      {
+        "term": "biopsy",
+        "count": 24,
+        "frequency": 0.2727272727272727
+      },
+      {
+        "term": "clinical",
+        "count": 24,
+        "frequency": 0.2727272727272727
+      },
+      {
+        "term": "dose",
+        "count": 22,
+        "frequency": 0.25
+      },
+      {
+        "term": "surgery",
+        "count": 21,
+        "frequency": 0.23863636363636365
+      },
+      {
+        "term": "vaccination",
+        "count": 20,
+        "frequency": 0.22727272727272727
+      },
+      {
+        "term": "colonoscopy",
+        "count": 20,
+        "frequency": 0.22727272727272727
+      },
+      {
+        "term": "screening",
+        "count": 20,
+        "frequency": 0.22727272727272727
+      },
+      {
+        "term": "pneumonia",
+        "count": 17,
+        "frequency": 0.19318181818181818
+      }
+    ],
+    "haitian_creole": [
+      {
+        "term": "cdc",
+        "count": 44,
+        "frequency": 0.5
+      },
+      {
+        "term": "fda",
+        "count": 44,
+        "frequency": 0.5
+      },
+      {
+        "term": "immunize",
+        "count": 44,
+        "frequency": 0.5
+      },
+      {
+        "term": "vaccines",
+        "count": 44,
+        "frequency": 0.5
+      },
+      {
+        "term": "cancer",
+        "count": 44,
+        "frequency": 0.5
+      },
+      {
+        "term": "vaccine",
+        "count": 22,
+        "frequency": 0.25
+      },
+      {
+        "term": "guillain",
+        "count": 12,
+        "frequency": 0.13636363636363635
+      },
+      {
+        "term": "immunotherapy",
+        "count": 8,
+        "frequency": 0.09090909090909091
+      },
+      {
+        "term": "therapy",
+        "count": 8,
+        "frequency": 0.09090909090909091
+      },
+      {
+        "term": "mmr",
+        "count": 7,
+        "frequency": 0.07954545454545454
+      },
+      {
+        "term": "clinical",
+        "count": 6,
+        "frequency": 0.06818181818181818
+      },
+      {
+        "term": "chickenpox",
+        "count": 5,
+        "frequency": 0.056818181818181816
+      },
+      {
+        "term": "flu",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "hpv",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "pneumococcal",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "tdap",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "aspirin",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "zoster",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "mammogram",
+        "count": 4,
+        "frequency": 0.045454545454545456
+      },
+      {
+        "term": "papillomavirus",
+        "count": 3,
+        "frequency": 0.03409090909090909
+      }
+    ],
+    "haitian_creole_french": [
+      {
+        "term": "poumon",
+        "count": 11,
+        "frequency": 0.125
+      },
+      {
+        "term": "zona",
+        "count": 6,
+        "frequency": 0.06818181818181818
+      }
+    ]
+  },
+  "statistical_tests": {
+    "kruskal_wallis_resource_levels": {
+      "test": "Kruskal-Wallis",
+      "comparison": "Borrowing rate across resource levels (high/medium/low)",
+      "H_statistic": 120.02560323393702,
+      "p_value": 8.645127728531694e-27,
+      "significant": true,
+      "group_sizes": {
+        "high": 352,
+        "medium": 176,
+        "low": 176
+      }
+    },
+    "mann_whitney_low_vs_others": {
+      "test": "Mann-Whitney U",
+      "comparison": "Borrowing rate: Tagalog+Haitian Creole vs all other languages",
+      "U_statistic": 72029.5,
+      "p_value": 6.358200003970157e-28,
+      "significant": true,
+      "n_low": 176,
+      "n_other": 528,
+      "mean_low": 0.4627082743171107,
+      "mean_other": 0.20744968773147843
+    },
+    "mann_whitney_latin_vs_nonlatin": {
+      "test": "Mann-Whitney U",
+      "comparison": "Borrowing rate: Latin script vs Non-Latin script languages",
+      "U_statistic": 86803.0,
+      "p_value": 2.9350518041262946e-20,
+      "significant": true,
+      "n_latin": 352,
+      "n_non_latin": 352,
+      "mean_latin": 0.34703126792370403,
+      "mean_non_latin": 0.195497400832069
+    },
+    "kruskal_wallis_models": {
+      "test": "Kruskal-Wallis",
+      "comparison": "Borrowing rate across models",
+      "H_statistic": 51.29151085230036,
+      "p_value": 4.240188318348112e-11,
+      "significant": true,
+      "group_sizes": {
+        "gpt-5.1": 176,
+        "claude-opus-4.5": 176,
+        "gemini-3-pro": 176,
+        "kimi-k2": 176
+      }
+    },
+    "pairwise_language_comparisons": [
+      {
+        "language_1": "arabic",
+        "language_2": "chinese_simplified",
+        "U_statistic": 3892.5,
+        "p_value": 0.9527028515777565,
+        "significant_uncorrected": false,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.1910222649707768,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "haitian_creole",
+        "U_statistic": 3061.0,
+        "p_value": 0.016290680001545925,
+        "significant_uncorrected": true,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.24321138080399998,
+        "p_value_bonferroni": 0.45613904004328587,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "korean",
+        "U_statistic": 3544.0,
+        "p_value": 0.33145481118651265,
+        "significant_uncorrected": false,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.22167371456807664,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "russian",
+        "U_statistic": 4440.5,
+        "p_value": 0.09208891153474527,
+        "significant_uncorrected": false,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.16739563962748366,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "spanish",
+        "U_statistic": 3317.5,
+        "p_value": 0.10046931116987254,
+        "significant_uncorrected": false,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.21203936353423466,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "tagalog",
+        "U_statistic": 246.0,
+        "p_value": 7.174739752194795e-27,
+        "significant_uncorrected": true,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 2.0089271306145426e-25,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "arabic",
+        "language_2": "vietnamese",
+        "U_statistic": 2868.0,
+        "p_value": 0.0029308506548730282,
+        "significant_uncorrected": true,
+        "mean_1": 0.201897984161939,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 0.08206381833644479,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "haitian_creole",
+        "U_statistic": 2987.5,
+        "p_value": 0.008800916824834807,
+        "significant_uncorrected": true,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.24321138080399998,
+        "p_value_bonferroni": 0.2464256710953746,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "korean",
+        "U_statistic": 3490.0,
+        "p_value": 0.2580327633435566,
+        "significant_uncorrected": false,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.22167371456807664,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "russian",
+        "U_statistic": 4431.5,
+        "p_value": 0.09743546863942056,
+        "significant_uncorrected": false,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.16739563962748366,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "spanish",
+        "U_statistic": 3230.5,
+        "p_value": 0.05740143694942056,
+        "significant_uncorrected": false,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.21203936353423466,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "tagalog",
+        "U_statistic": 189.5,
+        "p_value": 1.168336914970336e-27,
+        "significant_uncorrected": true,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 3.271343361916941e-26,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "chinese_simplified",
+        "language_2": "vietnamese",
+        "U_statistic": 2798.5,
+        "p_value": 0.0014719977838982881,
+        "significant_uncorrected": true,
+        "mean_1": 0.1910222649707768,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 0.04121593794915207,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "haitian_creole",
+        "language_2": "korean",
+        "U_statistic": 4304.5,
+        "p_value": 0.20047049198760225,
+        "significant_uncorrected": false,
+        "mean_1": 0.24321138080399998,
+        "mean_2": 0.22167371456807664,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "haitian_creole",
+        "language_2": "russian",
+        "U_statistic": 5257.0,
+        "p_value": 4.079072995181021e-05,
+        "significant_uncorrected": true,
+        "mean_1": 0.24321138080399998,
+        "mean_2": 0.16739563962748366,
+        "p_value_bonferroni": 0.001142140438650686,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "haitian_creole",
+        "language_2": "spanish",
+        "U_statistic": 4193.5,
+        "p_value": 0.3414364720853822,
+        "significant_uncorrected": false,
+        "mean_1": 0.24321138080399998,
+        "mean_2": 0.21203936353423466,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "haitian_creole",
+        "language_2": "tagalog",
+        "U_statistic": 319.5,
+        "p_value": 7.539838624137966e-26,
+        "significant_uncorrected": true,
+        "mean_1": 0.24321138080399998,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 2.1111548147586307e-24,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "haitian_creole",
+        "language_2": "vietnamese",
+        "U_statistic": 3737.0,
+        "p_value": 0.6902631724028448,
+        "significant_uncorrected": false,
+        "mean_1": 0.24321138080399998,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "korean",
+        "language_2": "russian",
+        "U_statistic": 4752.5,
+        "p_value": 0.009076608514860805,
+        "significant_uncorrected": true,
+        "mean_1": 0.22167371456807664,
+        "mean_2": 0.16739563962748366,
+        "p_value_bonferroni": 0.25414503841610253,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "korean",
+        "language_2": "spanish",
+        "U_statistic": 3749.5,
+        "p_value": 0.7176219208677321,
+        "significant_uncorrected": false,
+        "mean_1": 0.22167371456807664,
+        "mean_2": 0.21203936353423466,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "korean",
+        "language_2": "tagalog",
+        "U_statistic": 266.5,
+        "p_value": 1.3946215012912237e-26,
+        "significant_uncorrected": true,
+        "mean_1": 0.22167371456807664,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 3.9049402036154266e-25,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "korean",
+        "language_2": "vietnamese",
+        "U_statistic": 3267.5,
+        "p_value": 0.07343412858959693,
+        "significant_uncorrected": false,
+        "mean_1": 0.22167371456807664,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "russian",
+        "language_2": "spanish",
+        "U_statistic": 2755.0,
+        "p_value": 0.0009343019780451785,
+        "significant_uncorrected": true,
+        "mean_1": 0.16739563962748366,
+        "mean_2": 0.21203936353423466,
+        "p_value_bonferroni": 0.026160455385265,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "russian",
+        "language_2": "tagalog",
+        "U_statistic": 161.0,
+        "p_value": 4.595385402778579e-28,
+        "significant_uncorrected": true,
+        "mean_1": 0.16739563962748366,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 1.286707912778002e-26,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "russian",
+        "language_2": "vietnamese",
+        "U_statistic": 2276.5,
+        "p_value": 2.277157187008314e-06,
+        "significant_uncorrected": true,
+        "mean_1": 0.16739563962748366,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 6.376040123623278e-05,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "spanish",
+        "language_2": "tagalog",
+        "U_statistic": 206.0,
+        "p_value": 1.988495247738963e-27,
+        "significant_uncorrected": true,
+        "mean_1": 0.21203936353423466,
+        "mean_2": 0.6822051678302213,
+        "p_value_bonferroni": 5.567786693669096e-26,
+        "significant_bonferroni": true
+      },
+      {
+        "language_1": "spanish",
+        "language_2": "vietnamese",
+        "U_statistic": 3376.5,
+        "p_value": 0.14237435173280272,
+        "significant_uncorrected": false,
+        "mean_1": 0.21203936353423466,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 1.0,
+        "significant_bonferroni": false
+      },
+      {
+        "language_1": "tagalog",
+        "language_2": "vietnamese",
+        "U_statistic": 7447.0,
+        "p_value": 3.6903724383766786e-26,
+        "significant_uncorrected": true,
+        "mean_1": 0.6822051678302213,
+        "mean_2": 0.25066915952636,
+        "p_value_bonferroni": 1.03330428274547e-24,
+        "significant_bonferroni": true
+      }
+    ]
+  },
+  "labse_correlations": {
+    "arabic": {
+      "n": 87,
+      "spearman_rho": -0.08862686922120219,
+      "p_value": 0.41432402680455305,
+      "significant": false,
+      "mean_borrowing_rate": 0.20421865064655903,
+      "mean_labse": 0.9760136528946888
+    },
+    "chinese_simplified": {
+      "n": 88,
+      "spearman_rho": -0.432300543871663,
+      "p_value": 2.5993137278567264e-05,
+      "significant": true,
+      "mean_borrowing_rate": 0.1910222649707768,
+      "mean_labse": 0.9421939958225597
+    },
+    "haitian_creole": {
+      "n": 88,
+      "spearman_rho": -0.38045390976571547,
+      "p_value": 0.0002557264659610324,
+      "significant": true,
+      "mean_borrowing_rate": 0.24321138080399998,
+      "mean_labse": 0.9545858082446185
+    },
+    "korean": {
+      "n": 88,
+      "spearman_rho": -0.349890624022115,
+      "p_value": 0.0008329032091298751,
+      "significant": true,
+      "mean_borrowing_rate": 0.22167371456807664,
+      "mean_labse": 0.9372609040953896
+    },
+    "russian": {
+      "n": 88,
+      "spearman_rho": -0.3745899978336626,
+      "p_value": 0.0003236830447386832,
+      "significant": true,
+      "mean_borrowing_rate": 0.16739563962748366,
+      "mean_labse": 0.9446339458227158
+    },
+    "spanish": {
+      "n": 88,
+      "spearman_rho": -0.5830172507020147,
+      "p_value": 2.52110925057968e-09,
+      "significant": true,
+      "mean_borrowing_rate": 0.21203936353423466,
+      "mean_labse": 0.9538726163181391
+    },
+    "tagalog": {
+      "n": 87,
+      "spearman_rho": 0.18932139223810382,
+      "p_value": 0.07904547142389444,
+      "significant": false,
+      "mean_borrowing_rate": 0.6900466065409134,
+      "mean_labse": 0.9496468524823244
+    },
+    "vietnamese": {
+      "n": 88,
+      "spearman_rho": -0.32918876669143005,
+      "p_value": 0.0017380593028391012,
+      "significant": true,
+      "mean_borrowing_rate": 0.25066915952636,
+      "mean_labse": 0.953171780840917
+    },
+    "overall": {
+      "n": 702,
+      "spearman_rho": -0.21877822805299585,
+      "p_value": 4.702749100691491e-09,
+      "significant": true
+    },
+    "low_resource_combined": {
+      "n": 175,
+      "spearman_rho": 0.017648482513184058,
+      "p_value": 0.8166837232630888,
+      "significant": false
+    },
+    "haitian_creole_french_vs_labse": {
+      "n": 88,
+      "spearman_rho": -0.00541980130918576,
+      "p_value": 0.9600302321434092,
+      "significant": false,
+      "description": "French borrowing rate correlated with LaBSE in Haitian Creole"
+    }
+  },
+  "metadata": {
+    "n_english_terms": 213,
+    "n_french_terms": 175,
+    "n_translations": 704,
+    "languages": [
+      "arabic",
+      "chinese_simplified",
+      "haitian_creole",
+      "korean",
+      "russian",
+      "spanish",
+      "tagalog",
+      "vietnamese"
+    ],
+    "models": [
+      "claude-opus-4.5",
+      "gemini-3-pro",
+      "gpt-5.1",
+      "kimi-k2"
+    ],
+    "n_documents": 22
+  }
+}

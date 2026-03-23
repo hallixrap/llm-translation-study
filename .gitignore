@@ -50,9 +50,16 @@ data/pdfs/
 !output/github_pages/charts/*.png
 
 # Internal working documents (not for public repo)
-HANDOFF_TO_NEW_INSTANCE.md
+CLAUDE.md
+HANDOFF_*.md
+meeting transcripts/
+manuscript_edits/
+output/human_review/
+translation_project_group_transcript_*.txt
+physician-ai-sentiment-report*.pdf
+hepatitis b screenshot*
 SENSITIVITY_ANALYSIS_README.md
-translation_project_group_transcript_0108.txt
+SENSITIVITY_ANALYSIS_GUIDE.md
 scripts/SENSITIVITY_ANALYSIS_GUIDE.md
 scripts/config_original.py
 scripts/retry_failed_sensitivity.py
@@ -75,3 +82,4 @@ manuscript_edits/skills.md
 
 # Screenshots
 Images/Screenshot*
+checkpoint.json

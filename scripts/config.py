@@ -12,7 +12,7 @@ from pathlib import Path
 # PATHS
 # =============================================================================
 
-BASE_DIR = Path("/Users/chukanya/Library/Mobile Documents/com~apple~CloudDocs/Coding/Back translation project")
+BASE_DIR = Path(__file__).parent.parent
 TRANSLATIONS_DIR = BASE_DIR / "output" / "medlineplus_results"
 METRICS_DIR = BASE_DIR / "output" / "medlineplus_metrics"
 
