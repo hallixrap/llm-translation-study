@@ -1,0 +1,62 @@
+==============================================================================
+SEGMENT-LEVEL LaBSE RECOMPUTATION  (window = 150 words)
+==============================================================================
+published = whole document passed to encode(), truncated at 256 tokens
+pooled    = document chunked, every chunk embedded, mean-pooled
+aligned   = per-segment cosine, averaged (strictest)
+
+--- Layer 1: back-translation fidelity, by model ---
+model                    published      pooled     aligned     shift
+claude-opus-4.5             0.9871      0.9914      0.9406   +0.0042
+gemini-3-pro                0.9214      0.9654      0.8527   +0.0441
+gpt-5.1                     0.9568      0.9867      0.8785   +0.0299
+kimi-k2                     0.9402      0.9829      0.8608   +0.0427
+
+--- Layer 1: by language ---
+language                  level   published      pooled     aligned
+spanish                    high      0.9539      0.9852      0.8914
+vietnamese                 high      0.9532      0.9845      0.8866
+haitian_creole              low      0.9546      0.9833      0.8778
+tagalog                     low      0.9496      0.9830      0.8923
+arabic                   medium      0.9760      0.9800      0.9207
+russian                    high      0.9446      0.9799      0.8755
+chinese_simplified         high      0.9422      0.9797      0.8656
+korean                   medium      0.9373      0.9773      0.8563
+
+--- THE HEADLINE TEST: low vs high resource ---
+  all cells                 labse_published   low=0.9521 (n=175)  high=0.9485 (n=352)  p=0.0665 ns
+  all cells                 labse_pooled      low=0.9832 (n=175)  high=0.9823 (n=352)  p=0.115 ns
+  all cells                 labse_aligned     low=0.8850 (n=175)  high=0.8798 (n=352)  p=0.381 ns
+  (restricted to cells whose professional reference is NOT out of date)
+  current refs only         labse_published   low=0.9699 (n=116)  high=0.9613 (n=268)  p=0.0032 **
+  current refs only         labse_pooled      low=0.9856 (n=116)  high=0.9842 (n=268)  p=0.0167 *
+  current refs only         labse_aligned     low=0.9142 (n=116)  high=0.8993 (n=268)  p=0.068 ns
+
+--- clustered by (document, language), model pseudoreplication removed ---
+  labse_published    low=0.9519 (n=44)  high=0.9485 (n=88)  p=0.485
+  labse_pooled       low=0.9831 (n=44)  high=0.9823 (n=88)  p=0.652
+  labse_aligned      low=0.8848 (n=44)  high=0.8798 (n=88)  p=0.574
+
+--- DOES THE 'DOCUMENT TYPE' CLAIM SURVIVE? cancer vs vaccine ---
+  (published LaBSE says cancer >> vaccine; full-document chrF says the
+   opposite. If that gap was a truncation artefact it should shrink here.)
+  category                  labse_published   cancer=0.9835 (n=352)  immunize=0.9191 (n=350)  p=5.54e-46 ***
+  category                  labse_pooled      cancer=0.9877 (n=352)  immunize=0.9754 (n=350)  p=3.79e-26 ***
+  category                  labse_aligned     cancer=0.9343 (n=352)  immunize=0.8318 (n=350)  p=1.05e-49 ***
+
+--- ceiling diagnostics (AE comment 2: metric saturation) ---
+  labse_published    >0.98:  54.3%   >0.95:  66.7%   SD=0.0536   IQR=0.0846
+  labse_pooled       >0.98:  71.1%   >0.95:  92.0%   SD=0.0183   IQR=0.0148
+  labse_aligned      >0.98:  10.5%   >0.95:  30.5%   SD=0.0861   IQR=0.1551
+
+--- Layer 4: inter-model concordance ---
+  labse_published    overall = 0.9461
+  labse_pooled       overall = 0.9728
+  labse_aligned      overall = 0.8906
+
+--- Layer 3: cross-model back-translation ---
+  labse_published    overall = 0.9488
+  labse_pooled       overall = 0.9818
+  labse_aligned      overall = 0.8807
+
+==============================================================================

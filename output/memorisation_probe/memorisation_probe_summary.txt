@@ -1,0 +1,34 @@
+==========================================================================
+PREFIX-CONTINUATION MEMORISATION PROBE
+==========================================================================
+n = 317 matched items
+
+signal = chrF(continuing the professional translation)
+       - chrF(continuing a 2026 translation that cannot be in training data)
+A signal near zero means prediction, not recall.
+
+  professional prefix  chrF =  39.27
+  novel prefix         chrF =  42.05
+  SIGNAL                    =  -2.77   Wilcoxon p = 2.47e-06
+
+--- by resource level (AE: does memorisation mask a real gap?) ---
+level         n     prof    novel   signal   verbatim run
+high        142    40.32    44.29    -3.97            5.5
+medium       88    32.18    34.81    -2.62            4.4
+low          87    44.74    45.71    -0.97            5.0
+
+  high vs low memorisation signal: p = 0.234
+  (a larger signal for high-resource languages would support the AE's
+   concern that memorisation compresses the resource-level difference)
+
+--- by model ---
+model                   n     prof    novel   signal
+claude-opus-4.5       160    39.39    43.76    -4.37
+gpt-5.1               157    39.15    40.30    -1.14
+
+--- longest verbatim reproduced span (consecutive words) ---
+  professional prefix: mean 5.0, max 20
+  novel prefix:        mean 6.6, max 48
+  Long exact runs from the professional prefix only = strongest evidence.
+
+==========================================================================

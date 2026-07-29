@@ -17,6 +17,29 @@ Our **5-layer validation framework** addresses the circularity critique inherent
 4. **Inter-model concordance** -- Pairwise agreement among independent model translations (1,047 pairs)
 5. **Lexical borrowing quantification** -- Measuring verbatim English term retention in low-resource language translations
 
+### What each metric actually compares
+
+`cross_lang_labse`, `cross_lang_xlm_roberta`, `cross_lang_mbert` and
+`cross_lang_comet_qe` are **misnomers kept for backwards compatibility** with the
+published output files. All four compare the **English back-translation against the
+English source document**. Both sides are English.
+
+No metric in this pipeline compares the English source directly against the
+target-language forward translation.
+
+| Field | First argument | Second argument |
+|---|---|---|
+| `cross_lang_*` | English back-translation | English source |
+| `backtrans_*` | English back-translation | English source |
+| `prof_backtrans_*` | English back-translation of the professional translation | English source |
+| `llm_vs_prof_backtrans_*` | English back-translation (LLM) | English back-translation (professional) |
+| `same_lang_*` | LLM forward translation (target language) | Professional translation (target language) |
+
+Embedding metrics also process a fixed maximum input length (LaBSE 256 tokens,
+BERTScore and COMET 512). Documents here average ~900 words, so whole-document
+scoring truncates. Segment-level scoring is implemented in
+`recompute_labse_segmented.py`.
+
 ### Languages
 
 | Language | Script | Resource Level | CommonCrawl % |

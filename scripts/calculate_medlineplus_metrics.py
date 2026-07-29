@@ -227,7 +227,11 @@ class TranslationMetrics:
     # ==========================================================================
     # GOAL 1: LLM Back-translation vs Original English
     # ==========================================================================
-    # Cross-language semantic similarity
+    # NAMING WARNING: the `cross_lang_` prefix below is a MISNOMER retained for
+    # backwards compatibility with published output files. These fields do NOT
+    # compare English against the target language. Every one of them compares
+    # the ENGLISH back-translation against the ENGLISH source document, i.e.
+    # both sides are English. See calculate_all_metrics() for the exact calls.
     cross_lang_xlm_roberta: Optional[float] = None
     cross_lang_labse: Optional[float] = None
     cross_lang_mbert: Optional[float] = None
@@ -312,7 +316,13 @@ def evaluate_single(result: dict) -> TranslationMetrics:
             logger.warning(f"same_lang_comet failed: {e}")
 
     # ===========================================
-    # GOAL 1: CROSS-LANGUAGE METRICS (LLM Back-trans vs Original)
+    # GOAL 1: ROUND-TRIP METRICS (English back-translation vs English source)
+    #
+    # Despite the `cross_lang_` field names, these are ENGLISH-to-ENGLISH
+    # comparisons. The first argument is the model's back-translation (English);
+    # the second is the original source document (English). No metric in this
+    # pipeline compares the English source directly against the target-language
+    # forward translation.
     # ===========================================
     try:
         metrics.cross_lang_xlm_roberta = calculate_xlm_roberta_similarity(
@@ -322,6 +332,7 @@ def evaluate_single(result: dict) -> TranslationMetrics:
         logger.warning(f"xlm_roberta failed: {e}")
 
     try:
+        # (English back-translation, English source) -- both arguments English.
         metrics.cross_lang_labse = calculate_labse_similarity(
             back_translation, english_original
         )

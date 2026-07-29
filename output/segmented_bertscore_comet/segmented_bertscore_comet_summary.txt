@@ -1,0 +1,35 @@
+==============================================================================
+SEGMENT-LEVEL BERTScore AND COMET
+==============================================================================
+
+--- BERTScore vs professional ---
+  overall   published 0.8470   segmented 0.8026
+  level        published   segmented
+  high            0.8511      0.7987
+  medium          0.8519      0.8145
+  low             0.8338      0.7985
+  low vs high, segmented: 0.7985 vs 0.7987, Mann-Whitney p=0.87
+  low vs high, published: 0.8338 vs 0.8511, Mann-Whitney p=0.000292
+  cancer vs vaccine, segmented: 0.8564 vs 0.7485, p=4.07e-85
+
+--- COMET vs professional ---
+  overall   published 0.8733   segmented 0.4556
+  level        published   segmented
+  high            0.8789      0.4584
+  medium          0.8983      0.6390
+  low             0.8369      0.2665
+  low vs high, segmented: 0.2665 vs 0.4584, Mann-Whitney p=1.76e-06
+  low vs high, published: 0.8369 vs 0.8789, Mann-Whitney p=1.32e-16
+  cancer vs vaccine, segmented: 0.6375 vs 0.2726, p=6.83e-47
+
+--- BERTScore, back-translation ---
+  overall   published 0.9303   segmented 0.9266
+  level        published   segmented
+  high            0.9263      0.9209
+  medium          0.9379      0.9393
+  low             0.9308      0.9252
+  low vs high, segmented: 0.9252 vs 0.9209, Mann-Whitney p=0.0279
+  low vs high, published: 0.9308 vs 0.9263, Mann-Whitney p=0.124
+  cancer vs vaccine, segmented: 0.9629 vs 0.8900, p=1.52e-82
+
+==============================================================================
